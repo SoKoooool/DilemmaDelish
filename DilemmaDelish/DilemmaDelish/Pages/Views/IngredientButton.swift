@@ -48,6 +48,7 @@ final class IngredientButton: UIButton {
         config.background.strokeColor = .systemPink
         config.background.strokeWidth = 2
         config.cornerStyle = .capsule
+        config.buttonSize = .small
         config.preferredSymbolConfigurationForImage = .init(scale: .large)
     }
     
@@ -62,7 +63,7 @@ final class IngredientButton: UIButton {
     
     private func configureTitle() {
         guard let titleLabel = titleLabel else { return }
-        titleLabel.font = .systemFont(ofSize: 17, weight: .semibold)
+        titleLabel.font = .systemFont(ofSize: 14, weight: .medium)
         titleLabel.numberOfLines = 1
     }
 }
