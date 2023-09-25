@@ -16,7 +16,7 @@ struct PersistentStorage {
     // MARK: - Core Data stack
     
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "IngredientModel.xcdatamodeld")
+        let container = NSPersistentContainer(name: "IngredientModel")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -70,8 +70,8 @@ extension PersistentStorage {
     mutating func store(item: IngredientItem) {
         guard let entity = NSEntityDescription.entity(forEntityName: "IngredientModel", in: context) else { return }
         let model = NSManagedObject(entity: entity, insertInto: context)
-        model.setValue(item.name, forKey: item.name.self)
-        model.setValue(item.imageName, forKey: item.imageName.self)
+        model.setValue(item.name, forKey: "name")
+        model.setValue(item.imageName, forKey: "imageName")
         saveContext()
     }
     
