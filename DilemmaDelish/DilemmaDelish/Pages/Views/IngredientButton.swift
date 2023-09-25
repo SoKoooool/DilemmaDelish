@@ -26,6 +26,7 @@ final class IngredientButton: UIButton {
         super.init(coder: coder)
         self.config = .plain()
         setupConfiguarance()
+        config.title = "샤토브리앙"
         configuration = config
     }
     
