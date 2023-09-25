@@ -72,6 +72,7 @@ extension PersistentStorage {
         let model = NSManagedObject(entity: entity, insertInto: context)
         model.setValue(item.name, forKey: item.name.self)
         model.setValue(item.imageName, forKey: item.imageName.self)
+        saveContext()
     }
     
     mutating func delete(item: IngredientItem) {
@@ -80,6 +81,7 @@ extension PersistentStorage {
             let models = try context.fetch(request)
             guard let model = models.first else { return }
             context.delete(model)
+            saveContext()
         } catch {
             print(error.localizedDescription)
         }
