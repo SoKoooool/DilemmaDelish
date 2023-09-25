@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF9118EA2AC177B600CC5E8D /* IngredientModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF9118E82AC177B600CC5E8D /* IngredientModel.xcdatamodeld */; };
 		FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */; };
 		FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */; };
 		FFB913D42ABAE6FF0022E688 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913D32ABAE6FF0022E688 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF9118E92AC177B600CC5E8D /* IngredientModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IngredientModel.xcdatamodel; sourceTree = "<group>"; };
 		FFB913CC2ABAE6FF0022E688 /* DilemmaDelish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DilemmaDelish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				FFB913D52ABAE6FF0022E688 /* Main.storyboard */,
 				FFB913D82ABAE7010022E688 /* Assets.xcassets */,
 				FFB913DA2ABAE7010022E688 /* LaunchScreen.storyboard */,
+				FF9118E82AC177B600CC5E8D /* IngredientModel.xcdatamodeld */,
 				FFB913DD2ABAE7010022E688 /* Info.plist */,
 			);
 			path = DilemmaDelish;
@@ -151,6 +154,7 @@
 			files = (
 				FFB913D42ABAE6FF0022E688 /* ViewController.swift in Sources */,
 				FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */,
+				FF9118EA2AC177B600CC5E8D /* IngredientModel.xcdatamodeld in Sources */,
 				FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,6 +399,19 @@
 			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		FF9118E82AC177B600CC5E8D /* IngredientModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FF9118E92AC177B600CC5E8D /* IngredientModel.xcdatamodel */,
+			);
+			currentVersion = FF9118E92AC177B600CC5E8D /* IngredientModel.xcdatamodel */;
+			path = IngredientModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FFB913C42ABAE6FF0022E688 /* Project object */;
 }
