@@ -51,3 +51,19 @@ struct PersistentStorage {
         }
     }
 }
+
+extension PersistentStorage {
+    
+    typealias FetchResult = Result<[IngredientModel], NSError>
+    
+    mutating func fetch() -> FetchResult {
+        do {
+            let request = IngredientModel.fetchRequest()
+            let models = try context.fetch(request)
+            return .success(models)
+        } catch {
+            print(error.localizedDescription)
+            return .failure(error as NSError)
+        }
+    }
+}
