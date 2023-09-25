@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FF9118EA2AC177B600CC5E8D /* IngredientModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF9118E82AC177B600CC5E8D /* IngredientModel.xcdatamodeld */; };
 		FF9118ED2AC178E200CC5E8D /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9118EC2AC178E200CC5E8D /* PersistentStorage.swift */; };
+		FF9118F72AC1AF8300CC5E8D /* IngredientItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9118F62AC1AF8300CC5E8D /* IngredientItem.swift */; };
 		FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */; };
 		FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */; };
 		FFB913D42ABAE6FF0022E688 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913D32ABAE6FF0022E688 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		FF9118E92AC177B600CC5E8D /* IngredientModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IngredientModel.xcdatamodel; sourceTree = "<group>"; };
 		FF9118EC2AC178E200CC5E8D /* PersistentStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorage.swift; sourceTree = "<group>"; };
+		FF9118F62AC1AF8300CC5E8D /* IngredientItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientItem.swift; sourceTree = "<group>"; };
 		FFB913CC2ABAE6FF0022E688 /* DilemmaDelish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DilemmaDelish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,22 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		FF9118F42AC1AF6F00CC5E8D /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				FF9118F52AC1AF7700CC5E8D /* Models */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		FF9118F52AC1AF7700CC5E8D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FF9118F62AC1AF8300CC5E8D /* IngredientItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		FFB913C32ABAE6FF0022E688 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +94,7 @@
 				FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */,
 				FFB913D32ABAE6FF0022E688 /* ViewController.swift */,
 				FF9118EB2AC178CB00CC5E8D /* Repository */,
+				FF9118F42AC1AF6F00CC5E8D /* Domain */,
 				FFB913D52ABAE6FF0022E688 /* Main.storyboard */,
 				FFB913D82ABAE7010022E688 /* Assets.xcassets */,
 				FFB913DA2ABAE7010022E688 /* LaunchScreen.storyboard */,
@@ -168,6 +187,7 @@
 				FF9118EA2AC177B600CC5E8D /* IngredientModel.xcdatamodeld in Sources */,
 				FF9118ED2AC178E200CC5E8D /* PersistentStorage.swift in Sources */,
 				FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */,
+				FF9118F72AC1AF8300CC5E8D /* IngredientItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
