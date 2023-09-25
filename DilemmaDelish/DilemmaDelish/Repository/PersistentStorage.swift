@@ -73,4 +73,15 @@ extension PersistentStorage {
         model.setValue(item.name, forKey: item.name.self)
         model.setValue(item.imageName, forKey: item.imageName.self)
     }
+    
+    mutating func delete(item: IngredientItem) {
+        do {
+            let request = NSFetchRequest<IngredientModel>(entityName: "IngredientModel")
+            let models = try context.fetch(request)
+            guard let model = models.first else { return }
+            context.delete(model)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
 }
