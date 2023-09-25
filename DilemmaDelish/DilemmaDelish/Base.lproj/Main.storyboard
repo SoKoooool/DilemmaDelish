@@ -17,13 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zo-Bd-gCZ" customClass="IngredientButton" customModule="DilemmaDelish" customModuleProvider="target">
-                                <rect key="frame" x="159" y="408.66666666666669" width="75" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="62W-c0-Mk2" customClass="AddIngredientButton" customModule="DilemmaDelish" customModuleProvider="target">
+                                <rect key="frame" x="298" y="72" width="75" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="62W-c0-Mk2" customClass="AddIngredientButton" customModule="DilemmaDelish" customModuleProvider="target">
-                                <rect key="frame" x="234" y="408.66666666666669" width="75" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLx-Py-YAu" customClass="IngredientsViewTitleLabel" customModule="DilemmaDelish" customModuleProvider="target">
+                                <rect key="frame" x="175.66666666666666" y="79" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zo-Bd-gCZ" customClass="IngredientButton" customModule="DilemmaDelish" customModuleProvider="target">
+                                <rect key="frame" x="20" y="120" width="75" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
@@ -31,10 +37,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="9zo-Bd-gCZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2J8-i9-ROR"/>
-                            <constraint firstItem="62W-c0-Mk2" firstAttribute="centerY" secondItem="9zo-Bd-gCZ" secondAttribute="centerY" id="AIN-Cf-oaJ"/>
-                            <constraint firstItem="9zo-Bd-gCZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gs2-v0-0MF"/>
-                            <constraint firstItem="62W-c0-Mk2" firstAttribute="leading" secondItem="9zo-Bd-gCZ" secondAttribute="trailing" id="ypU-ne-56b"/>
+                            <constraint firstItem="XLx-Py-YAu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="L19-kb-Vmm"/>
+                            <constraint firstItem="9zo-Bd-gCZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="PsT-8l-oCW"/>
+                            <constraint firstItem="62W-c0-Mk2" firstAttribute="centerY" secondItem="XLx-Py-YAu" secondAttribute="centerY" id="c7m-hE-Q2Y"/>
+                            <constraint firstItem="9zo-Bd-gCZ" firstAttribute="top" secondItem="XLx-Py-YAu" secondAttribute="bottom" constant="20" id="fv1-TI-AQw"/>
+                            <constraint firstItem="XLx-Py-YAu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="neN-cV-biO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="62W-c0-Mk2" secondAttribute="trailing" constant="20" id="oBy-6j-W9s"/>
                         </constraints>
                     </view>
                 </viewController>
