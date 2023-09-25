@@ -66,4 +66,11 @@ extension PersistentStorage {
             return .failure(error as NSError)
         }
     }
+    
+    mutating func store(item: IngredientItem) {
+        guard let entity = NSEntityDescription.entity(forEntityName: "IngredientModel", in: context) else { return }
+        let model = NSManagedObject(entity: entity, insertInto: context)
+        model.setValue(item.name, forKey: item.name.self)
+        model.setValue(item.imageName, forKey: item.imageName.self)
+    }
 }
