@@ -18,7 +18,18 @@
 		FFB913DC2ABAE7010022E688 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB913DA2ABAE7010022E688 /* LaunchScreen.storyboard */; };
 		FFB913EC2ABAED4B0022E688 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = FFB913EB2ABAED4B0022E688 /* RxCocoa */; };
 		FFB913EE2ABAED4B0022E688 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFB913ED2ABAED4B0022E688 /* RxSwift */; };
+		FFD81A302AC3B07C00FCFCF5 /* DilemmaDelishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD81A2F2AC3B07C00FCFCF5 /* DilemmaDelishTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FFD81A312AC3B07C00FCFCF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFB913C42ABAE6FF0022E688 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFB913CB2ABAE6FF0022E688;
+			remoteInfo = DilemmaDelish;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		FF9118E92AC177B600CC5E8D /* IngredientModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IngredientModel.xcdatamodel; sourceTree = "<group>"; };
@@ -32,6 +43,8 @@
 		FFB913D82ABAE7010022E688 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFB913DB2ABAE7010022E688 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFB913DD2ABAE7010022E688 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFD81A2D2AC3B07C00FCFCF5 /* DilemmaDelishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DilemmaDelishTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFD81A2F2AC3B07C00FCFCF5 /* DilemmaDelishTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DilemmaDelishTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +54,13 @@
 			files = (
 				FFB913EE2ABAED4B0022E688 /* RxSwift in Frameworks */,
 				FFB913EC2ABAED4B0022E688 /* RxCocoa in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFD81A2A2AC3B07C00FCFCF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				FFB913CE2ABAE6FF0022E688 /* DilemmaDelish */,
+				FFD81A2E2AC3B07C00FCFCF5 /* DilemmaDelishTests */,
 				FFB913CD2ABAE6FF0022E688 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -83,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				FFB913CC2ABAE6FF0022E688 /* DilemmaDelish.app */,
+				FFD81A2D2AC3B07C00FCFCF5 /* DilemmaDelishTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,6 +124,14 @@
 				FFB913DD2ABAE7010022E688 /* Info.plist */,
 			);
 			path = DilemmaDelish;
+			sourceTree = "<group>";
+		};
+		FFD81A2E2AC3B07C00FCFCF5 /* DilemmaDelishTests */ = {
+			isa = PBXGroup;
+			children = (
+				FFD81A2F2AC3B07C00FCFCF5 /* DilemmaDelishTests.swift */,
+			);
+			path = DilemmaDelishTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +158,24 @@
 			productReference = FFB913CC2ABAE6FF0022E688 /* DilemmaDelish.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FFD81A2C2AC3B07C00FCFCF5 /* DilemmaDelishTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFD81A352AC3B07C00FCFCF5 /* Build configuration list for PBXNativeTarget "DilemmaDelishTests" */;
+			buildPhases = (
+				FFD81A292AC3B07C00FCFCF5 /* Sources */,
+				FFD81A2A2AC3B07C00FCFCF5 /* Frameworks */,
+				FFD81A2B2AC3B07C00FCFCF5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFD81A322AC3B07C00FCFCF5 /* PBXTargetDependency */,
+			);
+			name = DilemmaDelishTests;
+			productName = DilemmaDelishTests;
+			productReference = FFD81A2D2AC3B07C00FCFCF5 /* DilemmaDelishTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -140,6 +188,10 @@
 				TargetAttributes = {
 					FFB913CB2ABAE6FF0022E688 = {
 						CreatedOnToolsVersion = 14.1;
+					};
+					FFD81A2C2AC3B07C00FCFCF5 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = FFB913CB2ABAE6FF0022E688;
 					};
 				};
 			};
@@ -160,6 +212,7 @@
 			projectRoot = "";
 			targets = (
 				FFB913CB2ABAE6FF0022E688 /* DilemmaDelish */,
+				FFD81A2C2AC3B07C00FCFCF5 /* DilemmaDelishTests */,
 			);
 		};
 /* End PBXProject section */
@@ -172,6 +225,13 @@
 				FFB913DC2ABAE7010022E688 /* LaunchScreen.storyboard in Resources */,
 				FFB913D92ABAE7010022E688 /* Assets.xcassets in Resources */,
 				FFB913D72ABAE6FF0022E688 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFD81A2B2AC3B07C00FCFCF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,7 +251,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FFD81A292AC3B07C00FCFCF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFD81A302AC3B07C00FCFCF5 /* DilemmaDelishTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FFD81A322AC3B07C00FCFCF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFB913CB2ABAE6FF0022E688 /* DilemmaDelish */;
+			targetProxy = FFD81A312AC3B07C00FCFCF5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FFB913D52ABAE6FF0022E688 /* Main.storyboard */ = {
@@ -385,6 +461,42 @@
 			};
 			name = Release;
 		};
+		FFD81A332AC3B07C00FCFCF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UQ7NNW9PV7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SooJi.DilemmaDelishTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DilemmaDelish.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DilemmaDelish";
+			};
+			name = Debug;
+		};
+		FFD81A342AC3B07C00FCFCF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UQ7NNW9PV7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SooJi.DilemmaDelishTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DilemmaDelish.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DilemmaDelish";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -402,6 +514,15 @@
 			buildConfigurations = (
 				FFB913E12ABAE7010022E688 /* Debug */,
 				FFB913E22ABAE7010022E688 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFD81A352AC3B07C00FCFCF5 /* Build configuration list for PBXNativeTarget "DilemmaDelishTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFD81A332AC3B07C00FCFCF5 /* Debug */,
+				FFD81A342AC3B07C00FCFCF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
