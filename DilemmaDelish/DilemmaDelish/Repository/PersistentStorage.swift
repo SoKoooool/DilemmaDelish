@@ -10,12 +10,16 @@ import CoreData
 
 struct PersistentStorage {
     
+    // MARK: - Properties
+    
     static var shared = PersistentStorage()
-    lazy var context = persistentContainer.viewContext
+    private lazy var context = persistentContainer.viewContext
+    
+    init() {}
     
     // MARK: - Core Data stack
     
-    lazy var persistentContainer: NSPersistentContainer = {
+    private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "IngredientModel")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -38,7 +42,7 @@ struct PersistentStorage {
     
     // MARK: - Core Data Saving support
     
-    mutating func saveContext () {
+    mutating private func saveContext () {
         if context.hasChanges {
             do {
                 try context.save()
