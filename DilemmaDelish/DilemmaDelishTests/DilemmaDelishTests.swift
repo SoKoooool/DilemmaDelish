@@ -10,14 +10,26 @@ import XCTest
 
 final class DilemmaDelishTests: XCTestCase {
 
+    var sut: PersistentStorage!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        sut = PersistentStorage.shared
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
     }
 
+    func test_재료가_저장되는지_확인() {
+        let item = IngredientItem(name: "테스트재료", imageName: "테스트이미지")
+        
+        sut.store(item: item)
+        let fetchResult = sut.fetch()
+        guard case let .success(result) = fetchResult else { return }
+        
+        XCTAssertEqual(result.last!.name, item.name)
+        XCTAssertEqual(result.last!.imageName, item.imageName)
+    }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
