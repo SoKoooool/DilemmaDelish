@@ -16,9 +16,12 @@ extension IngredientModel {
         return NSFetchRequest<IngredientModel>(entityName: "IngredientModel")
     }
 
-    @NSManaged public var imageName: String?
-    @NSManaged public var name: String?
+    @NSManaged public var imageName: String
+    @NSManaged public var name: String
 
+    func toDomain() -> IngredientItem {
+        return IngredientItem(name: name, imageName: imageName)
+    }
 }
 
 extension IngredientModel : Identifiable {
