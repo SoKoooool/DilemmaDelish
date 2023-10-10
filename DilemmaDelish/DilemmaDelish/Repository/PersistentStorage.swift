@@ -49,7 +49,7 @@ extension PersistentStorage {
     
     typealias FetchResult = Result<[IngredientModel], NSError>
     
-    mutating func fetch() -> FetchResult {
+    mutating func fetchIngredients() -> FetchResult {
         do {
             let request = IngredientModel.fetchRequest()
             let models = try context.fetch(request)
@@ -60,7 +60,7 @@ extension PersistentStorage {
         }
     }
     
-    mutating func store(item: IngredientItem) {
+    mutating func storeIngredient(item: IngredientItem) {
         guard let entity = NSEntityDescription.entity(forEntityName: "IngredientModel", in: context) else { return }
         let model = NSManagedObject(entity: entity, insertInto: context)
         model.setValue(item.name, forKey: "name")
@@ -68,7 +68,7 @@ extension PersistentStorage {
         saveContext()
     }
     
-    mutating func delete(item: IngredientItem) {
+    mutating func deleteIngredient(item: IngredientItem) {
         do {
             let request = NSFetchRequest<IngredientModel>(entityName: "IngredientModel")
             let models = try context.fetch(request)
