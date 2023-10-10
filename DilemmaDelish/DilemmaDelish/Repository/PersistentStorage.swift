@@ -47,13 +47,13 @@ struct PersistentStorage {
 
 extension PersistentStorage {
     
-    typealias FetchResult = Result<[IngredientModel], NSError>
+    typealias FetchResult = Result<[IngredientItem], NSError>
     
     mutating func fetchIngredients() -> FetchResult {
         do {
             let request = IngredientModel.fetchRequest()
             let entities = try context.fetch(request)
-            return .success(entities)
+            return .success(entities.map { $0.toDomain() })
         } catch {
             print(error.localizedDescription)
             return .failure(error as NSError)
