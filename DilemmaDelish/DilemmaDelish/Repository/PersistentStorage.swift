@@ -61,16 +61,15 @@ extension PersistentStorage {
     }
     
     mutating func storeIngredient(item: IngredientItem) {
-        guard let entity = NSEntityDescription.entity(forEntityName: "IngredientModel", in: context) else { return }
-        let model = NSManagedObject(entity: entity, insertInto: context)
-        model.setValue(item.name, forKey: "name")
-        model.setValue(item.imageName, forKey: "imageName")
+        let entity = IngredientModel(context: context)
+        entity.name = item.name
+        entity.imageName = item.imageName
         saveContext()
     }
     
     mutating func deleteIngredient(item: IngredientItem) {
         do {
-            let request = NSFetchRequest<IngredientModel>(entityName: "IngredientModel")
+            let request = IngredientModel.fetchRequest()
             let models = try context.fetch(request)
             guard let model = models.first else { return }
             context.delete(model)
