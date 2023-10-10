@@ -23,11 +23,12 @@ final class DilemmaDelishTests: XCTestCase {
     func test_재료가_저장되는지_확인() {
         let item = IngredientItem(name: "테스트재료", imageName: "테스트이미지")
         
+        sut.deleteAllIngredients()
         sut.storeIngredient(item: item)
         guard case let .success(result) = sut.fetchIngredients() else { return }
         
         XCTAssertTrue(result.contains {
-            $0.name == $0.name && $0.imageName == $0.imageName
+            $0.name == item.name && $0.imageName == item.imageName
         })
     }
     
