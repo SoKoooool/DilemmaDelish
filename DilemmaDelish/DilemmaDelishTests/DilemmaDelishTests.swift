@@ -23,12 +23,30 @@ final class DilemmaDelishTests: XCTestCase {
     func test_재료가_저장되는지_확인() {
         let item = IngredientItem(name: "테스트재료", imageName: "테스트이미지")
         
-        sut.store(item: item)
-        let fetchResult = sut.fetchIngredients()
-        guard case let .success(result) = fetchResult else { return }
+        sut.storeIngredient(item: item)
+        guard case let .success(result) = sut.fetchIngredients() else { return }
         
         XCTAssertEqual(result.last!.name, item.name)
         XCTAssertEqual(result.last!.imageName, item.imageName)
+    }
+    
+    func test_재료가_하나_삭제되는지_확인() {
+        let item = IngredientItem(name: "삭제대상", imageName: "삭제대상")
+        
+        sut.deleteAllIngredients()
+        sut.storeIngredient(item: item)
+        sut.deleteIngredient(item: item)
+        guard case let .success(result) = sut.fetchIngredients() else { return }
+        
+        XCTAssertFalse(result.contains { item.name == $0.name })
+    }
+    
+    func test_재료가_모두_삭제되는지_확인() {
+        sut.deleteAllIngredients()
+        
+        guard case let .success(result) = sut.fetchIngredients() else { return }
+        
+        XCTAssertEqual(result.count, 0)
     }
 
     func testPerformanceExample() throws {
