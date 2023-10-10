@@ -52,8 +52,8 @@ extension PersistentStorage {
     mutating func fetchIngredients() -> FetchResult {
         do {
             let request = IngredientModel.fetchRequest()
-            let models = try context.fetch(request)
-            return .success(models)
+            let entities = try context.fetch(request)
+            return .success(entities)
         } catch {
             print(error.localizedDescription)
             return .failure(error as NSError)
@@ -70,9 +70,20 @@ extension PersistentStorage {
     mutating func deleteIngredient(item: IngredientItem) {
         do {
             let request = IngredientModel.fetchRequest()
-            let models = try context.fetch(request)
-            guard let model = models.first else { return }
-            context.delete(model)
+            let entities = try context.fetch(request)
+            guard let entity = entities.first else { return }
+            context.delete(entity)
+            saveContext()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    mutating func deleteAllIngredients() {
+        do {
+            let request = IngredientModel.fetchRequest()
+            let entities = try context.fetch(request)
+            entities.forEach { self.context.delete($0) }
             saveContext()
         } catch {
             print(error.localizedDescription)
