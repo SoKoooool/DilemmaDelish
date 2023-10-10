@@ -24,7 +24,7 @@ final class DilemmaDelishTests: XCTestCase {
         let item = IngredientItem(name: "테스트재료", imageName: "테스트이미지")
         
         sut.store(item: item)
-        let fetchResult = sut.fetch()
+        let fetchResult = sut.fetchIngredients()
         guard case let .success(result) = fetchResult else { return }
         
         XCTAssertEqual(result.last!.name, item.name)
