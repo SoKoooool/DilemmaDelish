@@ -11,6 +11,7 @@
 		FFB43E372ADCE30C00250AA6 /* GPTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E362ADCE30C00250AA6 /* GPTModel.swift */; };
 		FFB43E392ADCEA9D00250AA6 /* GPTResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E382ADCEA9D00250AA6 /* GPTResponseModel.swift */; };
 		FFB43E3B2ADD03B800250AA6 /* ChatRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E3A2ADD03B800250AA6 /* ChatRequestModel.swift */; };
+		FFB43E502ADD081400250AA6 /* ChatCompletionsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E4F2ADD081400250AA6 /* ChatCompletionsAPITests.swift */; };
 		FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */; };
 		FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */; };
 		FFB913D42ABAE6FF0022E688 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913D32ABAE6FF0022E688 /* ViewController.swift */; };
@@ -21,11 +22,23 @@
 		FFB913EE2ABAED4B0022E688 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFB913ED2ABAED4B0022E688 /* RxSwift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FFB43E512ADD081400250AA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFB913C42ABAE6FF0022E688 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFB913CB2ABAE6FF0022E688;
+			remoteInfo = DilemmaDelish;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		FFB43E322ADCE12300250AA6 /* ChatCompletionsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCompletionsAPI.swift; sourceTree = "<group>"; };
 		FFB43E362ADCE30C00250AA6 /* GPTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTModel.swift; sourceTree = "<group>"; };
 		FFB43E382ADCEA9D00250AA6 /* GPTResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTResponseModel.swift; sourceTree = "<group>"; };
 		FFB43E3A2ADD03B800250AA6 /* ChatRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestModel.swift; sourceTree = "<group>"; };
+		FFB43E4D2ADD081400250AA6 /* ChatCompletionsAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatCompletionsAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFB43E4F2ADD081400250AA6 /* ChatCompletionsAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCompletionsAPITests.swift; sourceTree = "<group>"; };
 		FFB913CC2ABAE6FF0022E688 /* DilemmaDelish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DilemmaDelish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +50,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FFB43E4A2ADD081400250AA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFB913C92ABAE6FF0022E688 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -49,10 +69,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FFB43E4E2ADD081400250AA6 /* ChatCompletionsAPITests */ = {
+			isa = PBXGroup;
+			children = (
+				FFB43E4F2ADD081400250AA6 /* ChatCompletionsAPITests.swift */,
+			);
+			path = ChatCompletionsAPITests;
+			sourceTree = "<group>";
+		};
 		FFB913C32ABAE6FF0022E688 = {
 			isa = PBXGroup;
 			children = (
 				FFB913CE2ABAE6FF0022E688 /* DilemmaDelish */,
+				FFB43E4E2ADD081400250AA6 /* ChatCompletionsAPITests */,
 				FFB913CD2ABAE6FF0022E688 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				FFB913CC2ABAE6FF0022E688 /* DilemmaDelish.app */,
+				FFB43E4D2ADD081400250AA6 /* ChatCompletionsAPITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,6 +116,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FFB43E4C2ADD081400250AA6 /* ChatCompletionsAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFB43E552ADD081400250AA6 /* Build configuration list for PBXNativeTarget "ChatCompletionsAPITests" */;
+			buildPhases = (
+				FFB43E492ADD081400250AA6 /* Sources */,
+				FFB43E4A2ADD081400250AA6 /* Frameworks */,
+				FFB43E4B2ADD081400250AA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFB43E522ADD081400250AA6 /* PBXTargetDependency */,
+			);
+			name = ChatCompletionsAPITests;
+			productName = ChatCompletionsAPITests;
+			productReference = FFB43E4D2ADD081400250AA6 /* ChatCompletionsAPITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		FFB913CB2ABAE6FF0022E688 /* DilemmaDelish */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFB913E02ABAE7010022E688 /* Build configuration list for PBXNativeTarget "DilemmaDelish" */;
@@ -117,6 +165,10 @@
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
+					FFB43E4C2ADD081400250AA6 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = FFB913CB2ABAE6FF0022E688;
+					};
 					FFB913CB2ABAE6FF0022E688 = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -139,11 +191,19 @@
 			projectRoot = "";
 			targets = (
 				FFB913CB2ABAE6FF0022E688 /* DilemmaDelish */,
+				FFB43E4C2ADD081400250AA6 /* ChatCompletionsAPITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FFB43E4B2ADD081400250AA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFB913CA2ABAE6FF0022E688 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -157,6 +217,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FFB43E492ADD081400250AA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFB43E502ADD081400250AA6 /* ChatCompletionsAPITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFB913C82ABAE6FF0022E688 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -172,6 +240,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FFB43E522ADD081400250AA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFB913CB2ABAE6FF0022E688 /* DilemmaDelish */;
+			targetProxy = FFB43E512ADD081400250AA6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FFB913D52ABAE6FF0022E688 /* Main.storyboard */ = {
@@ -193,6 +269,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FFB43E532ADD081400250AA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UQ7NNW9PV7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SooJi.ChatCompletionsAPITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DilemmaDelish.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DilemmaDelish";
+			};
+			name = Debug;
+		};
+		FFB43E542ADD081400250AA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UQ7NNW9PV7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SooJi.ChatCompletionsAPITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DilemmaDelish.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DilemmaDelish";
+			};
+			name = Release;
+		};
 		FFB913DE2ABAE7010022E688 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -368,6 +488,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FFB43E552ADD081400250AA6 /* Build configuration list for PBXNativeTarget "ChatCompletionsAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFB43E532ADD081400250AA6 /* Debug */,
+				FFB43E542ADD081400250AA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FFB913C72ABAE6FF0022E688 /* Build configuration list for PBXProject "DilemmaDelish" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
