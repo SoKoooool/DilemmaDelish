@@ -35,10 +35,10 @@ final class ChatCompletionsAPI {
         }
     }
     
-    func createChatRequest(with question: String) -> URLRequest? {
+    func createChatRequest(with requests: ChatRequestModel) -> URLRequest? {
         let url = URL(string: GPTModel.gpt_3_5_turbo.endpoint)!
         var request = URLRequest(url: url)
-        guard let requestBody = try? JSONSerialization.data(withJSONObject: ["question": question]) else { return nil }
+        guard let requestBody = try? JSONEncoder().encode(requests) else { return nil }
         
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type:")
