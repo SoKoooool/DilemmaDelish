@@ -8,10 +8,8 @@
 import Foundation
 
 struct GPTResponseModel: Decodable {
-    let id: String
-    let object: String
+    let id, object, model: String
     let created: Int
-    let model: String
     let choices: [Choice]
     let usage: Usage
     
@@ -21,21 +19,17 @@ struct GPTResponseModel: Decodable {
         let finishReason: String
         
         struct Message: Decodable {
-            let role: String
-            let content: String
+            let role, content: String
         }
         
         private enum CodingKeys: String, CodingKey {
-            case index
-            case message
+            case index, message
             case finishReason = "finish_reason"
         }
     }
     
     struct Usage: Decodable {
-        let promptTokens: Int
-        let completionTokens: Int
-        let totalTokens: Int
+        let promptTokens, completionTokens, totalTokens: Int
         
         private enum CodingKeys: String, CodingKey {
             case promptTokens = "prompt_tokens"
