@@ -24,8 +24,21 @@ final class ChatCompletionsAPITests: XCTestCase {
         
     }
     
-    func test_포스트_네트워킹이_요청한_데이터를_받아오는지_확인() {
+    func test_POST_메서드가_요청한_데이터를_받아오는지_확인() {
+        let model = ChatRequestModel(model: "gpt-3.5-turbo", messages: [ChatRequestModel.Message(role: "user", content: "안녕하세요")])
+        let request = sut.createRequest(from: model)!
         
+        sut.performRequest(request) { result in
+            switch result {
+            case let .success(data):
+                guard let decodedData = try? JSONDecoder().decode(GPTResponseModel.self, from: data) else { return }
+                XCTAssertTrue(decodedData.choices.contains(where: {
+                    $0.message.content == "안녕하세요"
+                }))
+            case let .failure(error):
+                XCTFail("\(error)")
+            }
+        }
     }
 
 }
