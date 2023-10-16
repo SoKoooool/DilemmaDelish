@@ -11,7 +11,7 @@ final class ChatCompletionsAPI {
     
     private let apiKey = ""
     
-    func createChatCompletion(with request: URLRequest, completion: @escaping (Result<Data, NSError>) -> Void) {
+    func performRequest(_ request: URLRequest, completion: @escaping (Result<Data, NSError>) -> Void) {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 print("Error: \(error.localizedDescription)")
@@ -32,7 +32,7 @@ final class ChatCompletionsAPI {
                 return
             }
             completion(.success(data))
-        }
+        }.resume()
     }
     
     func createRequest(from model: ChatRequestModel) -> URLRequest? {
