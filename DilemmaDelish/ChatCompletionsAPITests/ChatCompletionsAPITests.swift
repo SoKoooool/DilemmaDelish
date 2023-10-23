@@ -44,4 +44,17 @@ final class ChatCompletionsAPITests: XCTestCase {
             XCTAssertEqual(success, data)
         }
     }
+    
+    func test_ChatCompletionAPI_실패_확인() {
+        let error = NSError(domain: "Request Error", code: -1)
+        session.response = .failureDataTask(with: error)
+        
+        let query = ChatQueryModel(role: .user, message: "Request Message")
+        let request = gpt.createRequest(from: query.toRequestModel())!
+        
+        gpt.performRequest(request) { result in
+            guard case let .failure(failure) = result else { return }
+            XCTAssertEqual(failure, error)
+        }
+    }
 }
