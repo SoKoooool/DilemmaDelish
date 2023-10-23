@@ -33,3 +33,24 @@ final class MockURLDataTask: URLSessionDataTaskProtocol {
         completion?(data, response, error)
     }
 }
+
+extension MockURLDataTask {
+    
+    static func successDataTask(with data: Data) -> MockURLDataTask {
+        let response = HTTPURLResponse(url: URL(string: "url")!,
+                                       statusCode: 200,
+                                       httpVersion: nil,
+                                       headerFields: nil)
+        let task = MockURLDataTask(data: data, response: response)
+        return task
+    }
+    
+    static func failureDataTask(with error: Error) -> MockURLDataTask {
+        let response = HTTPURLResponse(url: URL(string: "url")!,
+                                       statusCode: 400,
+                                       httpVersion: nil,
+                                       headerFields: nil)
+        let task = MockURLDataTask(response: response, error: error)
+        return task
+    }
+}
