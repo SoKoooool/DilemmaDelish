@@ -19,9 +19,10 @@ extension URLSession: URLSessionProtocol {
 
 final class MockURLSession: URLSessionProtocol {
     
-    var onComplete: ((Data?, URLResponse?, Error?) -> Void)!
+    var response: MockURLDataTask!
     
     func dataTask(request: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol {
-        return MockURLDataTask(completion: onComplete)
+        response.completion = completion
+        return response
     }
 }
