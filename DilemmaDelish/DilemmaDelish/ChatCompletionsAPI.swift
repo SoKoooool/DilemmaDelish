@@ -11,6 +11,12 @@ final class ChatCompletionsAPI {
     
     private let apiKey = ""
     
+    private let session: URLSessionProtocol
+    
+    init(session: URLSessionProtocol = URLSession.shared) {
+        self.session = session
+    }
+    
     func performRequest(_ request: URLRequest, completion: @escaping (Result<Data, NSError>) -> Void) {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
