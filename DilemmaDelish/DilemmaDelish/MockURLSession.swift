@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol MockURLSessionProtocol {
-    func dataTask(request: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
+protocol URLSessionProtocol {
+    func dataTask(request: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol
 }
