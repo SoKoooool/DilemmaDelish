@@ -7,9 +7,9 @@
 
 import Foundation
 
-enum GPTModel {
-    case gpt_3_5_turbo
-    case gpt_4
+enum GPTModel: String {
+    case gpt_3_5_turbo = "gpt-3.5-turbo"
+    case gpt_4 = "gpt-4"
     
     var endpoint: String {
         let endpoint: String
