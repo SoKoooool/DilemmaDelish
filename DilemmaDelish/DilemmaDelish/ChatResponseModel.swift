@@ -7,18 +7,18 @@
 
 import Foundation
 
-struct GPTResponseModel: Decodable {
+struct ChatResponseModel: Codable {
     let id, object, model: String
     let created: Int
     let choices: [Choice]
     let usage: Usage
     
-    struct Choice: Decodable {
+    struct Choice: Codable {
         let index: Int
         let message: Message
         let finishReason: String
         
-        struct Message: Decodable {
+        struct Message: Codable {
             let role, content: String
         }
         
@@ -28,7 +28,7 @@ struct GPTResponseModel: Decodable {
         }
     }
     
-    struct Usage: Decodable {
+    struct Usage: Codable {
         let promptTokens, completionTokens, totalTokens: Int
         
         private enum CodingKeys: String, CodingKey {

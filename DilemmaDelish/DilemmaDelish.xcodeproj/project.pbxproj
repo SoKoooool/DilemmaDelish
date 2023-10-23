@@ -12,7 +12,7 @@
 		FFADA1AD2AE65B6B00BD9F25 /* ChatQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADA1AC2AE65B6B00BD9F25 /* ChatQueryModel.swift */; };
 		FFB43E332ADCE12300250AA6 /* ChatCompletionsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E322ADCE12300250AA6 /* ChatCompletionsAPI.swift */; };
 		FFB43E372ADCE30C00250AA6 /* GPTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E362ADCE30C00250AA6 /* GPTModel.swift */; };
-		FFB43E392ADCEA9D00250AA6 /* GPTResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E382ADCEA9D00250AA6 /* GPTResponseModel.swift */; };
+		FFB43E392ADCEA9D00250AA6 /* ChatResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E382ADCEA9D00250AA6 /* ChatResponseModel.swift */; };
 		FFB43E3B2ADD03B800250AA6 /* ChatRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E3A2ADD03B800250AA6 /* ChatRequestModel.swift */; };
 		FFB43E502ADD081400250AA6 /* ChatCompletionsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E4F2ADD081400250AA6 /* ChatCompletionsAPITests.swift */; };
 		FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */; };
@@ -41,7 +41,7 @@
 		FFADA1AC2AE65B6B00BD9F25 /* ChatQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatQueryModel.swift; sourceTree = "<group>"; };
 		FFB43E322ADCE12300250AA6 /* ChatCompletionsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCompletionsAPI.swift; sourceTree = "<group>"; };
 		FFB43E362ADCE30C00250AA6 /* GPTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTModel.swift; sourceTree = "<group>"; };
-		FFB43E382ADCEA9D00250AA6 /* GPTResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTResponseModel.swift; sourceTree = "<group>"; };
+		FFB43E382ADCEA9D00250AA6 /* ChatResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatResponseModel.swift; sourceTree = "<group>"; };
 		FFB43E3A2ADD03B800250AA6 /* ChatRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestModel.swift; sourceTree = "<group>"; };
 		FFB43E4D2ADD081400250AA6 /* ChatCompletionsAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatCompletionsAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB43E4F2ADD081400250AA6 /* ChatCompletionsAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCompletionsAPITests.swift; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 				FFB43E322ADCE12300250AA6 /* ChatCompletionsAPI.swift */,
 				FFADA1A82AE63AE200BD9F25 /* MockURLSession.swift */,
 				FFADA1AA2AE63B5900BD9F25 /* MockURLDataTask.swift */,
-				FFB43E382ADCEA9D00250AA6 /* GPTResponseModel.swift */,
+				FFB43E382ADCEA9D00250AA6 /* ChatResponseModel.swift */,
 				FFB43E3A2ADD03B800250AA6 /* ChatRequestModel.swift */,
 				FFADA1AC2AE65B6B00BD9F25 /* ChatQueryModel.swift */,
 				FFB43E362ADCE30C00250AA6 /* GPTModel.swift */,
@@ -241,7 +241,7 @@
 				FFADA1A92AE63AE200BD9F25 /* MockURLSession.swift in Sources */,
 				FFB913D42ABAE6FF0022E688 /* ViewController.swift in Sources */,
 				FFB43E3B2ADD03B800250AA6 /* ChatRequestModel.swift in Sources */,
-				FFB43E392ADCEA9D00250AA6 /* GPTResponseModel.swift in Sources */,
+				FFB43E392ADCEA9D00250AA6 /* ChatResponseModel.swift in Sources */,
 				FFB43E372ADCE30C00250AA6 /* GPTModel.swift in Sources */,
 				FFADA1AB2AE63B5900BD9F25 /* MockURLDataTask.swift in Sources */,
 				FFADA1AD2AE65B6B00BD9F25 /* ChatQueryModel.swift in Sources */,

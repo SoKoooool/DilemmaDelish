@@ -23,4 +23,25 @@ final class ChatCompletionsAPITests: XCTestCase {
         gpt = nil
     }
 
+    func test_ChatCompletionsAPI_성공_확인() throws {
+        let message: ChatResponseModel.Choice.Message = .init(role: "system", content: "Response Message")
+        let choices: [ChatResponseModel.Choice] = [.init(index: 0, message: message, finishReason: "finishReason")]
+        let usage: ChatResponseModel.Usage = .init(promptTokens: 0, completionTokens: 0, totalTokens: 0)
+        let responseModel = ChatResponseModel(id: "id",
+                                     object: "object",
+                                     model: "gpt-3.5-turbo",
+                                     created: 0,
+                                     choices: choices,
+                                     usage: usage)
+        let data = try JSONEncoder().encode(responseModel)
+        session.response = .successDataTask(with: data)
+        
+        let query = ChatQueryModel(role: .user, message: "Request Message")
+        let request = gpt.createRequest(from: query.toRequestModel())!
+        
+        gpt.performRequest(request) { result in
+            guard case let .success(success) = result else { return }
+            XCTAssertEqual(success, data)
+        }
+    }
 }
