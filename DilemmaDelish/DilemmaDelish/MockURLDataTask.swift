@@ -15,17 +15,19 @@ extension URLSessionDataTask: URLSessionDataTaskProtocol {}
 
 final class MockURLDataTask: URLSessionDataTaskProtocol {
     
-    var data: Data?
-    var response: URLResponse?
-    var error: Error?
+    private let data: Data
+    private let response: URLResponse
+    private let error: Error
     
-    var completion: (Data?, URLResponse?, Error?) -> Void
+    var completion: ((Data?, URLResponse?, Error?) -> Void)?
     
-    init(completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        self.completion = completion
+    init(data: Data, response: URLResponse, error: Error) {
+        self.data = data
+        self.response = response
+        self.error = error
     }
     
     func resume() {
-        completion(data, response, error)
+        completion?(data, response, error)
     }
 }
