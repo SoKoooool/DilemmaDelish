@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		FF9118D22AC11CBB00CC5E8D /* AddIngredientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9118D12AC11CBB00CC5E8D /* AddIngredientButton.swift */; };
 		FF9118D82AC1303900CC5E8D /* IngredientsViewTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9118D72AC1303900CC5E8D /* IngredientsViewTitleLabel.swift */; };
+		FFADA1A92AE63AE200BD9F25 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADA1A82AE63AE200BD9F25 /* MockURLSession.swift */; };
+		FFADA1AB2AE63B5900BD9F25 /* MockURLDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADA1AA2AE63B5900BD9F25 /* MockURLDataTask.swift */; };
+		FFADA1AD2AE65B6B00BD9F25 /* ChatQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADA1AC2AE65B6B00BD9F25 /* ChatQueryModel.swift */; };
+		FFB43E332ADCE12300250AA6 /* ChatCompletionsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E322ADCE12300250AA6 /* ChatCompletionsAPI.swift */; };
+		FFB43E372ADCE30C00250AA6 /* GPTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E362ADCE30C00250AA6 /* GPTModel.swift */; };
+		FFB43E392ADCEA9D00250AA6 /* ChatResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E382ADCEA9D00250AA6 /* ChatResponseModel.swift */; };
+		FFB43E3B2ADD03B800250AA6 /* ChatRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E3A2ADD03B800250AA6 /* ChatRequestModel.swift */; };
+		FFB43E502ADD081400250AA6 /* ChatCompletionsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E4F2ADD081400250AA6 /* ChatCompletionsAPITests.swift */; };
 		FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */; };
 		FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */; };
 		FFB913D72ABAE6FF0022E688 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB913D52ABAE6FF0022E688 /* Main.storyboard */; };
@@ -20,9 +28,28 @@
 		FFD49D7E2ABC6B7D00FBDE15 /* IngredientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD49D7D2ABC6B7D00FBDE15 /* IngredientButton.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FFB43E512ADD081400250AA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFB913C42ABAE6FF0022E688 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFB913CB2ABAE6FF0022E688;
+			remoteInfo = DilemmaDelish;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		FF9118D12AC11CBB00CC5E8D /* AddIngredientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientButton.swift; sourceTree = "<group>"; };
 		FF9118D72AC1303900CC5E8D /* IngredientsViewTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsViewTitleLabel.swift; sourceTree = "<group>"; };
+		FFADA1A82AE63AE200BD9F25 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		FFADA1AA2AE63B5900BD9F25 /* MockURLDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLDataTask.swift; sourceTree = "<group>"; };
+		FFADA1AC2AE65B6B00BD9F25 /* ChatQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatQueryModel.swift; sourceTree = "<group>"; };
+		FFB43E322ADCE12300250AA6 /* ChatCompletionsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCompletionsAPI.swift; sourceTree = "<group>"; };
+		FFB43E362ADCE30C00250AA6 /* GPTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTModel.swift; sourceTree = "<group>"; };
+		FFB43E382ADCEA9D00250AA6 /* ChatResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatResponseModel.swift; sourceTree = "<group>"; };
+		FFB43E3A2ADD03B800250AA6 /* ChatRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestModel.swift; sourceTree = "<group>"; };
+		FFB43E4D2ADD081400250AA6 /* ChatCompletionsAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatCompletionsAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFB43E4F2ADD081400250AA6 /* ChatCompletionsAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCompletionsAPITests.swift; sourceTree = "<group>"; };
 		FFB913CC2ABAE6FF0022E688 /* DilemmaDelish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DilemmaDelish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,10 +74,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FFB43E4E2ADD081400250AA6 /* ChatCompletionsAPITests */ = {
+			isa = PBXGroup;
+			children = (
+				FFB43E4F2ADD081400250AA6 /* ChatCompletionsAPITests.swift */,
+			);
+			path = ChatCompletionsAPITests;
+			sourceTree = "<group>";
+		};
 		FFB913C32ABAE6FF0022E688 = {
 			isa = PBXGroup;
 			children = (
 				FFB913CE2ABAE6FF0022E688 /* DilemmaDelish */,
+				FFB43E4E2ADD081400250AA6 /* ChatCompletionsAPITests */,
 				FFB913CD2ABAE6FF0022E688 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				FFB913CC2ABAE6FF0022E688 /* DilemmaDelish.app */,
+				FFB43E4D2ADD081400250AA6 /* ChatCompletionsAPITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +107,13 @@
 				FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */,
 				FFD49D782ABC6AE400FBDE15 /* Pages */,
 				FFB913D52ABAE6FF0022E688 /* Main.storyboard */,
+				FFB43E322ADCE12300250AA6 /* ChatCompletionsAPI.swift */,
+				FFADA1A82AE63AE200BD9F25 /* MockURLSession.swift */,
+				FFADA1AA2AE63B5900BD9F25 /* MockURLDataTask.swift */,
+				FFB43E382ADCEA9D00250AA6 /* ChatResponseModel.swift */,
+				FFB43E3A2ADD03B800250AA6 /* ChatRequestModel.swift */,
+				FFADA1AC2AE65B6B00BD9F25 /* ChatQueryModel.swift */,
+				FFB43E362ADCE30C00250AA6 /* GPTModel.swift */,
 				FFB913D82ABAE7010022E688 /* Assets.xcassets */,
 				FFB913DA2ABAE7010022E688 /* LaunchScreen.storyboard */,
 				FFB913DD2ABAE7010022E688 /* Info.plist */,
@@ -99,6 +143,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FFB43E4C2ADD081400250AA6 /* ChatCompletionsAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFB43E552ADD081400250AA6 /* Build configuration list for PBXNativeTarget "ChatCompletionsAPITests" */;
+			buildPhases = (
+				FFB43E492ADD081400250AA6 /* Sources */,
+				FFB43E4A2ADD081400250AA6 /* Frameworks */,
+				FFB43E4B2ADD081400250AA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFB43E522ADD081400250AA6 /* PBXTargetDependency */,
+			);
+			name = ChatCompletionsAPITests;
+			productName = ChatCompletionsAPITests;
+			productReference = FFB43E4D2ADD081400250AA6 /* ChatCompletionsAPITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		FFB913CB2ABAE6FF0022E688 /* DilemmaDelish */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFB913E02ABAE7010022E688 /* Build configuration list for PBXNativeTarget "DilemmaDelish" */;
@@ -130,6 +192,10 @@
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
+					FFB43E4C2ADD081400250AA6 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = FFB913CB2ABAE6FF0022E688;
+					};
 					FFB913CB2ABAE6FF0022E688 = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -152,11 +218,19 @@
 			projectRoot = "";
 			targets = (
 				FFB913CB2ABAE6FF0022E688 /* DilemmaDelish */,
+				FFB43E4C2ADD081400250AA6 /* ChatCompletionsAPITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FFB43E4B2ADD081400250AA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFB913CA2ABAE6FF0022E688 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -170,12 +244,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FFB43E492ADD081400250AA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFB43E502ADD081400250AA6 /* ChatCompletionsAPITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFB913C82ABAE6FF0022E688 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FF9118D22AC11CBB00CC5E8D /* AddIngredientButton.swift in Sources */,
+				FFADA1A92AE63AE200BD9F25 /* MockURLSession.swift in Sources */,
+				FFB913D42ABAE6FF0022E688 /* ViewController.swift in Sources */,
+				FFB43E3B2ADD03B800250AA6 /* ChatRequestModel.swift in Sources */,
+				FFB43E392ADCEA9D00250AA6 /* ChatResponseModel.swift in Sources */,
+				FFB43E372ADCE30C00250AA6 /* GPTModel.swift in Sources */,
+				FFADA1AB2AE63B5900BD9F25 /* MockURLDataTask.swift in Sources */,
+				FFADA1AD2AE65B6B00BD9F25 /* ChatQueryModel.swift in Sources */,
 				FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */,
+				FFB43E332ADCE12300250AA6 /* ChatCompletionsAPI.swift in Sources */,
 				FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */,
 				FFD49D7E2ABC6B7D00FBDE15 /* IngredientButton.swift in Sources */,
 				FFD49D7C2ABC6B0000FBDE15 /* CookbookViewController.swift in Sources */,
@@ -184,6 +274,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FFB43E522ADD081400250AA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFB913CB2ABAE6FF0022E688 /* DilemmaDelish */;
+			targetProxy = FFB43E512ADD081400250AA6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FFB913D52ABAE6FF0022E688 /* Main.storyboard */ = {
@@ -205,6 +303,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FFB43E532ADD081400250AA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UQ7NNW9PV7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SooJi.ChatCompletionsAPITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DilemmaDelish.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DilemmaDelish";
+			};
+			name = Debug;
+		};
+		FFB43E542ADD081400250AA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UQ7NNW9PV7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SooJi.ChatCompletionsAPITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DilemmaDelish.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DilemmaDelish";
+			};
+			name = Release;
+		};
 		FFB913DE2ABAE7010022E688 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -380,6 +522,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FFB43E552ADD081400250AA6 /* Build configuration list for PBXNativeTarget "ChatCompletionsAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFB43E532ADD081400250AA6 /* Debug */,
+				FFB43E542ADD081400250AA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FFB913C72ABAE6FF0022E688 /* Build configuration list for PBXProject "DilemmaDelish" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
