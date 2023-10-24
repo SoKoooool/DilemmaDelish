@@ -7,25 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF9118D22AC11CBB00CC5E8D /* AddIngredientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9118D12AC11CBB00CC5E8D /* AddIngredientButton.swift */; };
+		FF9118D82AC1303900CC5E8D /* IngredientsViewTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9118D72AC1303900CC5E8D /* IngredientsViewTitleLabel.swift */; };
 		FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */; };
 		FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */; };
-		FFB913D42ABAE6FF0022E688 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913D32ABAE6FF0022E688 /* ViewController.swift */; };
 		FFB913D72ABAE6FF0022E688 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB913D52ABAE6FF0022E688 /* Main.storyboard */; };
 		FFB913D92ABAE7010022E688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFB913D82ABAE7010022E688 /* Assets.xcassets */; };
 		FFB913DC2ABAE7010022E688 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB913DA2ABAE7010022E688 /* LaunchScreen.storyboard */; };
 		FFB913EC2ABAED4B0022E688 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = FFB913EB2ABAED4B0022E688 /* RxCocoa */; };
 		FFB913EE2ABAED4B0022E688 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFB913ED2ABAED4B0022E688 /* RxSwift */; };
+		FFD49D7C2ABC6B0000FBDE15 /* CookbookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD49D7B2ABC6B0000FBDE15 /* CookbookViewController.swift */; };
+		FFD49D7E2ABC6B7D00FBDE15 /* IngredientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD49D7D2ABC6B7D00FBDE15 /* IngredientButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF9118D12AC11CBB00CC5E8D /* AddIngredientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientButton.swift; sourceTree = "<group>"; };
+		FF9118D72AC1303900CC5E8D /* IngredientsViewTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsViewTitleLabel.swift; sourceTree = "<group>"; };
 		FFB913CC2ABAE6FF0022E688 /* DilemmaDelish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DilemmaDelish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FFB913D32ABAE6FF0022E688 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FFB913D62ABAE6FF0022E688 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFB913D82ABAE7010022E688 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFB913DB2ABAE7010022E688 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFB913DD2ABAE7010022E688 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFD49D7B2ABC6B0000FBDE15 /* CookbookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookbookViewController.swift; sourceTree = "<group>"; };
+		FFD49D7D2ABC6B7D00FBDE15 /* IngredientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +68,32 @@
 			children = (
 				FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */,
 				FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */,
-				FFB913D32ABAE6FF0022E688 /* ViewController.swift */,
+				FFD49D782ABC6AE400FBDE15 /* Pages */,
 				FFB913D52ABAE6FF0022E688 /* Main.storyboard */,
 				FFB913D82ABAE7010022E688 /* Assets.xcassets */,
 				FFB913DA2ABAE7010022E688 /* LaunchScreen.storyboard */,
 				FFB913DD2ABAE7010022E688 /* Info.plist */,
 			);
 			path = DilemmaDelish;
+			sourceTree = "<group>";
+		};
+		FFD49D782ABC6AE400FBDE15 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				FFD49D792ABC6AEA00FBDE15 /* Views */,
+				FFD49D7B2ABC6B0000FBDE15 /* CookbookViewController.swift */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		FFD49D792ABC6AEA00FBDE15 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FFD49D7D2ABC6B7D00FBDE15 /* IngredientButton.swift */,
+				FF9118D12AC11CBB00CC5E8D /* AddIngredientButton.swift */,
+				FF9118D72AC1303900CC5E8D /* IngredientsViewTitleLabel.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,9 +174,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFB913D42ABAE6FF0022E688 /* ViewController.swift in Sources */,
+				FF9118D22AC11CBB00CC5E8D /* AddIngredientButton.swift in Sources */,
 				FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */,
 				FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */,
+				FFD49D7E2ABC6B7D00FBDE15 /* IngredientButton.swift in Sources */,
+				FFD49D7C2ABC6B0000FBDE15 /* CookbookViewController.swift in Sources */,
+				FF9118D82AC1303900CC5E8D /* IngredientsViewTitleLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
