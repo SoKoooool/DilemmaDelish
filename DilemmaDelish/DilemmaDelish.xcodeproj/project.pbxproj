@@ -17,6 +17,11 @@
 		FFB43E392ADCEA9D00250AA6 /* ChatResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E382ADCEA9D00250AA6 /* ChatResponseModel.swift */; };
 		FFB43E3B2ADD03B800250AA6 /* ChatRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E3A2ADD03B800250AA6 /* ChatRequestModel.swift */; };
 		FFB43E502ADD081400250AA6 /* ChatCompletionsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E4F2ADD081400250AA6 /* ChatCompletionsAPITests.swift */; };
+		FF2F003D2AD4E20D0060E7C5 /* IngredientModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2F003B2AD4E20D0060E7C5 /* IngredientModel+CoreDataClass.swift */; };
+		FF2F003E2AD4E20D0060E7C5 /* IngredientModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2F003C2AD4E20D0060E7C5 /* IngredientModel+CoreDataProperties.swift */; };
+		FF9118EA2AC177B600CC5E8D /* IngredientModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF9118E82AC177B600CC5E8D /* IngredientModel.xcdatamodeld */; };
+		FF9118ED2AC178E200CC5E8D /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9118EC2AC178E200CC5E8D /* PersistentStorage.swift */; };
+		FF9118F72AC1AF8300CC5E8D /* IngredientItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9118F62AC1AF8300CC5E8D /* IngredientItem.swift */; };
 		FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */; };
 		FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */; };
 		FFB913D72ABAE6FF0022E688 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB913D52ABAE6FF0022E688 /* Main.storyboard */; };
@@ -50,6 +55,11 @@
 		FFB43E3A2ADD03B800250AA6 /* ChatRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestModel.swift; sourceTree = "<group>"; };
 		FFB43E4D2ADD081400250AA6 /* ChatCompletionsAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatCompletionsAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB43E4F2ADD081400250AA6 /* ChatCompletionsAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCompletionsAPITests.swift; sourceTree = "<group>"; };
+		FF2F003B2AD4E20D0060E7C5 /* IngredientModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IngredientModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FF2F003C2AD4E20D0060E7C5 /* IngredientModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IngredientModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FF9118E92AC177B600CC5E8D /* IngredientModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IngredientModel.xcdatamodel; sourceTree = "<group>"; };
+		FF9118EC2AC178E200CC5E8D /* PersistentStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorage.swift; sourceTree = "<group>"; };
+		FF9118F62AC1AF8300CC5E8D /* IngredientItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientItem.swift; sourceTree = "<group>"; };
 		FFB913CC2ABAE6FF0022E688 /* DilemmaDelish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DilemmaDelish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,11 +90,37 @@
 				FFB43E4F2ADD081400250AA6 /* ChatCompletionsAPITests.swift */,
 			);
 			path = ChatCompletionsAPITests;
+               sourceTree = "<group>";
+        };
+		FF9118EB2AC178CB00CC5E8D /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				FF9118EC2AC178E200CC5E8D /* PersistentStorage.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		FF9118F42AC1AF6F00CC5E8D /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				FF9118F52AC1AF7700CC5E8D /* Models */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		FF9118F52AC1AF7700CC5E8D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FF9118F62AC1AF8300CC5E8D /* IngredientItem.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		FFB913C32ABAE6FF0022E688 = {
 			isa = PBXGroup;
 			children = (
+				FF2F003B2AD4E20D0060E7C5 /* IngredientModel+CoreDataClass.swift */,
+				FF2F003C2AD4E20D0060E7C5 /* IngredientModel+CoreDataProperties.swift */,
 				FFB913CE2ABAE6FF0022E688 /* DilemmaDelish */,
 				FFB43E4E2ADD081400250AA6 /* ChatCompletionsAPITests */,
 				FFB913CD2ABAE6FF0022E688 /* Products */,
@@ -106,6 +142,9 @@
 				FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */,
 				FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */,
 				FFD49D782ABC6AE400FBDE15 /* Pages */,
+				FFB913D32ABAE6FF0022E688 /* ViewController.swift */,
+				FF9118EB2AC178CB00CC5E8D /* Repository */,
+				FF9118F42AC1AF6F00CC5E8D /* Domain */,
 				FFB913D52ABAE6FF0022E688 /* Main.storyboard */,
 				FFB43E322ADCE12300250AA6 /* ChatCompletionsAPI.swift */,
 				FFADA1A82AE63AE200BD9F25 /* MockURLSession.swift */,
@@ -116,6 +155,7 @@
 				FFB43E362ADCE30C00250AA6 /* GPTModel.swift */,
 				FFB913D82ABAE7010022E688 /* Assets.xcassets */,
 				FFB913DA2ABAE7010022E688 /* LaunchScreen.storyboard */,
+				FF9118E82AC177B600CC5E8D /* IngredientModel.xcdatamodeld */,
 				FFB913DD2ABAE7010022E688 /* Info.plist */,
 			);
 			path = DilemmaDelish;
@@ -270,6 +310,11 @@
 				FFD49D7E2ABC6B7D00FBDE15 /* IngredientButton.swift in Sources */,
 				FFD49D7C2ABC6B0000FBDE15 /* CookbookViewController.swift in Sources */,
 				FF9118D82AC1303900CC5E8D /* IngredientsViewTitleLabel.swift in Sources */,
+				FF2F003E2AD4E20D0060E7C5 /* IngredientModel+CoreDataProperties.swift in Sources */,
+				FF2F003D2AD4E20D0060E7C5 /* IngredientModel+CoreDataClass.swift in Sources */,
+				FF9118EA2AC177B600CC5E8D /* IngredientModel.xcdatamodeld in Sources */,
+				FF9118ED2AC178E200CC5E8D /* PersistentStorage.swift in Sources */,
+				FF9118F72AC1AF8300CC5E8D /* IngredientItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,6 +619,19 @@
 			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		FF9118E82AC177B600CC5E8D /* IngredientModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FF9118E92AC177B600CC5E8D /* IngredientModel.xcdatamodel */,
+			);
+			currentVersion = FF9118E92AC177B600CC5E8D /* IngredientModel.xcdatamodel */;
+			path = IngredientModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FFB913C42ABAE6FF0022E688 /* Project object */;
 }
