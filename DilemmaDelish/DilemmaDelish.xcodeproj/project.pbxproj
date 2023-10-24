@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF2F003D2AD4E20D0060E7C5 /* IngredientModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2F003B2AD4E20D0060E7C5 /* IngredientModel+CoreDataClass.swift */; };
+		FF2F003E2AD4E20D0060E7C5 /* IngredientModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2F003C2AD4E20D0060E7C5 /* IngredientModel+CoreDataProperties.swift */; };
 		FF9118D22AC11CBB00CC5E8D /* AddIngredientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9118D12AC11CBB00CC5E8D /* AddIngredientButton.swift */; };
 		FF9118D82AC1303900CC5E8D /* IngredientsViewTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9118D72AC1303900CC5E8D /* IngredientsViewTitleLabel.swift */; };
+		FF9118EA2AC177B600CC5E8D /* IngredientModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF9118E82AC177B600CC5E8D /* IngredientModel.xcdatamodeld */; };
+		FF9118ED2AC178E200CC5E8D /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9118EC2AC178E200CC5E8D /* PersistentStorage.swift */; };
+		FF9118F72AC1AF8300CC5E8D /* IngredientItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9118F62AC1AF8300CC5E8D /* IngredientItem.swift */; };
+		FFA258242AE7AD7900FE1A4F /* DilemmaDelishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E4F2ADD081400250AA6 /* DilemmaDelishTests.swift */; };
 		FFADA1A92AE63AE200BD9F25 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADA1A82AE63AE200BD9F25 /* MockURLSession.swift */; };
 		FFADA1AB2AE63B5900BD9F25 /* MockURLDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADA1AA2AE63B5900BD9F25 /* MockURLDataTask.swift */; };
 		FFADA1AD2AE65B6B00BD9F25 /* ChatQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADA1AC2AE65B6B00BD9F25 /* ChatQueryModel.swift */; };
@@ -16,12 +22,6 @@
 		FFB43E372ADCE30C00250AA6 /* GPTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E362ADCE30C00250AA6 /* GPTModel.swift */; };
 		FFB43E392ADCEA9D00250AA6 /* ChatResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E382ADCEA9D00250AA6 /* ChatResponseModel.swift */; };
 		FFB43E3B2ADD03B800250AA6 /* ChatRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E3A2ADD03B800250AA6 /* ChatRequestModel.swift */; };
-		FFB43E502ADD081400250AA6 /* ChatCompletionsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E4F2ADD081400250AA6 /* ChatCompletionsAPITests.swift */; };
-		FF2F003D2AD4E20D0060E7C5 /* IngredientModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2F003B2AD4E20D0060E7C5 /* IngredientModel+CoreDataClass.swift */; };
-		FF2F003E2AD4E20D0060E7C5 /* IngredientModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2F003C2AD4E20D0060E7C5 /* IngredientModel+CoreDataProperties.swift */; };
-		FF9118EA2AC177B600CC5E8D /* IngredientModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF9118E82AC177B600CC5E8D /* IngredientModel.xcdatamodeld */; };
-		FF9118ED2AC178E200CC5E8D /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9118EC2AC178E200CC5E8D /* PersistentStorage.swift */; };
-		FF9118F72AC1AF8300CC5E8D /* IngredientItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9118F62AC1AF8300CC5E8D /* IngredientItem.swift */; };
 		FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */; };
 		FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */; };
 		FFB913D72ABAE6FF0022E688 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB913D52ABAE6FF0022E688 /* Main.storyboard */; };
@@ -44,8 +44,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FF2F003B2AD4E20D0060E7C5 /* IngredientModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IngredientModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FF2F003C2AD4E20D0060E7C5 /* IngredientModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IngredientModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FF9118D12AC11CBB00CC5E8D /* AddIngredientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientButton.swift; sourceTree = "<group>"; };
 		FF9118D72AC1303900CC5E8D /* IngredientsViewTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsViewTitleLabel.swift; sourceTree = "<group>"; };
+		FF9118E92AC177B600CC5E8D /* IngredientModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IngredientModel.xcdatamodel; sourceTree = "<group>"; };
+		FF9118EC2AC178E200CC5E8D /* PersistentStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorage.swift; sourceTree = "<group>"; };
+		FF9118F62AC1AF8300CC5E8D /* IngredientItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientItem.swift; sourceTree = "<group>"; };
 		FFADA1A82AE63AE200BD9F25 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		FFADA1AA2AE63B5900BD9F25 /* MockURLDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLDataTask.swift; sourceTree = "<group>"; };
 		FFADA1AC2AE65B6B00BD9F25 /* ChatQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatQueryModel.swift; sourceTree = "<group>"; };
@@ -53,13 +58,8 @@
 		FFB43E362ADCE30C00250AA6 /* GPTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTModel.swift; sourceTree = "<group>"; };
 		FFB43E382ADCEA9D00250AA6 /* ChatResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatResponseModel.swift; sourceTree = "<group>"; };
 		FFB43E3A2ADD03B800250AA6 /* ChatRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestModel.swift; sourceTree = "<group>"; };
-		FFB43E4D2ADD081400250AA6 /* ChatCompletionsAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatCompletionsAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFB43E4F2ADD081400250AA6 /* ChatCompletionsAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCompletionsAPITests.swift; sourceTree = "<group>"; };
-		FF2F003B2AD4E20D0060E7C5 /* IngredientModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IngredientModel+CoreDataClass.swift"; sourceTree = "<group>"; };
-		FF2F003C2AD4E20D0060E7C5 /* IngredientModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IngredientModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		FF9118E92AC177B600CC5E8D /* IngredientModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IngredientModel.xcdatamodel; sourceTree = "<group>"; };
-		FF9118EC2AC178E200CC5E8D /* PersistentStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorage.swift; sourceTree = "<group>"; };
-		FF9118F62AC1AF8300CC5E8D /* IngredientItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientItem.swift; sourceTree = "<group>"; };
+		FFB43E4D2ADD081400250AA6 /* DilemmaDelishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DilemmaDelishTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFB43E4F2ADD081400250AA6 /* DilemmaDelishTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DilemmaDelishTests.swift; sourceTree = "<group>"; };
 		FFB913CC2ABAE6FF0022E688 /* DilemmaDelish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DilemmaDelish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,14 +84,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FFB43E4E2ADD081400250AA6 /* ChatCompletionsAPITests */ = {
-			isa = PBXGroup;
-			children = (
-				FFB43E4F2ADD081400250AA6 /* ChatCompletionsAPITests.swift */,
-			);
-			path = ChatCompletionsAPITests;
-               sourceTree = "<group>";
-        };
 		FF9118EB2AC178CB00CC5E8D /* Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,13 +108,21 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		FFB43E4E2ADD081400250AA6 /* DilemmaDelishTests */ = {
+			isa = PBXGroup;
+			children = (
+				FFB43E4F2ADD081400250AA6 /* DilemmaDelishTests.swift */,
+			);
+			path = DilemmaDelishTests;
+			sourceTree = "<group>";
+		};
 		FFB913C32ABAE6FF0022E688 = {
 			isa = PBXGroup;
 			children = (
 				FF2F003B2AD4E20D0060E7C5 /* IngredientModel+CoreDataClass.swift */,
 				FF2F003C2AD4E20D0060E7C5 /* IngredientModel+CoreDataProperties.swift */,
 				FFB913CE2ABAE6FF0022E688 /* DilemmaDelish */,
-				FFB43E4E2ADD081400250AA6 /* ChatCompletionsAPITests */,
+				FFB43E4E2ADD081400250AA6 /* DilemmaDelishTests */,
 				FFB913CD2ABAE6FF0022E688 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -131,7 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				FFB913CC2ABAE6FF0022E688 /* DilemmaDelish.app */,
-				FFB43E4D2ADD081400250AA6 /* ChatCompletionsAPITests.xctest */,
+				FFB43E4D2ADD081400250AA6 /* DilemmaDelishTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -142,7 +142,6 @@
 				FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */,
 				FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */,
 				FFD49D782ABC6AE400FBDE15 /* Pages */,
-				FFB913D32ABAE6FF0022E688 /* ViewController.swift */,
 				FF9118EB2AC178CB00CC5E8D /* Repository */,
 				FF9118F42AC1AF6F00CC5E8D /* Domain */,
 				FFB913D52ABAE6FF0022E688 /* Main.storyboard */,
@@ -183,12 +182,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FFB43E4C2ADD081400250AA6 /* ChatCompletionsAPITests */ = {
+		FFB43E4C2ADD081400250AA6 /* DilemmaDelishTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FFB43E552ADD081400250AA6 /* Build configuration list for PBXNativeTarget "ChatCompletionsAPITests" */;
+			buildConfigurationList = FFB43E552ADD081400250AA6 /* Build configuration list for PBXNativeTarget "DilemmaDelishTests" */;
 			buildPhases = (
 				FFB43E492ADD081400250AA6 /* Sources */,
-				FFB43E4A2ADD081400250AA6 /* Frameworks */,
 				FFB43E4B2ADD081400250AA6 /* Resources */,
 			);
 			buildRules = (
@@ -196,9 +194,9 @@
 			dependencies = (
 				FFB43E522ADD081400250AA6 /* PBXTargetDependency */,
 			);
-			name = ChatCompletionsAPITests;
+			name = DilemmaDelishTests;
 			productName = ChatCompletionsAPITests;
-			productReference = FFB43E4D2ADD081400250AA6 /* ChatCompletionsAPITests.xctest */;
+			productReference = FFB43E4D2ADD081400250AA6 /* DilemmaDelishTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		FFB913CB2ABAE6FF0022E688 /* DilemmaDelish */ = {
@@ -258,7 +256,7 @@
 			projectRoot = "";
 			targets = (
 				FFB913CB2ABAE6FF0022E688 /* DilemmaDelish */,
-				FFB43E4C2ADD081400250AA6 /* ChatCompletionsAPITests */,
+				FFB43E4C2ADD081400250AA6 /* DilemmaDelishTests */,
 			);
 		};
 /* End PBXProject section */
@@ -288,7 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFB43E502ADD081400250AA6 /* ChatCompletionsAPITests.swift in Sources */,
+				FFA258242AE7AD7900FE1A4F /* DilemmaDelishTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +296,6 @@
 			files = (
 				FF9118D22AC11CBB00CC5E8D /* AddIngredientButton.swift in Sources */,
 				FFADA1A92AE63AE200BD9F25 /* MockURLSession.swift in Sources */,
-				FFB913D42ABAE6FF0022E688 /* ViewController.swift in Sources */,
 				FFB43E3B2ADD03B800250AA6 /* ChatRequestModel.swift in Sources */,
 				FFB43E392ADCEA9D00250AA6 /* ChatResponseModel.swift in Sources */,
 				FFB43E372ADCE30C00250AA6 /* GPTModel.swift in Sources */,
@@ -567,7 +564,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FFB43E552ADD081400250AA6 /* Build configuration list for PBXNativeTarget "ChatCompletionsAPITests" */ = {
+		FFB43E552ADD081400250AA6 /* Build configuration list for PBXNativeTarget "DilemmaDelishTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FFB43E532ADD081400250AA6 /* Debug */,

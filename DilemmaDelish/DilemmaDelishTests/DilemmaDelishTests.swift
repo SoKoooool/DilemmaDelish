@@ -1,6 +1,6 @@
 //
-//  ChatCompletionsAPITests.swift
-//  ChatCompletionsAPITests
+//  DilemmaDelishTests.swift
+//  DilemmaDelishTests
 //
 //  Created by TORI on 2023/10/16.
 //
@@ -8,7 +8,7 @@
 import XCTest
 @testable import DilemmaDelish
 
-final class ChatCompletionsAPITests: XCTestCase {
+final class DilemmaDelishTests: XCTestCase {
 
     var gpt: ChatCompletionsAPI!
     var session: MockURLSession!
