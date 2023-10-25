@@ -87,30 +87,75 @@
 		FF9118EB2AC178CB00CC5E8D /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				FFA2582E2AE89EAE00FE1A4F /* CoreData */,
 				FF9118EC2AC178E200CC5E8D /* PersistentStorage.swift */,
+				FFB43E322ADCE12300250AA6 /* ChatCompletionsAPI.swift */,
 			);
 			path = Repository;
-			sourceTree = "<group>";
-		};
-		FF9118F42AC1AF6F00CC5E8D /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				FF9118F52AC1AF7700CC5E8D /* Models */,
-			);
-			path = Domain;
 			sourceTree = "<group>";
 		};
 		FF9118F52AC1AF7700CC5E8D /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				FF9118F62AC1AF8300CC5E8D /* IngredientItem.swift */,
+				FFB43E382ADCEA9D00250AA6 /* ChatResponseModel.swift */,
+				FFB43E3A2ADD03B800250AA6 /* ChatRequestModel.swift */,
+				FFADA1AC2AE65B6B00BD9F25 /* ChatQueryModel.swift */,
+				FFB43E362ADCE30C00250AA6 /* GPTModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FFA2582E2AE89EAE00FE1A4F /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FF9118E82AC177B600CC5E8D /* IngredientModel.xcdatamodeld */,
+				FF2F003B2AD4E20D0060E7C5 /* IngredientModel+CoreDataClass.swift */,
+				FF2F003C2AD4E20D0060E7C5 /* IngredientModel+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		FFA258302AE89F4900FE1A4F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FFB913D52ABAE6FF0022E688 /* Main.storyboard */,
+				FFB913DA2ABAE7010022E688 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FFA258312AE89F6700FE1A4F /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				FFADA1A82AE63AE200BD9F25 /* MockURLSession.swift */,
+				FFADA1AA2AE63B5900BD9F25 /* MockURLDataTask.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		FFA258322AE89F7F00FE1A4F /* EntryPoint */ = {
+			isa = PBXGroup;
+			children = (
+				FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */,
+				FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */,
+			);
+			path = EntryPoint;
+			sourceTree = "<group>";
+		};
+		FFA258332AE89F8B00FE1A4F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FFB913D82ABAE7010022E688 /* Assets.xcassets */,
+				FFB913DD2ABAE7010022E688 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		FFB43E4E2ADD081400250AA6 /* DilemmaDelishTests */ = {
 			isa = PBXGroup;
 			children = (
+				FFA258312AE89F6700FE1A4F /* Mock */,
 				FFB43E4F2ADD081400250AA6 /* DilemmaDelishTests.swift */,
 			);
 			path = DilemmaDelishTests;
@@ -119,8 +164,6 @@
 		FFB913C32ABAE6FF0022E688 = {
 			isa = PBXGroup;
 			children = (
-				FF2F003B2AD4E20D0060E7C5 /* IngredientModel+CoreDataClass.swift */,
-				FF2F003C2AD4E20D0060E7C5 /* IngredientModel+CoreDataProperties.swift */,
 				FFB913CE2ABAE6FF0022E688 /* DilemmaDelish */,
 				FFB43E4E2ADD081400250AA6 /* DilemmaDelishTests */,
 				FFB913CD2ABAE6FF0022E688 /* Products */,
@@ -139,23 +182,12 @@
 		FFB913CE2ABAE6FF0022E688 /* DilemmaDelish */ = {
 			isa = PBXGroup;
 			children = (
-				FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */,
-				FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */,
-				FFD49D782ABC6AE400FBDE15 /* Pages */,
+				FFA258322AE89F7F00FE1A4F /* EntryPoint */,
 				FF9118EB2AC178CB00CC5E8D /* Repository */,
-				FF9118F42AC1AF6F00CC5E8D /* Domain */,
-				FFB913D52ABAE6FF0022E688 /* Main.storyboard */,
-				FFB43E322ADCE12300250AA6 /* ChatCompletionsAPI.swift */,
-				FFADA1A82AE63AE200BD9F25 /* MockURLSession.swift */,
-				FFADA1AA2AE63B5900BD9F25 /* MockURLDataTask.swift */,
-				FFB43E382ADCEA9D00250AA6 /* ChatResponseModel.swift */,
-				FFB43E3A2ADD03B800250AA6 /* ChatRequestModel.swift */,
-				FFADA1AC2AE65B6B00BD9F25 /* ChatQueryModel.swift */,
-				FFB43E362ADCE30C00250AA6 /* GPTModel.swift */,
-				FFB913D82ABAE7010022E688 /* Assets.xcassets */,
-				FFB913DA2ABAE7010022E688 /* LaunchScreen.storyboard */,
-				FF9118E82AC177B600CC5E8D /* IngredientModel.xcdatamodeld */,
-				FFB913DD2ABAE7010022E688 /* Info.plist */,
+				FF9118F52AC1AF7700CC5E8D /* Models */,
+				FFD49D782ABC6AE400FBDE15 /* Pages */,
+				FFA258302AE89F4900FE1A4F /* Storyboards */,
+				FFA258332AE89F8B00FE1A4F /* Resources */,
 			);
 			path = DilemmaDelish;
 			sourceTree = "<group>";
