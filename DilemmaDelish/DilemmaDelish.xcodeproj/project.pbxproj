@@ -17,7 +17,6 @@
 		FFB43E502ADD081400250AA6 /* ChatCompletionsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E4F2ADD081400250AA6 /* ChatCompletionsAPITests.swift */; };
 		FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */; };
 		FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */; };
-		FFB913D42ABAE6FF0022E688 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913D32ABAE6FF0022E688 /* ViewController.swift */; };
 		FFB913D72ABAE6FF0022E688 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB913D52ABAE6FF0022E688 /* Main.storyboard */; };
 		FFB913D92ABAE7010022E688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFB913D82ABAE7010022E688 /* Assets.xcassets */; };
 		FFB913DC2ABAE7010022E688 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB913DA2ABAE7010022E688 /* LaunchScreen.storyboard */; };
@@ -48,7 +47,6 @@
 		FFB913CC2ABAE6FF0022E688 /* DilemmaDelish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DilemmaDelish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FFB913D32ABAE6FF0022E688 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FFB913D62ABAE6FF0022E688 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFB913D82ABAE7010022E688 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFB913DB2ABAE7010022E688 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -75,6 +73,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FFA258272AE89B3C00FE1A4F /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				FFB43E322ADCE12300250AA6 /* ChatCompletionsAPI.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		FFA258292AE89B5A00FE1A4F /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				FFADA1A82AE63AE200BD9F25 /* MockURLSession.swift */,
+				FFADA1AA2AE63B5900BD9F25 /* MockURLDataTask.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		FFA2582A2AE89B8B00FE1A4F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FFA258272AE89B3C00FE1A4F /* Repository */,
+				FFA2582B2AE89B8E00FE1A4F /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		FFA2582B2AE89B8E00FE1A4F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FFB43E382ADCEA9D00250AA6 /* ChatResponseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FFA2582C2AE89BB600FE1A4F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				FFA2582D2AE89BB900FE1A4F /* Models */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		FFA2582D2AE89BB900FE1A4F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FFB43E3A2ADD03B800250AA6 /* ChatRequestModel.swift */,
+				FFADA1AC2AE65B6B00BD9F25 /* ChatQueryModel.swift */,
+				FFB43E362ADCE30C00250AA6 /* GPTModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		FFB43E4E2ADD081400250AA6 /* ChatCompletionsAPITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,15 +156,10 @@
 			children = (
 				FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */,
 				FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */,
-				FFB913D32ABAE6FF0022E688 /* ViewController.swift */,
+				FFA2582A2AE89B8B00FE1A4F /* Data */,
 				FFB913D52ABAE6FF0022E688 /* Main.storyboard */,
-				FFB43E322ADCE12300250AA6 /* ChatCompletionsAPI.swift */,
-				FFADA1A82AE63AE200BD9F25 /* MockURLSession.swift */,
-				FFADA1AA2AE63B5900BD9F25 /* MockURLDataTask.swift */,
-				FFB43E382ADCEA9D00250AA6 /* ChatResponseModel.swift */,
-				FFB43E3A2ADD03B800250AA6 /* ChatRequestModel.swift */,
-				FFADA1AC2AE65B6B00BD9F25 /* ChatQueryModel.swift */,
-				FFB43E362ADCE30C00250AA6 /* GPTModel.swift */,
+				FFA258292AE89B5A00FE1A4F /* Mock */,
+				FFA2582C2AE89BB600FE1A4F /* Domain */,
 				FFB913D82ABAE7010022E688 /* Assets.xcassets */,
 				FFB913DA2ABAE7010022E688 /* LaunchScreen.storyboard */,
 				FFB913DD2ABAE7010022E688 /* Info.plist */,
@@ -239,7 +284,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFADA1A92AE63AE200BD9F25 /* MockURLSession.swift in Sources */,
-				FFB913D42ABAE6FF0022E688 /* ViewController.swift in Sources */,
 				FFB43E3B2ADD03B800250AA6 /* ChatRequestModel.swift in Sources */,
 				FFB43E392ADCEA9D00250AA6 /* ChatResponseModel.swift in Sources */,
 				FFB43E372ADCE30C00250AA6 /* GPTModel.swift in Sources */,
