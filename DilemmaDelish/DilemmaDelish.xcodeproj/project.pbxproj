@@ -14,7 +14,6 @@
 		FF9118F72AC1AF8300CC5E8D /* IngredientItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9118F62AC1AF8300CC5E8D /* IngredientItem.swift */; };
 		FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */; };
 		FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */; };
-		FFB913D42ABAE6FF0022E688 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913D32ABAE6FF0022E688 /* ViewController.swift */; };
 		FFB913D72ABAE6FF0022E688 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB913D52ABAE6FF0022E688 /* Main.storyboard */; };
 		FFB913D92ABAE7010022E688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFB913D82ABAE7010022E688 /* Assets.xcassets */; };
 		FFB913DC2ABAE7010022E688 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB913DA2ABAE7010022E688 /* LaunchScreen.storyboard */; };
@@ -31,7 +30,6 @@
 		FFB913CC2ABAE6FF0022E688 /* DilemmaDelish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DilemmaDelish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FFB913D32ABAE6FF0022E688 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FFB913D62ABAE6FF0022E688 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFB913D82ABAE7010022E688 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFB913DB2ABAE7010022E688 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -75,11 +73,28 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		FFA258252AE899BA00FE1A4F /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FF9118E82AC177B600CC5E8D /* IngredientModel.xcdatamodeld */,
+				FF2F003B2AD4E20D0060E7C5 /* IngredientModel+CoreDataClass.swift */,
+				FF2F003C2AD4E20D0060E7C5 /* IngredientModel+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		FFA258262AE89AE700FE1A4F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FFA258252AE899BA00FE1A4F /* CoreData */,
+				FF9118EB2AC178CB00CC5E8D /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		FFB913C32ABAE6FF0022E688 = {
 			isa = PBXGroup;
 			children = (
-				FF2F003B2AD4E20D0060E7C5 /* IngredientModel+CoreDataClass.swift */,
-				FF2F003C2AD4E20D0060E7C5 /* IngredientModel+CoreDataProperties.swift */,
 				FFB913CE2ABAE6FF0022E688 /* DilemmaDelish */,
 				FFB913CD2ABAE6FF0022E688 /* Products */,
 			);
@@ -98,13 +113,11 @@
 			children = (
 				FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */,
 				FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */,
-				FFB913D32ABAE6FF0022E688 /* ViewController.swift */,
-				FF9118EB2AC178CB00CC5E8D /* Repository */,
+				FFA258262AE89AE700FE1A4F /* Data */,
 				FF9118F42AC1AF6F00CC5E8D /* Domain */,
 				FFB913D52ABAE6FF0022E688 /* Main.storyboard */,
 				FFB913D82ABAE7010022E688 /* Assets.xcassets */,
 				FFB913DA2ABAE7010022E688 /* LaunchScreen.storyboard */,
-				FF9118E82AC177B600CC5E8D /* IngredientModel.xcdatamodeld */,
 				FFB913DD2ABAE7010022E688 /* Info.plist */,
 			);
 			path = DilemmaDelish;
@@ -189,7 +202,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF2F003E2AD4E20D0060E7C5 /* IngredientModel+CoreDataProperties.swift in Sources */,
-				FFB913D42ABAE6FF0022E688 /* ViewController.swift in Sources */,
 				FF2F003D2AD4E20D0060E7C5 /* IngredientModel+CoreDataClass.swift in Sources */,
 				FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */,
 				FF9118EA2AC177B600CC5E8D /* IngredientModel.xcdatamodeld in Sources */,
