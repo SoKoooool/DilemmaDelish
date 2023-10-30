@@ -12,10 +12,7 @@ struct PersistentStorage {
     
     // MARK: - Properties
     
-    static var shared = PersistentStorage()
     private lazy var context = persistentContainer.viewContext
-    
-    init() {}
     
     // MARK: - Core Data stack
     
