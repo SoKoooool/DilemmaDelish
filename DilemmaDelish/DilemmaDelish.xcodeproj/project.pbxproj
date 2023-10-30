@@ -22,7 +22,7 @@
 		FFB43E332ADCE12300250AA6 /* ChatCompletionsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E322ADCE12300250AA6 /* ChatCompletionsAPI.swift */; };
 		FFB43E372ADCE30C00250AA6 /* GPTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E362ADCE30C00250AA6 /* GPTModel.swift */; };
 		FFB43E392ADCEA9D00250AA6 /* ChatResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E382ADCEA9D00250AA6 /* ChatResponse.swift */; };
-		FFB43E3B2ADD03B800250AA6 /* ChatRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E3A2ADD03B800250AA6 /* ChatRequestModel.swift */; };
+		FFB43E3B2ADD03B800250AA6 /* ChatRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB43E3A2ADD03B800250AA6 /* ChatRequest.swift */; };
 		FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */; };
 		FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */; };
 		FFB913D72ABAE6FF0022E688 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB913D52ABAE6FF0022E688 /* Main.storyboard */; };
@@ -59,7 +59,7 @@
 		FFB43E322ADCE12300250AA6 /* ChatCompletionsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCompletionsAPI.swift; sourceTree = "<group>"; };
 		FFB43E362ADCE30C00250AA6 /* GPTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTModel.swift; sourceTree = "<group>"; };
 		FFB43E382ADCEA9D00250AA6 /* ChatResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatResponse.swift; sourceTree = "<group>"; };
-		FFB43E3A2ADD03B800250AA6 /* ChatRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestModel.swift; sourceTree = "<group>"; };
+		FFB43E3A2ADD03B800250AA6 /* ChatRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequest.swift; sourceTree = "<group>"; };
 		FFB43E4D2ADD081400250AA6 /* DilemmaDelishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DilemmaDelishTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB43E4F2ADD081400250AA6 /* DilemmaDelishTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DilemmaDelishTests.swift; sourceTree = "<group>"; };
 		FFB913CC2ABAE6FF0022E688 /* DilemmaDelish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DilemmaDelish.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,7 +102,7 @@
 				FF9118F62AC1AF8300CC5E8D /* IngredientItem.swift */,
 				FF8FEF572AEF6B1B0019180E /* RecipeItem.swift */,
 				FFB43E382ADCEA9D00250AA6 /* ChatResponse.swift */,
-				FFB43E3A2ADD03B800250AA6 /* ChatRequestModel.swift */,
+				FFB43E3A2ADD03B800250AA6 /* ChatRequest.swift */,
 				FFADA1AC2AE65B6B00BD9F25 /* ChatQuery.swift */,
 				FFB43E362ADCE30C00250AA6 /* GPTModel.swift */,
 			);
@@ -150,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				FFB913D82ABAE7010022E688 /* Assets.xcassets */,
-				FFB913DD2ABAE7010022E688 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -168,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				FFB913CE2ABAE6FF0022E688 /* DilemmaDelish */,
+				FFB913DD2ABAE7010022E688 /* Info.plist */,
 				FFB43E4E2ADD081400250AA6 /* DilemmaDelishTests */,
 				FFB913CD2ABAE6FF0022E688 /* Products */,
 			);
@@ -331,7 +331,7 @@
 			files = (
 				FF9118D22AC11CBB00CC5E8D /* AddIngredientButton.swift in Sources */,
 				FFADA1A92AE63AE200BD9F25 /* MockURLSession.swift in Sources */,
-				FFB43E3B2ADD03B800250AA6 /* ChatRequestModel.swift in Sources */,
+				FFB43E3B2ADD03B800250AA6 /* ChatRequest.swift in Sources */,
 				FFB43E392ADCEA9D00250AA6 /* ChatResponse.swift in Sources */,
 				FFB43E372ADCE30C00250AA6 /* GPTModel.swift in Sources */,
 				FFADA1AB2AE63B5900BD9F25 /* MockURLDataTask.swift in Sources */,
@@ -548,7 +548,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UQ7NNW9PV7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DilemmaDelish/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -577,7 +577,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UQ7NNW9PV7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DilemmaDelish/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
