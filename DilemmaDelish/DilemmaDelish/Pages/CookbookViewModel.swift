@@ -12,6 +12,9 @@ protocol CookbookViewModelProtocol {
     var fetchRecipes: AnyObserver<Void> { get }
     var addIngredient: AnyObserver<IngredientItem> { get }
     var subtractIngredient: AnyObserver<IngredientItem> { get }
+    
+    var onIngredients: Observable<[IngredientItem]> { get }
+    var onRecipes: Observable<[RecipeItem]> { get }
 }
 
 final class CookbookViewModel: CookbookViewModelProtocol {
@@ -22,13 +25,22 @@ final class CookbookViewModel: CookbookViewModelProtocol {
     let addIngredient: AnyObserver<IngredientItem>
     let subtractIngredient: AnyObserver<IngredientItem>
     
+    let onIngredients: Observable<[IngredientItem]>
+    let onRecipes: Observable<[RecipeItem]>
+    
     init() {
         let fetching = PublishSubject<Void>()
         let adding = PublishSubject<IngredientItem>()
         let subtracting = PublishSubject<IngredientItem>()
         
+        let ingredients = PublishSubject<[IngredientItem]>()
+        let recipes = PublishSubject<[RecipeItem]>()
+        
         fetchRecipes = fetching.asObserver()
         addIngredient = adding.asObserver()
         subtractIngredient = subtracting.asObserver()
+        
+        onIngredients = ingredients.asObserver()
+        onRecipes = recipes.asObserver()
     }
 }
