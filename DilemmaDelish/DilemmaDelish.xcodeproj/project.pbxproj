@@ -201,8 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				FFD49D792ABC6AEA00FBDE15 /* Views */,
-				FFD49D7B2ABC6B0000FBDE15 /* CookbookViewController.swift */,
 				FF8FEF592AEF7A310019180E /* CookbookViewModel.swift */,
+				FFD49D7B2ABC6B0000FBDE15 /* CookbookViewController.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
