@@ -36,7 +36,7 @@ final class DilemmaDelishTests: XCTestCase {
         let data = try JSONEncoder().encode(responseModel)
         session.response = .successDataTask(with: data)
         
-        let query = ChatQueryModel(role: .user, message: "Request Message")
+        let query = ChatQuery(role: .user, message: "Request Message")
         let request = gpt.createRequest(from: query.toRequestModel())!
         
         gpt.performRequest(request) { result in
@@ -49,7 +49,7 @@ final class DilemmaDelishTests: XCTestCase {
         let error = NSError(domain: "Request Error", code: -1)
         session.response = .failureDataTask(with: error)
         
-        let query = ChatQueryModel(role: .user, message: "Request Message")
+        let query = ChatQuery(role: .user, message: "Request Message")
         let request = gpt.createRequest(from: query.toRequestModel())!
         
         gpt.performRequest(request) { result in
