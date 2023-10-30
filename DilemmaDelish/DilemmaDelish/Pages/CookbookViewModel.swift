@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 protocol CookbookViewModelProtocol {
-    var fetchRecipes: AnyObserver<Void> { get }
+    var searchRecipe: AnyObserver<Void> { get }
     var addIngredient: AnyObserver<IngredientItem> { get }
     var subtractIngredient: AnyObserver<IngredientItem> { get }
     
@@ -22,7 +22,7 @@ final class CookbookViewModel: CookbookViewModelProtocol {
     private let service: RecipeSearchServiceProtocol!
     private let disposeBag = DisposeBag()
     
-    let fetchRecipes: AnyObserver<Void>
+    let searchRecipe: AnyObserver<Void>
     let addIngredient: AnyObserver<IngredientItem>
     let subtractIngredient: AnyObserver<IngredientItem>
     
@@ -32,14 +32,14 @@ final class CookbookViewModel: CookbookViewModelProtocol {
     init(service: RecipeSearchServiceProtocol = RecipeSearchService()) {
         self.service = service
         
-        let fetching = PublishSubject<Void>()
+        let searching = PublishSubject<Void>()
         let adding = PublishSubject<IngredientItem>()
         let subtracting = PublishSubject<IngredientItem>()
         
         let ingredients = PublishSubject<[IngredientItem]>()
         let recipes = PublishSubject<[RecipeItem]>()
         
-        fetchRecipes = fetching.asObserver()
+        searchRecipe = searching.asObserver()
         addIngredient = adding.asObserver()
         subtractIngredient = subtracting.asObserver()
         
