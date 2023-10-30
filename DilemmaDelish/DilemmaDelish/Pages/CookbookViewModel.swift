@@ -19,6 +19,7 @@ protocol CookbookViewModelProtocol {
 
 final class CookbookViewModel: CookbookViewModelProtocol {
     
+    private let service: RecipeSearchServiceProtocol!
     private let disposeBag = DisposeBag()
     
     let fetchRecipes: AnyObserver<Void>
@@ -28,7 +29,9 @@ final class CookbookViewModel: CookbookViewModelProtocol {
     let onIngredients: Observable<[IngredientItem]>
     let onRecipes: Observable<[RecipeItem]>
     
-    init() {
+    init(service: RecipeSearchServiceProtocol = RecipeSearchService()) {
+        self.service = service
+        
         let fetching = PublishSubject<Void>()
         let adding = PublishSubject<IngredientItem>()
         let subtracting = PublishSubject<IngredientItem>()
