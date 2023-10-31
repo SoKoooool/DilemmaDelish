@@ -26,4 +26,16 @@ struct ChatQuery: Encodable {
             case user
         }
     }
+    
+    func toRequest() throws -> URLRequest {
+        let url = URL(string: model.endpoint)!
+        var request = URLRequest(url: url)
+        let body = try JSONEncoder().encode(self)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer apiKey", forHTTPHeaderField: "Authorization")
+        request.httpBody = body
+        return request
+    }
+
 }

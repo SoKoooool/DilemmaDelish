@@ -40,16 +40,4 @@ final class ChatCompletionsAPI {
             completion(.success(data))
         }.resume()
     }
-    
-    func createRequest(from model: ChatQuery) -> URLRequest? {
-        let url = URL(string: GPTModel.gpt_3_5_turbo.endpoint)!
-        var request = URLRequest(url: url)
-        guard let requestBody = try? JSONEncoder().encode(model) else { return nil }
-        
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
-        request.httpBody = requestBody
-        return request
-    }
 }
