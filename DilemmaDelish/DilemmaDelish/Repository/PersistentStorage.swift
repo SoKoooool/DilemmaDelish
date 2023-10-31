@@ -7,6 +7,16 @@
 
 import Foundation
 import CoreData
+import RxSwift
+
+protocol RepositoryProtocol {
+    func create(item: IngredientItem)
+    func read(from item: IngredientItem) -> Observable<IngredientModel>
+    func readEntities() -> Observable<[IngredientModel]>
+    func update(item: IngredientItem)
+    func delete(item: IngredientItem)
+    func deleteAllItems()
+}
 
 struct PersistentStorage {
     
