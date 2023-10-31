@@ -72,12 +72,16 @@ extension PersistentStorage: RepositoryProtocol {
         return Observable.create { [weak self] emitter in
             do {
                 let request = IngredientModel.fetchRequest()
-                guard let entities = try self?.context.fetch(request) else { return }
+                guard let entities = try self?.context.fetch(request) else {
+                    emitter.onCompleted()
+                    return Disposables.create()
+                }
                 emitter.onNext(entities)
                 emitter.onCompleted()
             } catch {
                 emitter.onError(error)
             }
+            return Disposables.create()
         }
     }
     
