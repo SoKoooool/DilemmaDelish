@@ -18,10 +18,11 @@ protocol RepositoryProtocol {
     func deleteAllItems()
 }
 
-struct PersistentStorage {
+final class PersistentStorage {
     
     // MARK: - Properties
     
+    private let disposeBag = DisposeBag()
     private lazy var context = persistentContainer.viewContext
     
     // MARK: - Core Data stack
@@ -38,7 +39,7 @@ struct PersistentStorage {
     
     // MARK: - Core Data Saving support
     
-    mutating private func saveContext () {
+    private func saveContext () {
         if context.hasChanges {
             do {
                 try context.save()
@@ -52,48 +53,59 @@ struct PersistentStorage {
 
 // MARK: - Persistent Storage API
 
-extension PersistentStorage {
-    
-    typealias FetchResult = Result<[IngredientItem], NSError>
-    
-    mutating func fetchIngredients() -> FetchResult {
-        do {
-            let request = IngredientModel.fetchRequest()
-            let entities = try context.fetch(request)
-            return .success(entities.map { $0.toDomain() })
-        } catch {
-            print(error.localizedDescription)
-            return .failure(error as NSError)
-        }
-    }
-    
-    mutating func storeIngredient(item: IngredientItem) {
+extension PersistentStorage: RepositoryProtocol {
+
+    func create(item: IngredientItem) {
         let entity = IngredientModel(context: context)
         entity.name = item.name
         entity.imageName = item.imageName
         saveContext()
     }
     
-    mutating func deleteIngredient(item: IngredientItem) {
-        do {
-            let request = IngredientModel.fetchRequest()
-            let entities = try context.fetch(request)
-            guard let entity = entities.first else { return }
-            context.delete(entity)
-            saveContext()
-        } catch {
-            print(error.localizedDescription)
+    func read(from item: IngredientItem) -> Observable<IngredientModel> {
+        return readEntities()
+            .map { $0.filter { $0.name == item.name }.first }
+            .flatMap { Observable.from(optional: $0) }
+    }
+    
+    func readEntities() -> Observable<[IngredientModel]> {
+        return Observable.create { [weak self] emitter in
+            do {
+                let request = IngredientModel.fetchRequest()
+                guard let entities = try self?.context.fetch(request) else { return }
+                emitter.onNext(entities)
+                emitter.onCompleted()
+            } catch {
+                emitter.onError(error)
+            }
         }
     }
     
-    mutating func deleteAllIngredients() {
-        do {
-            let request = IngredientModel.fetchRequest()
-            let entities = try context.fetch(request)
-            entities.forEach { self.context.delete($0) }
-            saveContext()
-        } catch {
-            print(error.localizedDescription)
-        }
+    func update(item: IngredientItem) {
+        read(from: item)
+            .subscribe {
+                $0.name = item.name
+                $0.imageName = item.imageName
+                self.saveContext()
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    func delete(item: IngredientItem) {
+        read(from: item)
+            .subscribe {
+                self.context.delete($0)
+                self.saveContext()
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    func deleteAllItems() {
+        readEntities()
+            .subscribe {
+                $0.forEach { self.context.delete($0) }
+                self.saveContext()
+            }
+            .disposed(by: disposeBag)
     }
 }
