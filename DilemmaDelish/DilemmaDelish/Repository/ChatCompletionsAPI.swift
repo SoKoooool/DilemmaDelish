@@ -41,7 +41,7 @@ final class ChatCompletionsAPI {
         }.resume()
     }
     
-    func createRequest(from model: ChatRequest) -> URLRequest? {
+    func createRequest(from model: ChatQuery) -> URLRequest? {
         let url = URL(string: GPTModel.gpt_3_5_turbo.endpoint)!
         var request = URLRequest(url: url)
         guard let requestBody = try? JSONEncoder().encode(model) else { return nil }
