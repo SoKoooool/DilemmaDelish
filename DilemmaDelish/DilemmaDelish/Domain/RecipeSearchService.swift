@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 protocol RecipeSearchServiceProtocol {
-
+    
 }
 
 final class RecipeSearchService: RecipeSearchServiceProtocol {

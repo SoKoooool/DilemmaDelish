@@ -10,6 +10,7 @@ import RxSwift
 
 final class ChatCompletionsAPI {
     
+    static let shared = ChatCompletionsAPI()
     private let session: URLSessionProtocol
     
     init(session: URLSessionProtocol = URLSession.shared) {
