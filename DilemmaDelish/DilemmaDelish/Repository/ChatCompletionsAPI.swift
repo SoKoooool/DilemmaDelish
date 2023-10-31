@@ -6,10 +6,9 @@
 //
 
 import Foundation
+import RxSwift
 
 final class ChatCompletionsAPI {
-    
-    private let apiKey = ""
     
     private let session: URLSessionProtocol
     
@@ -17,27 +16,27 @@ final class ChatCompletionsAPI {
         self.session = session
     }
     
-    func performRequest(_ request: URLRequest, completion: @escaping (Result<Data, NSError>) -> Void) {
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
-                completion(.failure(error as NSError))
-            }
-            
-            guard let httpResponse = response as? HTTPURLResponse else {
-                let error = NSError(domain: "InvalidResponse", code: -2)
-                completion(.failure(error))
-                print(error._domain)
-                return
-            }
-            print("HTTP Status Code: \(httpResponse.statusCode)")
-            
-            guard let data = data else {
-                let error = NSError(domain: "NoData", code: -1)
-                completion(.failure(error))
-                return
-            }
-            completion(.success(data))
-        }.resume()
+    func performRequest(_ request: URLRequest) -> Observable<Data> {
+        return Observable.create { emitter in
+            self.session.dataTask(request: request) { data, response, error in
+                if let error = error {
+                    emitter.onError(error)
+                    return
+                }
+                
+                guard let response = response as? HTTPURLResponse else {
+                    emitter.onCompleted()
+                    return
+                }
+                print("Status Code: \(response.statusCode)")
+                
+                guard let data = data else {
+                    emitter.onCompleted()
+                    return
+                }
+                emitter.onNext(data)
+            }.resume()
+            return Disposables.create()
+        }
     }
 }
