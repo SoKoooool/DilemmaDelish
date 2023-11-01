@@ -36,6 +36,7 @@ final class ChatCompletionsAPI {
                     return
                 }
                 emitter.onNext(data)
+                emitter.onCompleted()
             }.resume()
             return Disposables.create()
         }
