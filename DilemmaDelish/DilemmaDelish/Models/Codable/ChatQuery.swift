@@ -8,12 +8,16 @@
 import Foundation
 
 struct ChatQuery: Encodable {
-    let model: GPTModel
+    let model: Model
     let messages: [Message]
     
-    init(model: GPTModel = .gpt_3_5_turbo, messages: [Message]) {
+    init(model: Model = .gpt3_5turbo, messages: [Message]) {
         self.model = model
         self.messages = messages
+    }
+    
+    enum Model: String, Encodable {
+        case gpt3_5turbo = "gpt-3.5-turbo"
     }
     
     struct Message: Encodable {
@@ -28,7 +32,7 @@ struct ChatQuery: Encodable {
     }
     
     func toRequest() throws -> URLRequest {
-        let url = URL(string: model.endpoint)!
+        let url = URL(string: "https://api.openai.com/v1/chat/completions")!
         var request = URLRequest(url: url)
         let body = try JSONEncoder().encode(self)
         request.httpMethod = "POST"
