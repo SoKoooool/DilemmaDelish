@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct IngredientItem {
+struct IngredientItem: Decodable {
     var name: String
     var imageName: String
 }

@@ -106,6 +106,8 @@
 				FFB43E382ADCEA9D00250AA6 /* ChatResponse.swift */,
 				FFB43E3A2ADD03B800250AA6 /* ChatQuery.swift */,
 				FFB43E362ADCE30C00250AA6 /* GPTModel.swift */,
+				FF9118F62AC1AF8300CC5E8D /* IngredientItem.swift */,
+				FF8FEF572AEF6B1B0019180E /* RecipeItem.swift */,
 			);
 			path = Codable;
 			sourceTree = "<group>";
@@ -132,8 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				FF0C93852AF2258B0024AF7D /* Codable */,
-				FF9118F62AC1AF8300CC5E8D /* IngredientItem.swift */,
-				FF8FEF572AEF6B1B0019180E /* RecipeItem.swift */,
 				FF0C93862AF3261B0024AF7D /* RecipeQueryMessage.swift */,
 			);
 			path = Models;
