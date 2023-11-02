@@ -31,10 +31,7 @@ final class RecipeSearchService: RecipeSearchServiceProtocol {
     func fetchRecipes(with message: RecipeQueryMessage) -> Observable<[RecipeItem]> {
         return ChatCompletionsAPI.shared.chatCompletion(query: message.toQuery())
             .decode(type: ChatResponse.self, decoder: JSONDecoder())
-            .map { $0.choices.first?.message.content } 
-            .map { $0?.data(using: .utf8) }
-            .flatMap { Observable.from(optional: $0) }
-            .decode(type: [RecipeItem].self, decoder: JSONDecoder())
+            .map { try $0.toRecipeItems() }
     }
     
     func store(item: IngredientItem) {

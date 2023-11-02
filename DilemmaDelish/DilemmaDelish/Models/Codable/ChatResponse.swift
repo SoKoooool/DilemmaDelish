@@ -37,4 +37,10 @@ struct ChatResponse: Codable {
             case totalTokens = "total_tokens"
         }
     }
+    
+    func toRecipeItems() throws -> [RecipeItem] {
+        let jsonString = choices.first?.message.content
+        let data = jsonString?.data(using: .utf8)
+        return try JSONDecoder().decode([RecipeItem].self, from: data ?? Data())
+    }
 }
