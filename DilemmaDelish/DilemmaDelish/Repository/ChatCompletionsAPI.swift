@@ -17,7 +17,12 @@ final class ChatCompletionsAPI {
         self.session = session
     }
     
-    func performRequest(_ request: URLRequest) -> Observable<Data> {
+    func chatCompletion(query: ChatQuery) -> Observable<Data> {
+        do { return performRequest(try query.toRequest()) }
+        catch { return .error(error) }
+    }
+    
+    private func performRequest(_ request: URLRequest) -> Observable<Data> {
         return Observable.create { emitter in
             self.session.dataTask(request: request) { data, response, error in
                 if let error = error {
