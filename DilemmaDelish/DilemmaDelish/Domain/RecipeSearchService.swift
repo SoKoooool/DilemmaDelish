@@ -10,6 +10,7 @@ import RxSwift
 
 protocol RecipeSearchServiceProtocol {
     func fetchIngredients() -> Observable<[IngredientItem]>
+    func fetchRecipes(with message: RecipeQueryMessage) -> Observable<[RecipeItem]>
     func store(item: IngredientItem)
     func remove(item: IngredientItem)
 }
@@ -25,6 +26,15 @@ final class RecipeSearchService: RecipeSearchServiceProtocol {
     func fetchIngredients() -> Observable<[IngredientItem]> {
         return repository.readEntities()
             .map { $0.map { $0.toDomain() } }
+    }
+    
+    func fetchRecipes(with message: RecipeQueryMessage) -> Observable<[RecipeItem]> {
+        return ChatCompletionsAPI.shared.chatCompletion(query: message.toQuery())
+            .decode(type: ChatResponse.self, decoder: JSONDecoder())
+            .map { $0.choices.first?.message.content } 
+            .map { $0?.data(using: .utf8) }
+            .flatMap { Observable.from(optional: $0) }
+            .decode(type: [RecipeItem].self, decoder: JSONDecoder())
     }
     
     func store(item: IngredientItem) {
