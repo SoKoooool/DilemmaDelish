@@ -16,6 +16,7 @@
 		FFB913D92ABAE7010022E688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFB913D82ABAE7010022E688 /* Assets.xcassets */; };
 		FFB913DC2ABAE7010022E688 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB913DA2ABAE7010022E688 /* LaunchScreen.storyboard */; };
 		FFBD7CFC2C2CC75100F6D802 /* ViewRecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBD7CFB2C2CC75100F6D802 /* ViewRecipeDetail.swift */; };
+		FFBD7CFE2C2CC7BB00F6D802 /* RecipeSearchTutorialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBD7CFD2C2CC7BB00F6D802 /* RecipeSearchTutorialViewModel.swift */; };
 		FFE2109A2C16D4CD000D29B0 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = FFE210992C16D4CD000D29B0 /* RxCocoa */; };
 		FFE2109C2C16D4CD000D29B0 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFE2109B2C16D4CD000D29B0 /* RxSwift */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		FFB913DB2ABAE7010022E688 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFB913DD2ABAE7010022E688 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFBD7CFB2C2CC75100F6D802 /* ViewRecipeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRecipeDetail.swift; sourceTree = "<group>"; };
+		FFBD7CFD2C2CC7BB00F6D802 /* RecipeSearchTutorialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchTutorialViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				FFBD7CFB2C2CC75100F6D802 /* ViewRecipeDetail.swift */,
+				FFBD7CFD2C2CC7BB00F6D802 /* RecipeSearchTutorialViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			files = (
 				FF940AAC2C16D5B4008A1856 /* RecipeDetail.swift in Sources */,
 				FFB913D42ABAE6FF0022E688 /* ViewController.swift in Sources */,
+				FFBD7CFE2C2CC7BB00F6D802 /* RecipeSearchTutorialViewModel.swift in Sources */,
 				FF940AAE2C16D769008A1856 /* RecipeQuery.swift in Sources */,
 				FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */,
 				FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */,
