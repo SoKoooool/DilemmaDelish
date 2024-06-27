@@ -36,7 +36,9 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
     
     let recipeDetail: Observable<ViewRecipeDetail>
     
-    init() {
+    private let disposeBag = DisposeBag()
+    
+    init(domain: RecipeSearchable) {
         let recipeDetailFetching = PublishSubject<Void>()
         let typeSelecting = PublishSubject<ViewRecipeType>()
         let mainIngredientSelecting = PublishSubject<ViewRecipeIngredient>()
@@ -45,6 +47,12 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
         let fetchedRecipeDetail = PublishSubject<ViewRecipeDetail>()
         
         fetchRecipeDetail = recipeDetailFetching.asObserver()
+        recipeDetailFetching
+            .flatMap { domain.fetchRecipeDetail() }
+            .map { ViewRecipeDetail($0) }
+            .subscribe(onNext: fetchedRecipeDetail.onNext)
+            .disposed(by: disposeBag)
+        
         typeSelected = typeSelecting.asObserver()
         mainIngredientSelected = mainIngredientSelecting.asObserver()
         subIngredientSelected = subIngredientSelecting.asObserver()
