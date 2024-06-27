@@ -10,7 +10,7 @@ import Foundation
 struct RecipeDetail {
     let recipeTypes: [Category]
     let mainIngredients: [Ingredient]
-    let additionalIngredients: [Ingredient]
+    let subIngredients: [Ingredient]
     
     struct Category {
         let iconName: String
