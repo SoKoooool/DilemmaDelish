@@ -22,10 +22,21 @@ struct ViewRecipeDetail {
 struct ViewRecipeType {
     let name: String
     let iconName: String
+    var isSelected: Bool = false
     
     init(_ recipeType: RecipeDetail.Category) {
         self.name = recipeType.name
         self.iconName = recipeType.iconName
+    }
+    
+    init(name: String, iconName: String, isSelected: Bool) {
+        self.name = name
+        self.iconName = iconName
+        self.isSelected = isSelected
+    }
+    
+    func selected(state: Bool) -> Self {
+        return ViewRecipeType(name: name, iconName: iconName, isSelected: state)
     }
 }
 
