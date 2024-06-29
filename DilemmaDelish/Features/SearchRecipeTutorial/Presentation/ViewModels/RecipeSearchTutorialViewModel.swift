@@ -64,8 +64,26 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
             .disposed(by: disposeBag)
         
         selectRecipeType = recipeTypeSelecting.asObserver()
+        let selectedRecipeType = recipeTypeSelecting
+            .withLatestFrom(fetchedRecipeTypes) { selected, fetched in
+                return fetched
+                    .map { $0.selected(state: false) }
+                    .map { $0.name == selected.name ? selected.name : $0.name }
+            }
+        
         selectMainIngredient = mainIngredientSelecting.asObserver()
+        let selectedMainIngredient = mainIngredientSelecting
+            .scan(into: [""]) { seed, selected in
+                seed.contains(selected.name) ? 
+                seed = seed.filter { $0 != selected.name } : seed.append(selected.name)
+            }
+        
         selectSubIngredient = subIngredientSelecting.asObserver()
+        let selectedSubIngredient = subIngredientSelecting
+            .scan(into: [""]) { seed, selected in
+                seed.contains(selected.name) ?
+                seed = seed.filter { $0 != selected.name } : seed.append(selected.name)
+            }
         
         recipeTypes = fetchedRecipeTypes
         mainIngredients = fetchedMainIngredients
