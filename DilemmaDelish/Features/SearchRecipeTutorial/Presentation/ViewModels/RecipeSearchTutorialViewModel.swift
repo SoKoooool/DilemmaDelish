@@ -9,17 +9,17 @@ import Foundation
 import RxSwift
 
 protocol RecipeTypePickerViewModel {
-    var typeSelected: AnyObserver<ViewRecipeType> { get }
+    var selectRecipeType: AnyObserver<ViewRecipeType> { get }
     var recipeTypes: Observable<[ViewRecipeType]> { get }
 }
 
 protocol RecipeMainIngredientPickerViewModel {
-    var mainIngredientSelected: AnyObserver<ViewRecipeIngredient> { get }
+    var selectMainIngredient: AnyObserver<ViewRecipeIngredient> { get }
     var mainIngredients: Observable<[ViewRecipeIngredient]> { get }
 }
 
 protocol RecipeSubIngerdientPickerViewModel {
-    var subIngredientSelected: AnyObserver<ViewRecipeIngredient> { get }
+    var selectSubIngredient: AnyObserver<ViewRecipeIngredient> { get }
     var subIngredients: Observable<[ViewRecipeIngredient]> { get }
 }
 
@@ -32,9 +32,9 @@ typealias RecipeSearchTutorialViewModelType = RecipeTypePickerViewModel & Recipe
 final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel {
     
     let fetchRecipeDetail: AnyObserver<Void>
-    let typeSelected: AnyObserver<ViewRecipeType>
-    let mainIngredientSelected: AnyObserver<ViewRecipeIngredient>
-    let subIngredientSelected: AnyObserver<ViewRecipeIngredient>
+    let selectRecipeType: AnyObserver<ViewRecipeType>
+    let selectMainIngredient: AnyObserver<ViewRecipeIngredient>
+    let selectSubIngredient: AnyObserver<ViewRecipeIngredient>
     
     let recipeTypes: Observable<[ViewRecipeType]>
     let mainIngredients: Observable<[ViewRecipeIngredient]>
@@ -44,7 +44,7 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
     
     init(domain: RecipeSearchable) {
         let recipeDetailFetching = PublishSubject<Void>()
-        let typeSelecting = PublishSubject<ViewRecipeType>()
+        let recipeTypeSelecting = PublishSubject<ViewRecipeType>()
         let mainIngredientSelecting = PublishSubject<ViewRecipeIngredient>()
         let subIngredientSelecting = PublishSubject<ViewRecipeIngredient>()
         
@@ -63,9 +63,9 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
             })
             .disposed(by: disposeBag)
         
-        typeSelected = typeSelecting.asObserver()
-        mainIngredientSelected = mainIngredientSelecting.asObserver()
-        subIngredientSelected = subIngredientSelecting.asObserver()
+        selectRecipeType = recipeTypeSelecting.asObserver()
+        selectMainIngredient = mainIngredientSelecting.asObserver()
+        selectSubIngredient = subIngredientSelecting.asObserver()
         
         recipeTypes = fetchedRecipeTypes
         mainIngredients = fetchedMainIngredients
