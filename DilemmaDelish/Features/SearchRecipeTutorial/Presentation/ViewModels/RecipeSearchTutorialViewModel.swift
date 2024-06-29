@@ -51,6 +51,7 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
         let fetchedRecipeTypes = PublishSubject<[ViewRecipeType]>()
         let fetchedMainIngredients = PublishSubject<[ViewRecipeIngredient]>()
         let fetchedSubIngredients = PublishSubject<[ViewRecipeIngredient]>()
+        let recipeQuery = PublishSubject<RecipeQuery>()
         
         fetchRecipeDetail = recipeDetailFetching.asObserver()
         recipeDetailFetching
@@ -70,11 +71,12 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
                     .map { $0.selected(state: false) }
                     .map { $0.name == selected.name ? selected.name : $0.name }
             }
+            .flatMap { Observable.from($0) }
         
         selectMainIngredient = mainIngredientSelecting.asObserver()
         let selectedMainIngredient = mainIngredientSelecting
             .scan(into: [""]) { seed, selected in
-                seed.contains(selected.name) ? 
+                seed.contains(selected.name) ?
                 seed = seed.filter { $0 != selected.name } : seed.append(selected.name)
             }
         
@@ -84,6 +86,16 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
                 seed.contains(selected.name) ?
                 seed = seed.filter { $0 != selected.name } : seed.append(selected.name)
             }
+        
+        Observable.combineLatest(selectedRecipeType,
+                                 selectedMainIngredient,
+                                 selectedSubIngredient) {
+            return RecipeQuery(recipeType: $0,
+                               mainIngredients: $1,
+                               additionalIngredients: $2)
+        }
+                                 .subscribe(onNext: recipeQuery.onNext)
+                                 .disposed(by: disposeBag)
         
         recipeTypes = fetchedRecipeTypes
         mainIngredients = fetchedMainIngredients
