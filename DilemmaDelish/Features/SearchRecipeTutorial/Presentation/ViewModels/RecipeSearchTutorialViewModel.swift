@@ -26,7 +26,7 @@ protocol RecipeSubIngerdientPickerViewModel {
     var selectSubIngredient: AnyObserver<ViewRecipeIngredient> { get }
     var moveSearchResultPage: AnyObserver<Void> { get }
     var subIngredients: Observable<[ViewRecipeIngredient]> { get }
-    var searchResultPage: Observable<Void> { get }
+    var searchResultPage: Observable<[Recipe]> { get }
 }
 
 protocol RecipeSearchTutorialViewModel: RecipeSearchTutorialViewModelType {
@@ -50,7 +50,7 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
     let subIngredients: Observable<[ViewRecipeIngredient]>
     let mainPickerPage: Observable<Void>
     let subPickerPage: Observable<Void>
-    let searchResultPage: Observable<Void>
+    let searchResultPage: Observable<[Recipe]>
     
     private let disposeBag = DisposeBag()
     
@@ -67,6 +67,7 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
         let fetchedMainIngredients = PublishSubject<[ViewRecipeIngredient]>()
         let fetchedSubIngredients = PublishSubject<[ViewRecipeIngredient]>()
         let recipeQuery = PublishSubject<RecipeQuery>()
+        let searchedRecipe = PublishSubject<[Recipe]>()
         
         fetchRecipeDetail = recipeDetailFetching.asObserver()
         recipeDetailFetching
@@ -115,12 +116,17 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
         moveMainPickerPage = mainPickerPageMoving.asObserver()
         moveSubPickerPage = subPickerPageMoving.asObserver()
         moveSearchResultPage = searchResultPageMoving.asObserver()
+        searchResultPageMoving
+            .withLatestFrom(recipeQuery)
+            .flatMap { domain.searchRecipe(with: $0) }
+            .subscribe(onNext: searchedRecipe.onNext)
+            .disposed(by: disposeBag)
         
         recipeTypes = fetchedRecipeTypes
         mainIngredients = fetchedMainIngredients
         subIngredients = fetchedSubIngredients
         mainPickerPage = mainPickerPageMoving
         subPickerPage = subPickerPageMoving
-        searchResultPage = searchResultPageMoving
+        searchResultPage = searchedRecipe
     }
 }

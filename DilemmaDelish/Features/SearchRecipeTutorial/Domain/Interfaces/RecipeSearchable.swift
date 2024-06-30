@@ -10,4 +10,5 @@ import RxSwift
 
 protocol RecipeSearchable {
     func fetchRecipeDetail() -> Observable<RecipeDetail>
+    func searchRecipe(with query: RecipeQuery) -> Observable<[Recipe]>
 }
