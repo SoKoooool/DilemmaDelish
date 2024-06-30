@@ -10,17 +10,23 @@ import RxSwift
 
 protocol RecipeTypePickerViewModel {
     var selectRecipeType: AnyObserver<ViewRecipeType> { get }
+    var moveMainPickerPage: AnyObserver<Void> { get }
     var recipeTypes: Observable<[ViewRecipeType]> { get }
+    var mainPickerPage: Observable<Void> { get }
 }
 
 protocol RecipeMainIngredientPickerViewModel {
     var selectMainIngredient: AnyObserver<ViewRecipeIngredient> { get }
+    var moveSubPickerPage: AnyObserver<Void> { get }
     var mainIngredients: Observable<[ViewRecipeIngredient]> { get }
+    var subPickerPage: Observable<Void> { get }
 }
 
 protocol RecipeSubIngerdientPickerViewModel {
     var selectSubIngredient: AnyObserver<ViewRecipeIngredient> { get }
+    var moveSearchResultPage: AnyObserver<Void> { get }
     var subIngredients: Observable<[ViewRecipeIngredient]> { get }
+    var searchResultPage: Observable<Void> { get }
 }
 
 protocol RecipeSearchTutorialViewModel: RecipeSearchTutorialViewModelType {
@@ -35,10 +41,16 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
     let selectRecipeType: AnyObserver<ViewRecipeType>
     let selectMainIngredient: AnyObserver<ViewRecipeIngredient>
     let selectSubIngredient: AnyObserver<ViewRecipeIngredient>
+    let moveMainPickerPage: AnyObserver<Void>
+    let moveSubPickerPage: AnyObserver<Void>
+    let moveSearchResultPage: AnyObserver<Void>
     
     let recipeTypes: Observable<[ViewRecipeType]>
     let mainIngredients: Observable<[ViewRecipeIngredient]>
     let subIngredients: Observable<[ViewRecipeIngredient]>
+    let mainPickerPage: Observable<Void>
+    let subPickerPage: Observable<Void>
+    let searchResultPage: Observable<Void>
     
     private let disposeBag = DisposeBag()
     
@@ -47,6 +59,9 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
         let recipeTypeSelecting = PublishSubject<ViewRecipeType>()
         let mainIngredientSelecting = PublishSubject<ViewRecipeIngredient>()
         let subIngredientSelecting = PublishSubject<ViewRecipeIngredient>()
+        let mainPickerPageMoving = PublishSubject<Void>()
+        let subPickerPageMoving = PublishSubject<Void>()
+        let searchResultPageMoving = PublishSubject<Void>()
         
         let fetchedRecipeTypes = PublishSubject<[ViewRecipeType]>()
         let fetchedMainIngredients = PublishSubject<[ViewRecipeIngredient]>()
@@ -97,8 +112,15 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
                                  .subscribe(onNext: recipeQuery.onNext)
                                  .disposed(by: disposeBag)
         
+        moveMainPickerPage = mainPickerPageMoving.asObserver()
+        moveSubPickerPage = subPickerPageMoving.asObserver()
+        moveSearchResultPage = searchResultPageMoving.asObserver()
+        
         recipeTypes = fetchedRecipeTypes
         mainIngredients = fetchedMainIngredients
         subIngredients = fetchedSubIngredients
+        mainPickerPage = mainPickerPageMoving
+        subPickerPage = subPickerPageMoving
+        searchResultPage = searchResultPageMoving
     }
 }
