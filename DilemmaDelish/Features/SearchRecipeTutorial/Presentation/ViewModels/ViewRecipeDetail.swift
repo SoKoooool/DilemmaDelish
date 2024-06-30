@@ -8,18 +8,18 @@
 import Foundation
 
 struct ViewRecipeDetail {
-    let types: [ViewRecipeType]
-    let mainIngredients: [ViewRecipeIngredient]
-    let subIngredients: [ViewRecipeIngredient]
+    let categories: [ViewRecipeCategory]
+    let ingredients: [ViewRecipeIngredient]
+    let seasonings: [ViewRecipeSeasoning]
     
     init(_ recipeDetail: RecipeDetail) {
-        self.types = recipeDetail.recipeTypes.map { ViewRecipeType($0) }
-        self.mainIngredients = recipeDetail.mainIngredients.map { ViewRecipeIngredient($0) }
-        self.subIngredients = recipeDetail.subIngredients.map { ViewRecipeIngredient($0) }
+        self.categories = recipeDetail.categories.map { ViewRecipeCategory($0) }
+        self.ingredients = recipeDetail.ingredients.map { ViewRecipeIngredient($0) }
+        self.seasonings = recipeDetail.seasonings.map { ViewRecipeSeasoning($0) }
     }
 }
 
-struct ViewRecipeType {
+struct ViewRecipeCategory {
     let name: String
     let iconName: String
     var isSelected: Bool = false
@@ -36,7 +36,7 @@ struct ViewRecipeType {
     }
     
     func selected(state: Bool) -> Self {
-        return ViewRecipeType(name: name, iconName: iconName, isSelected: state)
+        return ViewRecipeCategory(name: name, iconName: iconName, isSelected: state)
     }
 }
 
@@ -52,3 +52,12 @@ struct ViewRecipeIngredient {
     }
 }
 
+struct ViewRecipeSeasoning {
+    let name: String
+    let iconName: String
+    
+    init(_ recipeSeasoning: RecipeDetail.Seasoning) {
+        self.name = recipeSeasoning.name
+        self.iconName = recipeSeasoning.iconName
+    }
+}

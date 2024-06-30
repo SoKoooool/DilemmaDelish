@@ -8,9 +8,9 @@
 import Foundation
 
 struct RecipeDetail {
-    let recipeTypes: [Category]
-    let mainIngredients: [Ingredient]
-    let subIngredients: [Ingredient]
+    let categories: [Category]
+    let ingredients: [Ingredient]
+    let seasonings: [Seasoning]
     
     struct Category {
         let iconName: String
@@ -21,5 +21,10 @@ struct RecipeDetail {
         let iconName: String
         let name: String
         let quantity: String
+    }
+    
+    struct Seasoning {
+        let iconName: String
+        let name: String
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 struct RecipeQuery {
-    let recipeType: String
-    let mainIngredients: [String]
-    let additionalIngredients: [String]
+    let category: String
+    let ingredients: [String]
+    let seasonings: [String]
 }

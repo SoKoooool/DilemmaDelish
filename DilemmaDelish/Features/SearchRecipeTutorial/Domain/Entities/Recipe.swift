@@ -10,6 +10,6 @@ import Foundation
 struct Recipe {
     let name: String
     let directions: [String]
-    let mainIngredients: [String]
-    let subIngredients: [String]
+    let ingredients: [String]
+    let seasonings: [String]
 }
