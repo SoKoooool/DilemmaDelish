@@ -23,6 +23,8 @@
 		FFE2109C2C16D4CD000D29B0 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFE2109B2C16D4CD000D29B0 /* RxSwift */; };
 		FFF81AAE2C3AAC4E0060F0C8 /* RecipeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF81AAD2C3AAC4E0060F0C8 /* RecipeRepository.swift */; };
 		FFF81AB22C3AAFDD0060F0C8 /* RecipeDetailResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF81AB12C3AAFDD0060F0C8 /* RecipeDetailResponseDTO.swift */; };
+		FFF81AB42C3B47EE0060F0C8 /* RecipeResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF81AB32C3B47EE0060F0C8 /* RecipeResponseDTO.swift */; };
+		FFF81AB62C3B48370060F0C8 /* RecipeRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF81AB52C3B48370060F0C8 /* RecipeRequestDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		FFC956462C316E9C006E439C /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		FFF81AAD2C3AAC4E0060F0C8 /* RecipeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRepository.swift; sourceTree = "<group>"; };
 		FFF81AB12C3AAFDD0060F0C8 /* RecipeDetailResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailResponseDTO.swift; sourceTree = "<group>"; };
+		FFF81AB32C3B47EE0060F0C8 /* RecipeResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeResponseDTO.swift; sourceTree = "<group>"; };
+		FFF81AB52C3B48370060F0C8 /* RecipeRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRequestDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				FFF81AB12C3AAFDD0060F0C8 /* RecipeDetailResponseDTO.swift */,
+				FFF81AB32C3B47EE0060F0C8 /* RecipeResponseDTO.swift */,
+				FFF81AB52C3B48370060F0C8 /* RecipeRequestDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -249,6 +255,8 @@
 				FFB913D42ABAE6FF0022E688 /* ViewController.swift in Sources */,
 				FFF81AB22C3AAFDD0060F0C8 /* RecipeDetailResponseDTO.swift in Sources */,
 				FFBD7CFE2C2CC7BB00F6D802 /* RecipeSearchTutorialViewModel.swift in Sources */,
+				FFF81AB42C3B47EE0060F0C8 /* RecipeResponseDTO.swift in Sources */,
+				FFF81AB62C3B48370060F0C8 /* RecipeRequestDTO.swift in Sources */,
 				FFBD7D022C2D2BAF00F6D802 /* RecipeSearchable.swift in Sources */,
 				FF940AAE2C16D769008A1856 /* RecipeQuery.swift in Sources */,
 				FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */,
