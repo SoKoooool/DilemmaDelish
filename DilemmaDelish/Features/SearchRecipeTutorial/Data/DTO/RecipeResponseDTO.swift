@@ -12,4 +12,11 @@ struct RecipeResponseDTO: Decodable {
     let directions: [String]
     let ingredients: [String]
     let seasonings: [String]
+    
+    func toDomain() -> Recipe {
+        return Recipe(name: name,
+                      directions: directions,
+                      ingredients: ingredients,
+                      seasonings: seasonings)
+    }
 }
