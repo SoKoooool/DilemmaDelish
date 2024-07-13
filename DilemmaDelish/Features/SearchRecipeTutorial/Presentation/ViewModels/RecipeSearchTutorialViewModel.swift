@@ -102,16 +102,11 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
                 seed = seed.filter { $0 != selected.name } : seed.append(selected.name)
             }
         
-        Observable.combineLatest(categoryName,
-                                 ingredientNames,
-                                 seasoningNames) {
-            return RecipeQuery(category: $0,
-                               ingredients: $1,
-                               seasonings: $2)
-        }
-                                 .subscribe(onNext: recipeQuery.onNext)
-                                 .disposed(by: disposeBag)
-        
+        Observable.combineLatest(categoryName, ingredientNames, seasoningNames)
+            .map { RecipeQuery($0) }
+            .subscribe(onNext: recipeQuery.onNext)
+            .disposed(by: disposeBag)
+    
         moveIngredientPickerPage = ingredientPickerPageMoving.asObserver()
         moveSeasoningPickerPage = seasoningPickerPageMoving.asObserver()
         searchRecipe = searching.asObserver()
