@@ -32,7 +32,7 @@ final class RecipeStore: RecipeSearchable {
     }
     
     func searchRecipe(with query: RecipeQuery) -> Observable<[Recipe]> {
-        return repository.searchAllRecipe(with: RecipeRequestDTO(dto: query).query)
+        return repository.searchAllRecipe(request: RecipeRequestDTO(query))
             .decode(type: [RecipeResponseDTO].self, decoder: decoder)
             .map { $0.map { $0.toDomain() } }
     }

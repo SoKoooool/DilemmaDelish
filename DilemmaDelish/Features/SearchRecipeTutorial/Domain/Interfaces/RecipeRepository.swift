@@ -10,5 +10,5 @@ import RxSwift
 
 protocol RecipeRepository {
     func fetchAllRecipeDetail() -> Observable<Data>
-    func searchAllRecipe(with query: String) -> Observable<Data>
+    func searchAllRecipe(request: RecipeRequestDTO) -> Observable<Data>
 }

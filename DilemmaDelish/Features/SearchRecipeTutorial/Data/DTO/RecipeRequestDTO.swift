@@ -14,7 +14,7 @@ struct RecipeRequestDTO: Encodable {
         self.query = query
     }
     
-    init(dto recipeQuery: RecipeQuery) {
+    init(_ recipeQuery: RecipeQuery) {
         let categoryString = recipeQuery.category
         let ingredientsString = recipeQuery.ingredients.joined(separator: ",")
         let seasoningsString = recipeQuery.seasonings.joined(separator: ",")
