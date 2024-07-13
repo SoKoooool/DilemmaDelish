@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 protocol RecipeSearchable {
-    func fetchRecipeDetail() -> Observable<RecipeDetail>
+    func fetchRecipeDetail() -> Observable<ViewRecipeDetail>
     func searchRecipe(with query: RecipeQuery) -> Observable<[Recipe]>
 }
 
@@ -25,10 +25,9 @@ final class RecipeStore: RecipeSearchable {
         self.decoder = decoder
     }
     
-    func fetchRecipeDetail() -> Observable<RecipeDetail> {
+    func fetchRecipeDetail() -> Observable<ViewRecipeDetail> {
         return repository.fetchAllRecipeDetail()
-            .decode(type: RecipeDetailResponseDTO.self, decoder: decoder)
-            .map { $0.toDomain() }
+            .map { ViewRecipeDetail($0) }
     }
     
     func searchRecipe(with query: RecipeQuery) -> Observable<[Recipe]> {

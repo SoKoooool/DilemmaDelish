@@ -72,7 +72,6 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
         fetchRecipeDetail = fetching.asObserver()
         fetching
             .flatMap { domain.fetchRecipeDetail() }
-            .map { ViewRecipeDetail($0) }
             .subscribe(onNext: {
                 viewCategories.onNext($0.categories)
                 viewIngredients.onNext($0.ingredients)

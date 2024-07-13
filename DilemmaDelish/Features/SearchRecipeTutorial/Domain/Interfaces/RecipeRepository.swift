@@ -9,6 +9,6 @@ import Foundation
 import RxSwift
 
 protocol RecipeRepository {
-    func fetchAllRecipeDetail() -> Observable<Data>
+    func fetchAllRecipeDetail() -> Observable<RecipeDetail>
     func searchAllRecipe(request: RecipeRequestDTO) -> Observable<Data>
 }
