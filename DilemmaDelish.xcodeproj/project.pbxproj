@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF707ADE2C469218002ABD20 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF707ADD2C469218002ABD20 /* Environment.swift */; };
 		FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */; };
 		FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */; };
 		FFB913D42ABAE6FF0022E688 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913D32ABAE6FF0022E688 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		FF707ADA2C4690D9002ABD20 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		FF707ADB2C4690F4002ABD20 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		FF707ADD2C469218002ABD20 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		FFB913CC2ABAE6FF0022E688 /* DilemmaDelish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DilemmaDelish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +54,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		FF707ADC2C4691FC002ABD20 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FF707ADD2C469218002ABD20 /* Environment.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		FFB913C32ABAE6FF0022E688 = {
 			isa = PBXGroup;
 			children = (
@@ -71,8 +81,9 @@
 		FFB913CE2ABAE6FF0022E688 /* DilemmaDelish */ = {
 			isa = PBXGroup;
 			children = (
-				FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */,
 				FF707AD92C4690D0002ABD20 /* Resources */,
+				FF707ADC2C4691FC002ABD20 /* Common */,
+				FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */,
 				FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */,
 				FFB913D32ABAE6FF0022E688 /* ViewController.swift */,
 				FFB913D52ABAE6FF0022E688 /* Main.storyboard */,
@@ -162,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFB913D42ABAE6FF0022E688 /* ViewController.swift in Sources */,
+				FF707ADE2C469218002ABD20 /* Environment.swift in Sources */,
 				FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */,
 				FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */,
 			);
