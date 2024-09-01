@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol SearchRecipeRepository {
-    func fetchRecipe(query: String) -> [Recipe]
+    func fetchRecipe(query: String) -> Observable<[Recipe]>
 }
 
 
