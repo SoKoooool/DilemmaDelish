@@ -47,14 +47,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FFA2A1462C84446000760692 /* Features */ = {
-			isa = PBXGroup;
-			children = (
-				FFA2A1472C84446400760692 /* Network */,
-			);
-			path = Features;
-			sourceTree = "<group>";
-		};
 		FFA2A1472C84446400760692 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,7 +75,7 @@
 		FFB913CE2ABAE6FF0022E688 /* DilemmaDelish */ = {
 			isa = PBXGroup;
 			children = (
-				FFA2A1462C84446000760692 /* Features */,
+				FFA2A1472C84446400760692 /* Network */,
 				FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */,
 				FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */,
 				FFB913D32ABAE6FF0022E688 /* ViewController.swift */,
