@@ -17,6 +17,9 @@
 		FFDDF1EC2C7D980900E7B551 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDDF1EB2C7D980900E7B551 /* Recipe.swift */; };
 		FFDDF1F32C7EBAA100E7B551 /* SearchRecipeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDDF1F22C7EBAA100E7B551 /* SearchRecipeRepository.swift */; };
 		FFDDF1F52C7EEBF000E7B551 /* SearchRecipeUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDDF1F42C7EEBF000E7B551 /* SearchRecipeUsecase.swift */; };
+		FFDC6DA42C7306A600DAC52E /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDC6DA32C7306A600DAC52E /* Requestable.swift */; };
+		FFDC6DA62C73087700DAC52E /* APIBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDC6DA52C73087700DAC52E /* APIBase.swift */; };
+		FFDC6DA92C730ADD00DAC52E /* RecipeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDC6DA82C730ADD00DAC52E /* RecipeAPI.swift */; };
 		FFE2109A2C16D4CD000D29B0 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = FFE210992C16D4CD000D29B0 /* RxCocoa */; };
 		FFE2109C2C16D4CD000D29B0 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFE2109B2C16D4CD000D29B0 /* RxSwift */; };
 /* End PBXBuildFile section */
@@ -34,6 +37,9 @@
 		FFDDF1EB2C7D980900E7B551 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		FFDDF1F22C7EBAA100E7B551 /* SearchRecipeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecipeRepository.swift; sourceTree = "<group>"; };
 		FFDDF1F42C7EEBF000E7B551 /* SearchRecipeUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecipeUsecase.swift; sourceTree = "<group>"; };
+		FFDC6DA32C7306A600DAC52E /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		FFDC6DA52C73087700DAC52E /* APIBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBase.swift; sourceTree = "<group>"; };
+		FFDC6DA82C730ADD00DAC52E /* RecipeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,15 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
+		FFA2A1472C84446400760692 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FFDC6DA22C73066A00DAC52E /* APIBase */,
+				FFDC6DA72C730AD100DAC52E /* APIs */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		FFB913C32ABAE6FF0022E688 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				FFDDF1E82C7D97EA00E7B551 /* Features */,
+				FFA2A1472C84446400760692 /* Network */,
 				FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */,
 				FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */,
 				FFB913D32ABAE6FF0022E688 /* ViewController.swift */,
@@ -121,6 +137,23 @@
 				FFDDF1F22C7EBAA100E7B551 /* SearchRecipeRepository.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		FFDC6DA22C73066A00DAC52E /* APIBase */ = {
+			isa = PBXGroup;
+			children = (
+				FFDC6DA32C7306A600DAC52E /* Requestable.swift */,
+				FFDC6DA52C73087700DAC52E /* APIBase.swift */,
+			);
+			path = APIBase;
+			sourceTree = "<group>";
+		};
+		FFDC6DA72C730AD100DAC52E /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				FFDC6DA82C730ADD00DAC52E /* RecipeAPI.swift */,
+			);
+			path = APIs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,8 +235,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFB913D42ABAE6FF0022E688 /* ViewController.swift in Sources */,
+				FFDC6DA42C7306A600DAC52E /* Requestable.swift in Sources */,
+				FFDC6DA92C730ADD00DAC52E /* RecipeAPI.swift in Sources */,
 				FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */,
 				FFDDF1F32C7EBAA100E7B551 /* SearchRecipeRepository.swift in Sources */,
+				FFDC6DA62C73087700DAC52E /* APIBase.swift in Sources */,
 				FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */,
 				FFDDF1EC2C7D980900E7B551 /* Recipe.swift in Sources */,
 				FFA2A1442C843DD200760692 /* SearchRecipeViewModel.swift in Sources */,
