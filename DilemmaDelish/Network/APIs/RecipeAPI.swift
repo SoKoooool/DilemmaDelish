@@ -9,8 +9,8 @@ import Foundation
 import RxSwift
 
 struct RecipeAPI: APIBase {
-    var baseURL: String
-    var session: URLSession
+    var baseURL: String = ""
+    var session: URLSession = .shared
     
     struct Recipe: Requestable {
         var path: String = ""
