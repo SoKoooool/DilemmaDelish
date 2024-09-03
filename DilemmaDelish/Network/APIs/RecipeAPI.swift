@@ -19,7 +19,14 @@ struct RecipeAPI: APIBase {
         var parameters: [String : Any]? = nil
         
         struct Response: Decodable {
-            let response: [String]
+            let dto: [DTO]
+            
+            struct DTO: Decodable {
+                let name: String
+                let directions: [String]
+                let ingredients: [String]
+                let seasonings: [String]
+            }
         }
     }
 
