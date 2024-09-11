@@ -11,26 +11,24 @@ import RxSwift
 protocol RecipeCategoryPickerViewModel {
     var selectCategory: AnyObserver<ViewRecipeCategory> { get }
     var moveIngredientPickerPage: AnyObserver<Void> { get }
-    var categories: Observable<[ViewRecipeCategory]> { get }
     var ingredientPickerPage: Observable<Void> { get }
 }
 
 protocol RecipeIngredientPickerViewModel {
     var selectIngredient: AnyObserver<ViewRecipeIngredient> { get }
     var moveSeasoningPickerPage: AnyObserver<Void> { get }
-    var ingredients: Observable<[ViewRecipeIngredient]> { get }
     var seasoningPickerPage: Observable<Void> { get }
 }
 
 protocol RecipeSubIngerdientPickerViewModel {
     var selectSeasoning: AnyObserver<ViewRecipeSeasoning> { get }
     var searchRecipe: AnyObserver<Void> { get }
-    var seasonings: Observable<[ViewRecipeSeasoning]> { get }
     var searchRecipsResultPage: Observable<[Recipe]> { get }
 }
 
 protocol RecipeSearchTutorialViewModel: RecipeSearchTutorialViewModelType {
     var fetchRecipeDetail: AnyObserver<Void> { get }
+    var recipeDetail: Observable<ViewRecipeDetail> { get }
 }
 
 typealias RecipeSearchTutorialViewModelType = RecipeCategoryPickerViewModel & RecipeIngredientPickerViewModel & RecipeSubIngerdientPickerViewModel
@@ -45,9 +43,7 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
     let moveSeasoningPickerPage: AnyObserver<Void>
     let searchRecipe: AnyObserver<Void>
     
-    let categories: Observable<[ViewRecipeCategory]>
-    let ingredients: Observable<[ViewRecipeIngredient]>
-    let seasonings: Observable<[ViewRecipeSeasoning]>
+    let recipeDetail: Observable<ViewRecipeDetail>
     let ingredientPickerPage: Observable<Void>
     let seasoningPickerPage: Observable<Void>
     let searchRecipsResultPage: Observable<[Recipe]>
@@ -63,49 +59,22 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
         let seasoningPickerPageMoving = PublishSubject<Void>()
         let searching = PublishSubject<Void>()
         
-        let viewCategories = PublishSubject<[ViewRecipeCategory]>()
-        let viewIngredients = PublishSubject<[ViewRecipeIngredient]>()
-        let viewSeasonings = PublishSubject<[ViewRecipeSeasoning]>()
+        let viewRecipeDetail = PublishSubject<ViewRecipeDetail>()
         let recipeQuery = PublishSubject<RecipeQuery>()
         let recipes = PublishSubject<[Recipe]>()
         
         fetchRecipeDetail = fetching.asObserver()
         fetching
             .flatMap { domain.fetchRecipeDetail() }
-            .subscribe(onNext: {
-                viewCategories.onNext($0.categories)
-                viewIngredients.onNext($0.ingredients)
-                viewSeasonings.onNext($0.seasonings)
-            })
+            .map { ViewRecipeDetail($0) }
+            .subscribe(onNext: viewRecipeDetail.onNext)
             .disposed(by: disposeBag)
+        
+        recipeDetail = viewRecipeDetail.asObserver()
         
         selectCategory = filtering.asObserver()
-        let categoryName = filtering
-            .withLatestFrom(viewCategories) { category, categories in
-                return categories
-                    .map { $0.selected(state: false) }
-                    .map { $0.name == category.name ? category.name : $0.name }
-            }
-            .flatMap { Observable.from($0) }
-        
         selectIngredient = ingredientCollecting.asObserver()
-        let ingredientNames = ingredientCollecting
-            .scan(into: [""]) { seed, selected in
-                seed.contains(selected.name) ?
-                seed = seed.filter { $0 != selected.name } : seed.append(selected.name)
-            }
-        
         selectSeasoning = seasoningCollecting.asObserver()
-        let seasoningNames = seasoningCollecting
-            .scan(into: [""]) { seed, selected in
-                seed.contains(selected.name) ?
-                seed = seed.filter { $0 != selected.name } : seed.append(selected.name)
-            }
-        
-        Observable.combineLatest(categoryName, ingredientNames, seasoningNames)
-            .map { RecipeQuery($0) }
-            .subscribe(onNext: recipeQuery.onNext)
-            .disposed(by: disposeBag)
     
         moveIngredientPickerPage = ingredientPickerPageMoving.asObserver()
         moveSeasoningPickerPage = seasoningPickerPageMoving.asObserver()
@@ -116,9 +85,6 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
             .subscribe(onNext: recipes.onNext)
             .disposed(by: disposeBag)
         
-        categories = viewCategories
-        ingredients = viewIngredients
-        seasonings = viewSeasonings
         ingredientPickerPage = ingredientPickerPageMoving
         seasoningPickerPage = seasoningPickerPageMoving
         searchRecipsResultPage = recipes
