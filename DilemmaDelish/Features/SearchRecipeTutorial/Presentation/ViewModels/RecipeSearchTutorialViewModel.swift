@@ -9,19 +9,19 @@ import Foundation
 import RxSwift
 
 protocol RecipeCategoryPickerViewModel {
-    var selectCategory: AnyObserver<ViewRecipeCategory> { get }
+    var selectCategory: AnyObserver<ViewRecipeDetail.Category> { get }
     var moveIngredientPickerPage: AnyObserver<Void> { get }
     var ingredientPickerPage: Observable<Void> { get }
 }
 
 protocol RecipeIngredientPickerViewModel {
-    var selectIngredient: AnyObserver<ViewRecipeIngredient> { get }
+    var selectIngredient: AnyObserver<ViewRecipeDetail.Ingredient> { get }
     var moveSeasoningPickerPage: AnyObserver<Void> { get }
     var seasoningPickerPage: Observable<Void> { get }
 }
 
 protocol RecipeSubIngerdientPickerViewModel {
-    var selectSeasoning: AnyObserver<ViewRecipeSeasoning> { get }
+    var selectSeasoning: AnyObserver<ViewRecipeDetail.Seasoning> { get }
     var searchRecipe: AnyObserver<Void> { get }
     var searchRecipsResultPage: Observable<[Recipe]> { get }
 }
@@ -36,9 +36,9 @@ typealias RecipeSearchTutorialViewModelType = RecipeCategoryPickerViewModel & Re
 final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel {
     
     let fetchRecipeDetail: AnyObserver<Void>
-    let selectCategory: AnyObserver<ViewRecipeCategory>
-    let selectIngredient: AnyObserver<ViewRecipeIngredient>
-    let selectSeasoning: AnyObserver<ViewRecipeSeasoning>
+    let selectCategory: AnyObserver<ViewRecipeDetail.Category>
+    let selectIngredient: AnyObserver<ViewRecipeDetail.Ingredient>
+    let selectSeasoning: AnyObserver<ViewRecipeDetail.Seasoning>
     let moveIngredientPickerPage: AnyObserver<Void>
     let moveSeasoningPickerPage: AnyObserver<Void>
     let searchRecipe: AnyObserver<Void>
@@ -52,9 +52,9 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
     
     init(domain: RecipeSearchable) {
         let fetching = PublishSubject<Void>()
-        let filtering = PublishSubject<ViewRecipeCategory>()
-        let ingredientCollecting = PublishSubject<ViewRecipeIngredient>()
-        let seasoningCollecting = PublishSubject<ViewRecipeSeasoning>()
+        let filtering = PublishSubject<ViewRecipeDetail.Category>()
+        let ingredientCollecting = PublishSubject<ViewRecipeDetail.Ingredient>()
+        let seasoningCollecting = PublishSubject<ViewRecipeDetail.Seasoning>()
         let ingredientPickerPageMoving = PublishSubject<Void>()
         let seasoningPickerPageMoving = PublishSubject<Void>()
         let searching = PublishSubject<Void>()
