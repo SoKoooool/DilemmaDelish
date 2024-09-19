@@ -11,18 +11,21 @@ import RxSwift
 protocol RecipeCategoryPickerViewModel {
     var pickCategories: AnyObserver<[ViewRecipeDetail.Category]> { get }
     var moveIngredientPickerPage: AnyObserver<Void> { get }
+    var recipeCategories: Observable<[ViewRecipeDetail.Category]> { get }
     var ingredientPickerPage: Observable<Void> { get }
 }
 
 protocol RecipeIngredientPickerViewModel {
     var pickIngredients: AnyObserver<[ViewRecipeDetail.Ingredient]> { get }
     var moveSeasoningPickerPage: AnyObserver<Void> { get }
+    var recipeIngredients: Observable<[ViewRecipeDetail.Ingredient]> { get }
     var seasoningPickerPage: Observable<Void> { get }
 }
 
 protocol RecipeSubIngerdientPickerViewModel {
     var pickSeasonings: AnyObserver<[ViewRecipeDetail.Seasoning]> { get }
     var searchRecipe: AnyObserver<Void> { get }
+    var recipeSeasonings: Observable<[ViewRecipeDetail.Seasoning]> { get }
     var searchRecipsResultPage: Observable<[Recipe]> { get }
 }
 
@@ -44,6 +47,9 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
     let searchRecipe: AnyObserver<Void>
     
     let recipeDetail: Observable<ViewRecipeDetail>
+    let recipeCategories: Observable<[ViewRecipeDetail.Category]>
+    let recipeIngredients: Observable<[ViewRecipeDetail.Ingredient]>
+    let recipeSeasonings: Observable<[ViewRecipeDetail.Seasoning]>
     let ingredientPickerPage: Observable<Void>
     let seasoningPickerPage: Observable<Void>
     let searchRecipsResultPage: Observable<[Recipe]>
@@ -60,6 +66,9 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
         let searching = PublishSubject<Void>()
         
         let viewRecipeDetail = PublishSubject<ViewRecipeDetail>()
+        let categories = PublishSubject<[ViewRecipeDetail.Category]>()
+        let ingredients = PublishSubject<[ViewRecipeDetail.Ingredient]>()
+        let seasonings = PublishSubject<[ViewRecipeDetail.Seasoning]>()
         let recipeQuery = PublishSubject<RecipeQuery>()
         let recipes = PublishSubject<[Recipe]>()
         
@@ -71,6 +80,9 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
             .disposed(by: disposeBag)
         
         recipeDetail = viewRecipeDetail.asObserver()
+        recipeCategories = categories.asObserver()
+        recipeIngredients = ingredients.asObserver()
+        recipeSeasonings = seasonings.asObserver()
         pickCategories = pickedCategories.asObserver()
         pickIngredients = pickedIngredients.asObserver()
         pickSeasonings = pickedSeasonings.asObserver()
