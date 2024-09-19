@@ -31,7 +31,6 @@ protocol RecipeSubIngerdientPickerViewModel {
 
 protocol RecipeSearchTutorialViewModel: RecipeSearchTutorialViewModelType {
     var fetchRecipeDetail: AnyObserver<Void> { get }
-    var recipeDetail: Observable<ViewRecipeDetail> { get }
 }
 
 typealias RecipeSearchTutorialViewModelType = RecipeCategoryPickerViewModel & RecipeIngredientPickerViewModel & RecipeSubIngerdientPickerViewModel
@@ -46,7 +45,6 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
     let moveSeasoningPickerPage: AnyObserver<Void>
     let searchRecipe: AnyObserver<Void>
     
-    let recipeDetail: Observable<ViewRecipeDetail>
     let recipeCategories: Observable<[ViewRecipeDetail.Category]>
     let recipeIngredients: Observable<[ViewRecipeDetail.Ingredient]>
     let recipeSeasonings: Observable<[ViewRecipeDetail.Seasoning]>
@@ -65,7 +63,7 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
         let seasoningPickerPageMoving = PublishSubject<Void>()
         let searching = PublishSubject<Void>()
         
-        let viewRecipeDetail = PublishSubject<ViewRecipeDetail>()
+        let recipeDetail = PublishSubject<RecipeDetail>()
         let categories = PublishSubject<[ViewRecipeDetail.Category]>()
         let ingredients = PublishSubject<[ViewRecipeDetail.Ingredient]>()
         let seasonings = PublishSubject<[ViewRecipeDetail.Seasoning]>()
@@ -75,11 +73,9 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
         fetchRecipeDetail = fetching.asObserver()
         fetching
             .flatMap { domain.fetchRecipeDetail() }
-            .map { ViewRecipeDetail($0) }
-            .subscribe(onNext: viewRecipeDetail.onNext)
+            .subscribe(onNext: recipeDetail.onNext)
             .disposed(by: disposeBag)
         
-        recipeDetail = viewRecipeDetail.asObserver()
         recipeCategories = categories.asObserver()
         recipeIngredients = ingredients.asObserver()
         recipeSeasonings = seasonings.asObserver()
