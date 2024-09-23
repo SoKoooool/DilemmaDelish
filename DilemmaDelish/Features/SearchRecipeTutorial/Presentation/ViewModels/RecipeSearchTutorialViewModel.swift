@@ -100,6 +100,7 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
             .withLatestFrom(categories) { selected, categories in
                 categories.map { $0.name == selected.name ? selected : $0 }
             }
+            .scan([ViewRecipeDetail.Category]()) { $0 + $1 }
             .subscribe(onNext: categories.onNext(_:))
             .disposed(by: disposeBag)
         
@@ -109,6 +110,7 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
             .withLatestFrom(ingredients) { selected, ingredients in
                 ingredients.map { $0.name == selected.name ? selected : $0 }
             }
+            .scan([ViewRecipeDetail.Ingredient]()) { $0 + $1 }
             .subscribe(onNext: ingredients.onNext(_:))
             .disposed(by: disposeBag)
             
@@ -118,6 +120,7 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
             .withLatestFrom(seasonings) { selected, seasonings in
                 seasonings.map { $0.name == selected.name ? selected : $0 }
             }
+            .scan([ViewRecipeDetail.Seasoning]()) { $0 + $1 }
             .subscribe(onNext: seasonings.onNext(_:))
             .disposed(by: disposeBag)
     
