@@ -8,18 +8,18 @@
 import Foundation
 
 struct RecipeQuery {
-    let category: String
+    let categories: [String]
     let ingredients: [String]
     let seasonings: [String]
     
-    init(category: String, ingredients: [String], seasonings: [String]) {
-        self.category = category
+    init(categories: [String], ingredients: [String], seasonings: [String]) {
+        self.categories = categories
         self.ingredients = ingredients
         self.seasonings = seasonings
     }
     
-    init(_ recipeDetail: (category: String, ingredients: [String], seasonings: [String])) {
-        self.category = recipeDetail.category
+    init(_ recipeDetail: (categories: [String], ingredients: [String], seasonings: [String])) {
+        self.categories = recipeDetail.categories
         self.ingredients = recipeDetail.ingredients
         self.seasonings = recipeDetail.seasonings
     }
