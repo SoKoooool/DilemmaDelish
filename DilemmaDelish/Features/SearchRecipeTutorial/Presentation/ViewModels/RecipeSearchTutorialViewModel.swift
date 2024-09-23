@@ -22,9 +22,8 @@ protocol RecipeIngredientPickerViewModel {
 
 protocol RecipeSubIngerdientPickerViewModel {
     var pickSeasonings: AnyObserver<[ViewRecipeDetail.Seasoning]> { get }
-    var searchRecipe: AnyObserver<Void> { get }
     var recipeSeasonings: Observable<[ViewRecipeDetail.Seasoning]> { get }
-    var searchRecipsResultPage: Observable<[Recipe]> { get }
+    var searchRecipsResultPage: Observable<RecipeQuery> { get }
 }
 
 protocol RecipeSearchTutorialViewModel: RecipeSearchTutorialViewModelType {
@@ -39,14 +38,13 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
     let pickCategories: AnyObserver<[ViewRecipeDetail.Category]>
     let pickIngredients: AnyObserver<[ViewRecipeDetail.Ingredient]>
     let pickSeasonings: AnyObserver<[ViewRecipeDetail.Seasoning]>
-    let searchRecipe: AnyObserver<Void>
     
     let recipeCategories: Observable<[ViewRecipeDetail.Category]>
     let recipeIngredients: Observable<[ViewRecipeDetail.Ingredient]>
     let recipeSeasonings: Observable<[ViewRecipeDetail.Seasoning]>
     let ingredientPickerPage: Observable<Void>
     let seasoningPickerPage: Observable<Void>
-    let searchRecipsResultPage: Observable<[Recipe]>
+    let searchRecipsResultPage: Observable<RecipeQuery>
     
     private let disposeBag = DisposeBag()
     
@@ -55,14 +53,12 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
         let pickedCategories = PublishSubject<[ViewRecipeDetail.Category]>()
         let pickedIngredients = PublishSubject<[ViewRecipeDetail.Ingredient]>()
         let pickedSeasonings = PublishSubject<[ViewRecipeDetail.Seasoning]>()
-        let searching = PublishSubject<Void>()
         
         let recipeDetail = PublishSubject<RecipeDetail>()
         let categories = PublishSubject<[ViewRecipeDetail.Category]>()
         let ingredients = PublishSubject<[ViewRecipeDetail.Ingredient]>()
         let seasonings = PublishSubject<[ViewRecipeDetail.Seasoning]>()
         let recipeQuery = PublishSubject<RecipeQuery>()
-        let recipes = PublishSubject<[Recipe]>()
         
         fetchRecipeDetail = fetching.asObserver()
         fetching
@@ -117,16 +113,18 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
             .scan([ViewRecipeDetail.Seasoning]()) { $0 + $1 }
             .subscribe(onNext: seasonings.onNext(_:))
             .disposed(by: disposeBag)
-    
-        searchRecipe = searching.asObserver()
-        searching
-            .withLatestFrom(recipeQuery)
-            .flatMap { domain.searchRecipe(with: $0) }
-            .subscribe(onNext: recipes.onNext)
-            .disposed(by: disposeBag)
+        
+        Observable.combineLatest(pickedCategories, pickedIngredients, pickedSeasonings) {
+            return ViewRecipeDetail(categories: $0.filter { $0.isSelected },
+                                    ingredients: $1.filter { $0.isSelected },
+                                    seasonings: $2.filter { $0.isSelected })
+        }
+        .map { RecipeQuery($0.asRecipeDetail()) }
+        .subscribe(onNext: recipeQuery.onNext(_:))
+        .disposed(by: disposeBag)
         
         ingredientPickerPage = pickedCategories.map { _ in }
         seasoningPickerPage = pickedIngredients.map { _ in }
-        searchRecipsResultPage = recipes
+        searchRecipsResultPage = recipeQuery
     }
 }
