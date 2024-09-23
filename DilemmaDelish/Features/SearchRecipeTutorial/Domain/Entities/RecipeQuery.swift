@@ -18,9 +18,9 @@ struct RecipeQuery {
         self.seasonings = seasonings
     }
     
-    init(_ recipeDetail: (categories: [String], ingredients: [String], seasonings: [String])) {
-        self.categories = recipeDetail.categories
-        self.ingredients = recipeDetail.ingredients
-        self.seasonings = recipeDetail.seasonings
+    init(_ recipeDetail: RecipeDetail) {
+        self.categories = recipeDetail.categories.map { $0.name }
+        self.ingredients = recipeDetail.ingredients.map { $0.name }
+        self.seasonings = recipeDetail.seasonings.map { $0.name }
     }
 }
