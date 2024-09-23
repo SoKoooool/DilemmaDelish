@@ -10,14 +10,12 @@ import RxSwift
 
 protocol RecipeCategoryPickerViewModel {
     var pickCategories: AnyObserver<[ViewRecipeDetail.Category]> { get }
-    var moveIngredientPickerPage: AnyObserver<Void> { get }
     var recipeCategories: Observable<[ViewRecipeDetail.Category]> { get }
     var ingredientPickerPage: Observable<Void> { get }
 }
 
 protocol RecipeIngredientPickerViewModel {
     var pickIngredients: AnyObserver<[ViewRecipeDetail.Ingredient]> { get }
-    var moveSeasoningPickerPage: AnyObserver<Void> { get }
     var recipeIngredients: Observable<[ViewRecipeDetail.Ingredient]> { get }
     var seasoningPickerPage: Observable<Void> { get }
 }
@@ -41,8 +39,6 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
     let pickCategories: AnyObserver<[ViewRecipeDetail.Category]>
     let pickIngredients: AnyObserver<[ViewRecipeDetail.Ingredient]>
     let pickSeasonings: AnyObserver<[ViewRecipeDetail.Seasoning]>
-    let moveIngredientPickerPage: AnyObserver<Void>
-    let moveSeasoningPickerPage: AnyObserver<Void>
     let searchRecipe: AnyObserver<Void>
     
     let recipeCategories: Observable<[ViewRecipeDetail.Category]>
@@ -59,8 +55,6 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
         let pickedCategories = PublishSubject<[ViewRecipeDetail.Category]>()
         let pickedIngredients = PublishSubject<[ViewRecipeDetail.Ingredient]>()
         let pickedSeasonings = PublishSubject<[ViewRecipeDetail.Seasoning]>()
-        let ingredientPickerPageMoving = PublishSubject<Void>()
-        let seasoningPickerPageMoving = PublishSubject<Void>()
         let searching = PublishSubject<Void>()
         
         let recipeDetail = PublishSubject<RecipeDetail>()
@@ -124,8 +118,6 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
             .subscribe(onNext: seasonings.onNext(_:))
             .disposed(by: disposeBag)
     
-        moveIngredientPickerPage = ingredientPickerPageMoving.asObserver()
-        moveSeasoningPickerPage = seasoningPickerPageMoving.asObserver()
         searchRecipe = searching.asObserver()
         searching
             .withLatestFrom(recipeQuery)
@@ -133,8 +125,8 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
             .subscribe(onNext: recipes.onNext)
             .disposed(by: disposeBag)
         
-        ingredientPickerPage = ingredientPickerPageMoving
-        seasoningPickerPage = seasoningPickerPageMoving
+        ingredientPickerPage = pickedCategories.map { _ in }
+        seasoningPickerPage = pickedIngredients.map { _ in }
         searchRecipsResultPage = recipes
     }
 }
