@@ -95,9 +95,31 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
             .disposed(by: disposeBag)
         
         pickCategories = pickedCategories.asObserver()
-        pickIngredients = pickedIngredients.asObserver()
-        pickSeasonings = pickedSeasonings.asObserver()
+        pickedCategories
+            .flatMap { Observable.from($0) }
+            .withLatestFrom(categories) { selected, categories in
+                categories.map { $0.name == selected.name ? selected : $0 }
+            }
+            .subscribe(onNext: categories.onNext(_:))
+            .disposed(by: disposeBag)
         
+        pickIngredients = pickedIngredients.asObserver()
+        pickedIngredients
+            .flatMap { Observable.from($0) }
+            .withLatestFrom(ingredients) { selected, ingredients in
+                ingredients.map { $0.name == selected.name ? selected : $0 }
+            }
+            .subscribe(onNext: ingredients.onNext(_:))
+            .disposed(by: disposeBag)
+            
+        pickSeasonings = pickedSeasonings.asObserver()
+        pickedSeasonings
+            .flatMap { Observable.from($0) }
+            .withLatestFrom(seasonings) { selected, seasonings in
+                seasonings.map { $0.name == selected.name ? selected : $0 }
+            }
+            .subscribe(onNext: seasonings.onNext(_:))
+            .disposed(by: disposeBag)
     
         moveIngredientPickerPage = ingredientPickerPageMoving.asObserver()
         moveSeasoningPickerPage = seasoningPickerPageMoving.asObserver()
