@@ -77,8 +77,23 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
             .disposed(by: disposeBag)
         
         recipeCategories = categories.asObserver()
+        categories.withLatestFrom(recipeDetail)
+            .map { $0.categories.map { ViewRecipeDetail.Category($0) } }
+            .subscribe(onNext: categories.onNext(_:))
+            .disposed(by: disposeBag)
+        
         recipeIngredients = ingredients.asObserver()
+        ingredients.withLatestFrom(recipeDetail)
+            .map { $0.ingredients.map { ViewRecipeDetail.Ingredient($0) } }
+            .subscribe(onNext: ingredients.onNext(_:))
+            .disposed(by: disposeBag)
+        
         recipeSeasonings = seasonings.asObserver()
+        seasonings.withLatestFrom(recipeDetail)
+            .map { $0.seasonings.map { ViewRecipeDetail.Seasoning($0) } }
+            .subscribe(onNext: seasonings.onNext(_:))
+            .disposed(by: disposeBag)
+        
         pickCategories = pickedCategories.asObserver()
         pickIngredients = pickedIngredients.asObserver()
         pickSeasonings = pickedSeasonings.asObserver()
