@@ -12,6 +12,12 @@ struct ViewRecipeDetail {
     let ingredients: [Ingredient]
     let seasonings: [Seasoning]
     
+    init(categories: [Category], ingredients: [Ingredient], seasonings: [Seasoning]) {
+        self.categories = categories
+        self.ingredients = ingredients
+        self.seasonings = seasonings
+    }
+    
     init(_ recipeDetail: RecipeDetail) {
         self.categories = recipeDetail.categories.map { Category($0) }
         self.ingredients = recipeDetail.ingredients.map { Ingredient($0) }
@@ -43,6 +49,7 @@ struct ViewRecipeDetail {
         let name: String
         let iconName: String
         let quantity: String
+        var isSelected: Bool = false
         
         init(_ recipeIngredient: RecipeDetail.Ingredient) {
             self.name = recipeIngredient.name
@@ -54,6 +61,7 @@ struct ViewRecipeDetail {
     struct Seasoning {
         let name: String
         let iconName: String
+        var isSelected: Bool = false
         
         init(_ recipeSeasoning: RecipeDetail.Seasoning) {
             self.name = recipeSeasoning.name
@@ -62,4 +70,10 @@ struct ViewRecipeDetail {
     }
 }
 
-
+extension ViewRecipeDetail {
+    func asRecipeDetail() -> RecipeDetail {
+        return RecipeDetail(categories: categories.map { RecipeDetail.Category(iconName: $0.iconName, name: $0.name) },
+                            ingredients: ingredients.map { RecipeDetail.Ingredient(iconName: $0.iconName, name: $0.name, quantity: $0.quantity) },
+                            seasonings: seasonings.map { RecipeDetail.Seasoning(iconName: $0.iconName, name: $0.name) })
+    }
+}
