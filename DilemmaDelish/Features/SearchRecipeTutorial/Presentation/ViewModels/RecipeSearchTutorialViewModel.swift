@@ -48,7 +48,7 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
     
     private let disposeBag = DisposeBag()
     
-    init(domain: RecipeSearchable) {
+    init(recipeSearchTutorialUsecase: RecipeSearchTutorialUsecase) {
         let fetching = PublishSubject<Void>()
         let pickedCategories = PublishSubject<[ViewRecipeDetail.Category]>()
         let pickedIngredients = PublishSubject<[ViewRecipeDetail.Ingredient]>()
@@ -62,7 +62,7 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
         
         fetchRecipeDetail = fetching.asObserver()
         fetching
-            .flatMap { domain.fetchRecipeDetail() }
+            .flatMap { recipeSearchTutorialUsecase.execute() }
             .subscribe(onNext: recipeDetail.onNext)
             .disposed(by: disposeBag)
         
