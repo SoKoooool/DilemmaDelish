@@ -48,13 +48,11 @@ struct ViewRecipeDetail {
     struct Ingredient {
         let name: String
         let iconName: String
-        let quantity: String
         var isSelected: Bool = false
         
         init(_ recipeIngredient: RecipeDetail.Ingredient) {
             self.name = recipeIngredient.name
             self.iconName = recipeIngredient.iconName
-            self.quantity = recipeIngredient.quantity
         }
     }
 
@@ -73,7 +71,7 @@ struct ViewRecipeDetail {
 extension ViewRecipeDetail {
     func asRecipeDetail() -> RecipeDetail {
         return RecipeDetail(categories: categories.map { RecipeDetail.Category(iconName: $0.iconName, name: $0.name) },
-                            ingredients: ingredients.map { RecipeDetail.Ingredient(iconName: $0.iconName, name: $0.name, quantity: $0.quantity) },
+                            ingredients: ingredients.map { RecipeDetail.Ingredient(iconName: $0.iconName, name: $0.name) },
                             seasonings: seasonings.map { RecipeDetail.Seasoning(iconName: $0.iconName, name: $0.name) })
     }
 }

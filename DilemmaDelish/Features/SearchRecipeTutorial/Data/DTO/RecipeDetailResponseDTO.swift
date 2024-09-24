@@ -45,7 +45,7 @@ extension RecipeDetailResponseDTO.Category {
 
 extension RecipeDetailResponseDTO.Ingredient {
     func toDomain() -> RecipeDetail.Ingredient {
-        return RecipeDetail.Ingredient(iconName: iconName, name: name, quantity: quantity)
+        return RecipeDetail.Ingredient(iconName: iconName, name: name)
     }
 }
 

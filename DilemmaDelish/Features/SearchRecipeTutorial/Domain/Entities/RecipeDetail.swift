@@ -20,7 +20,6 @@ struct RecipeDetail {
     struct Ingredient {
         let iconName: String
         let name: String
-        let quantity: String
     }
     
     struct Seasoning {
