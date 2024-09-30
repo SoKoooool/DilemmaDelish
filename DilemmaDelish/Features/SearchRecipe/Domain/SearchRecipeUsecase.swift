@@ -14,13 +14,13 @@ protocol SearchRecipeUsecase {
 
 public final class DefaultSearchRecipeUsecase: SearchRecipeUsecase {
     
-    private let repository: SearchRecipeRepository
+    private let repository: RecipeSearchRepository
     
-    init(repository: SearchRecipeRepository) {
+    init(repository: RecipeSearchRepository) {
         self.repository = repository
     }
     
     func execute(query: String) -> Observable<[Recipe]> {
-        return repository.fetchRecipe(query: query)
+        return repository.searchRecipe(query: query)
     }
 }

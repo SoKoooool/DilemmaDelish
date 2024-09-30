@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FF5A37E32CAA663500836F62 /* RecipeSearchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A37E22CAA663500836F62 /* RecipeSearchable.swift */; };
+		FF5A37E62CAA687B00836F62 /* RecipeSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A37E52CAA687B00836F62 /* RecipeSearchRepository.swift */; };
 		FFA2A1442C843DD200760692 /* SearchRecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA2A1432C843DD200760692 /* SearchRecipeViewModel.swift */; };
 		FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */; };
 		FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		FF5A37E22CAA663500836F62 /* RecipeSearchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchable.swift; sourceTree = "<group>"; };
+		FF5A37E52CAA687B00836F62 /* RecipeSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchRepository.swift; sourceTree = "<group>"; };
 		FFA2A1432C843DD200760692 /* SearchRecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecipeViewModel.swift; sourceTree = "<group>"; };
 		FFB913CC2ABAE6FF0022E688 /* DilemmaDelish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DilemmaDelish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF5A37E42CAA685D00836F62 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				FF5A37E52CAA687B00836F62 /* RecipeSearchRepository.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
 		FFA2A1422C843DC500760692 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +154,7 @@
 		FFDDF1EA2C7D980200E7B551 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				FF5A37E42CAA685D00836F62 /* Interfaces */,
 				FFDDF1EB2C7D980900E7B551 /* Recipe.swift */,
 				FFDDF1F42C7EEBF000E7B551 /* SearchRecipeUsecase.swift */,
 				FF5A37E22CAA663500836F62 /* RecipeSearchable.swift */,
@@ -246,6 +257,7 @@
 				FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */,
 				FFDDF1EC2C7D980900E7B551 /* Recipe.swift in Sources */,
 				FFA2A1442C843DD200760692 /* SearchRecipeViewModel.swift in Sources */,
+				FF5A37E62CAA687B00836F62 /* RecipeSearchRepository.swift in Sources */,
 				FF5A37E32CAA663500836F62 /* RecipeSearchable.swift in Sources */,
 				FFDDF1F52C7EEBF000E7B551 /* SearchRecipeUsecase.swift in Sources */,
 			);

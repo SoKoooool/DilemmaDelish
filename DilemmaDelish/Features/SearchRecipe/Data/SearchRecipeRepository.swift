@@ -8,12 +8,8 @@
 import Foundation
 import RxSwift
 
-protocol SearchRecipeRepository {
-    func fetchRecipe(query: String) -> Observable<[Recipe]>
-}
-
-public final class DefaultSearchRecipeRepository: SearchRecipeRepository {
-    func fetchRecipe(query: String) -> Observable<[Recipe]> {
+public final class DefaultSearchRecipeRepository: RecipeSearchRepository {
+    func searchRecipe(query: String) -> Observable<[Recipe]> {
         return RecipeAPI().recipe()
             .map { $0.dto.map { $0.toDomain() } }
     }
