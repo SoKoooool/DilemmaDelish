@@ -10,24 +10,27 @@ import RxSwift
 
 protocol RecipeSearchViewModel {
     var searchTerm: AnyObserver<String> { get }
+    var showSearchResultPage: Observable<String> { get }
 }
 
 public final class DefaultRecipeSearchViewModel: RecipeSearchViewModel {
     
     private let disposeBag = DisposeBag()
-    private let usecase: SearchRecipeUsecase
     
     let searchTerm: AnyObserver<String>
-    
     let showSearchResultPage: Observable<String>
     
-    init(usecase: SearchRecipeUsecase) {
-        self.usecase = usecase
-        
+    init() {
         let searching = PublishSubject<String>()
         let searchQuery = PublishSubject<String>()
         
         searchTerm = searching.asObserver()
+        searching
+            .map { DefaultRecipeSearchable(name: $0) }
+            .map { $0.toQueryString() }
+            .subscribe(onNext: searchQuery.onNext(_:))
+            .disposed(by: disposeBag)
+        
         showSearchResultPage = searchQuery
     }
 }
