@@ -58,3 +58,35 @@ extension RecipeSearchable {
         return query.joined(separator: "&")
     }
 }
+
+public final class DefaultRecipeSearchable: RecipeSearchable {
+    var name: String
+    var categories: [String]?
+    var ingredients: [String]?
+    var seasonings: [String]?
+    var cuisineType: String?
+    var dietaryRestrictions: [String]?
+    var preparationTime: Int?
+    var cookingTime: Int?
+    var difficulty: String?
+    var mealType: String?
+    var cookingMethod: String?
+    var occasion: String?
+    var taste: [String]?
+    
+    init(name: String, categories: [String]? = nil, ingredients: [String]? = nil, seasonings: [String]? = nil, cuisineType: String? = nil, dietaryRestrictions: [String]? = nil, preparationTime: Int? = nil, cookingTime: Int? = nil, difficulty: String? = nil, mealType: String? = nil, cookingMethod: String? = nil, occasion: String? = nil, taste: [String]? = nil) {
+        self.name = name
+        self.categories = categories
+        self.ingredients = ingredients
+        self.seasonings = seasonings
+        self.cuisineType = cuisineType
+        self.dietaryRestrictions = dietaryRestrictions
+        self.preparationTime = preparationTime
+        self.cookingTime = cookingTime
+        self.difficulty = difficulty
+        self.mealType = mealType
+        self.cookingMethod = cookingMethod
+        self.occasion = occasion
+        self.taste = taste
+    }
+}
