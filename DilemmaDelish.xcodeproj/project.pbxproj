@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		FF5A37E32CAA663500836F62 /* RecipeSearchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A37E22CAA663500836F62 /* RecipeSearchable.swift */; };
 		FF5A37E62CAA687B00836F62 /* RecipeSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A37E52CAA687B00836F62 /* RecipeSearchRepository.swift */; };
-		FFA2A1442C843DD200760692 /* SearchRecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA2A1432C843DD200760692 /* SearchRecipeViewModel.swift */; };
+		FFA2A1442C843DD200760692 /* RecipeSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA2A1432C843DD200760692 /* RecipeSearchViewModel.swift */; };
 		FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */; };
 		FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */; };
 		FFB913D42ABAE6FF0022E688 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913D32ABAE6FF0022E688 /* ViewController.swift */; };
@@ -29,7 +29,7 @@
 /* Begin PBXFileReference section */
 		FF5A37E22CAA663500836F62 /* RecipeSearchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchable.swift; sourceTree = "<group>"; };
 		FF5A37E52CAA687B00836F62 /* RecipeSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchRepository.swift; sourceTree = "<group>"; };
-		FFA2A1432C843DD200760692 /* SearchRecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecipeViewModel.swift; sourceTree = "<group>"; };
+		FFA2A1432C843DD200760692 /* RecipeSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchViewModel.swift; sourceTree = "<group>"; };
 		FFB913CC2ABAE6FF0022E688 /* DilemmaDelish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DilemmaDelish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 		FFA2A1422C843DC500760692 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				FFA2A1432C843DD200760692 /* SearchRecipeViewModel.swift */,
+				FFA2A1432C843DD200760692 /* RecipeSearchViewModel.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -256,7 +256,7 @@
 				FFDC6DA62C73087700DAC52E /* APIBase.swift in Sources */,
 				FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */,
 				FFDDF1EC2C7D980900E7B551 /* Recipe.swift in Sources */,
-				FFA2A1442C843DD200760692 /* SearchRecipeViewModel.swift in Sources */,
+				FFA2A1442C843DD200760692 /* RecipeSearchViewModel.swift in Sources */,
 				FF5A37E62CAA687B00836F62 /* RecipeSearchRepository.swift in Sources */,
 				FF5A37E32CAA663500836F62 /* RecipeSearchable.swift in Sources */,
 				FFDDF1F52C7EEBF000E7B551 /* SearchRecipeUsecase.swift in Sources */,
