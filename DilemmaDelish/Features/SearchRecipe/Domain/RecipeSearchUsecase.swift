@@ -8,11 +8,11 @@
 import Foundation
 import RxSwift
 
-protocol SearchRecipeUsecase {
+protocol RecipeSearchUsecase {
     func execute(query: String) -> Observable<[Recipe]>
 }
 
-public final class DefaultSearchRecipeUsecase: SearchRecipeUsecase {
+public final class DefaultRecipeSearchUsecase: RecipeSearchUsecase {
     
     private let repository: RecipeSearchRepository
     
