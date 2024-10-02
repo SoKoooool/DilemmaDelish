@@ -25,6 +25,7 @@
 		FFE2109A2C16D4CD000D29B0 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = FFE210992C16D4CD000D29B0 /* RxCocoa */; };
 		FFE2109C2C16D4CD000D29B0 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFE2109B2C16D4CD000D29B0 /* RxSwift */; };
 		FFE2B26C2CAABB9600927C2C /* RecipeSearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE2B26B2CAABB9600927C2C /* RecipeSearchResultViewModel.swift */; };
+		FFE2B26E2CACDC9C00927C2C /* RecipeSearchResultDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE2B26D2CACDC9C00927C2C /* RecipeSearchResultDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		FFDDF1F22C7EBAA100E7B551 /* SearchRecipeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecipeRepository.swift; sourceTree = "<group>"; };
 		FFDDF1F42C7EEBF000E7B551 /* RecipeSearchUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchUsecase.swift; sourceTree = "<group>"; };
 		FFE2B26B2CAABB9600927C2C /* RecipeSearchResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchResultViewModel.swift; sourceTree = "<group>"; };
+		FFE2B26D2CACDC9C00927C2C /* RecipeSearchResultDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchResultDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			children = (
 				FFA2A1432C843DD200760692 /* RecipeSearchViewModel.swift */,
 				FFE2B26B2CAABB9600927C2C /* RecipeSearchResultViewModel.swift */,
+				FFE2B26D2CACDC9C00927C2C /* RecipeSearchResultDetailViewModel.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				FFDC6DA62C73087700DAC52E /* APIBase.swift in Sources */,
 				FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */,
 				FFDDF1EC2C7D980900E7B551 /* Recipe.swift in Sources */,
+				FFE2B26E2CACDC9C00927C2C /* RecipeSearchResultDetailViewModel.swift in Sources */,
 				FFA2A1442C843DD200760692 /* RecipeSearchViewModel.swift in Sources */,
 				FF5A37E62CAA687B00836F62 /* RecipeSearchRepository.swift in Sources */,
 				FFE2B26C2CAABB9600927C2C /* RecipeSearchResultViewModel.swift in Sources */,
