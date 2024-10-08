@@ -25,6 +25,7 @@
 		FFDC6DA92C730ADD00DAC52E /* RecipeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDC6DA82C730ADD00DAC52E /* RecipeAPI.swift */; };
 		FFE2109A2C16D4CD000D29B0 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = FFE210992C16D4CD000D29B0 /* RxCocoa */; };
 		FFE2109C2C16D4CD000D29B0 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFE2109B2C16D4CD000D29B0 /* RxSwift */; };
+		FFE2B2742CB4BE4700927C2C /* RecipeSearchTutorialCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE2B2732CB4BE4700927C2C /* RecipeSearchTutorialCoordinator.swift */; };
 		FFF81AAE2C3AAC4E0060F0C8 /* RecipeSearchTutorialRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF81AAD2C3AAC4E0060F0C8 /* RecipeSearchTutorialRepository.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		FFDC6DA32C7306A600DAC52E /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		FFDC6DA52C73087700DAC52E /* APIBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBase.swift; sourceTree = "<group>"; };
 		FFDC6DA82C730ADD00DAC52E /* RecipeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAPI.swift; sourceTree = "<group>"; };
+		FFE2B2732CB4BE4700927C2C /* RecipeSearchTutorialCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchTutorialCoordinator.swift; sourceTree = "<group>"; };
 		FFF81AAD2C3AAC4E0060F0C8 /* RecipeSearchTutorialRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchTutorialRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				FFBD7CFA2C2CC74600F6D802 /* ViewModels */,
+				FFE2B2732CB4BE4700927C2C /* RecipeSearchTutorialCoordinator.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				FFDC6DA92C730ADD00DAC52E /* RecipeAPI.swift in Sources */,
 				FFDC6DA62C73087700DAC52E /* APIBase.swift in Sources */,
 				FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */,
+				FFE2B2742CB4BE4700927C2C /* RecipeSearchTutorialCoordinator.swift in Sources */,
 				FFBD7CFC2C2CC75100F6D802 /* ViewRecipeDetail.swift in Sources */,
 				FFF81AAE2C3AAC4E0060F0C8 /* RecipeSearchTutorialRepository.swift in Sources */,
 			);
