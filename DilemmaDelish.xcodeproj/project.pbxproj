@@ -29,6 +29,7 @@
 		FFE2B27D2CB503D100927C2C /* RecipeCategoriesPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE2B27C2CB503D100927C2C /* RecipeCategoriesPickerViewController.swift */; };
 		FFE2B27F2CB505FF00927C2C /* RecipeIngredientsPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE2B27E2CB505FF00927C2C /* RecipeIngredientsPickerViewController.swift */; };
 		FFE2B2812CB5061700927C2C /* RecipeSeasoningsPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE2B2802CB5061700927C2C /* RecipeSeasoningsPickerViewController.swift */; };
+		FFE2B2832CB506DE00927C2C /* RecipeSearchTutorialDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE2B2822CB506DE00927C2C /* RecipeSearchTutorialDIContainer.swift */; };
 		FFF81AAE2C3AAC4E0060F0C8 /* RecipeSearchTutorialRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF81AAD2C3AAC4E0060F0C8 /* RecipeSearchTutorialRepository.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		FFE2B27C2CB503D100927C2C /* RecipeCategoriesPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCategoriesPickerViewController.swift; sourceTree = "<group>"; };
 		FFE2B27E2CB505FF00927C2C /* RecipeIngredientsPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeIngredientsPickerViewController.swift; sourceTree = "<group>"; };
 		FFE2B2802CB5061700927C2C /* RecipeSeasoningsPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSeasoningsPickerViewController.swift; sourceTree = "<group>"; };
+		FFE2B2822CB506DE00927C2C /* RecipeSearchTutorialDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchTutorialDIContainer.swift; sourceTree = "<group>"; };
 		FFF81AAD2C3AAC4E0060F0C8 /* RecipeSearchTutorialRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchTutorialRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +103,7 @@
 				FFF81AAF2C3AAFB90060F0C8 /* Data */,
 				FF940AAA2C16D5AC008A1856 /* Domain */,
 				FFBD7CF92C2CC74200F6D802 /* Presentation */,
+				FFE2B2822CB506DE00927C2C /* RecipeSearchTutorialDIContainer.swift */,
 			);
 			path = SearchRecipeTutorial;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				FFC956472C316E9C006E439C /* Recipe.swift in Sources */,
 				FFDC6DA42C7306A600DAC52E /* Requestable.swift in Sources */,
 				FFDC6DA92C730ADD00DAC52E /* RecipeAPI.swift in Sources */,
+				FFE2B2832CB506DE00927C2C /* RecipeSearchTutorialDIContainer.swift in Sources */,
 				FFDC6DA62C73087700DAC52E /* APIBase.swift in Sources */,
 				FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */,
 				FFE2B2742CB4BE4700927C2C /* RecipeSearchTutorialCoordinator.swift in Sources */,
