@@ -31,6 +31,9 @@
 		FFE2B2812CB5061700927C2C /* RecipeSeasoningsPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE2B2802CB5061700927C2C /* RecipeSeasoningsPickerViewController.swift */; };
 		FFE2B2832CB506DE00927C2C /* RecipeSearchTutorialDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE2B2822CB506DE00927C2C /* RecipeSearchTutorialDIContainer.swift */; };
 		FFF81AAE2C3AAC4E0060F0C8 /* RecipeSearchTutorialRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF81AAD2C3AAC4E0060F0C8 /* RecipeSearchTutorialRepository.swift */; };
+		FFE2B2872CB76F5000927C2C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE2B2862CB76F5000927C2C /* Coordinator.swift */; };
+		FFE2B28A2CB7FDF700927C2C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE2B2892CB7FDF700927C2C /* AppCoordinator.swift */; };
+		FFE2B28D2CB7FF1C00927C2C /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE2B28C2CB7FF1C00927C2C /* AppDIContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		FFE2B2802CB5061700927C2C /* RecipeSeasoningsPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSeasoningsPickerViewController.swift; sourceTree = "<group>"; };
 		FFE2B2822CB506DE00927C2C /* RecipeSearchTutorialDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchTutorialDIContainer.swift; sourceTree = "<group>"; };
 		FFF81AAD2C3AAC4E0060F0C8 /* RecipeSearchTutorialRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchTutorialRepository.swift; sourceTree = "<group>"; };
+		FFE2B2862CB76F5000927C2C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		FFE2B2892CB7FDF700927C2C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		FFE2B28C2CB7FF1C00927C2C /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +154,8 @@
 			children = (
 				FF940AA82C16D59E008A1856 /* Features */,
 				FFA2A1472C84446400760692 /* Network */,
+				FFE2B28B2CB7FEFF00927C2C /* DIContainer */,
+				FFE2B2882CB79AA600927C2C /* Coordinator */,
 				FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */,
 				FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */,
 				FFB913D32ABAE6FF0022E688 /* ViewController.swift */,
@@ -229,6 +237,23 @@
 				FF4C97322CA2CE3700923656 /* Repositories */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		FFE2B2882CB79AA600927C2C /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FFE2B2862CB76F5000927C2C /* Coordinator.swift */,
+				FFE2B2892CB7FDF700927C2C /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		FFE2B28B2CB7FEFF00927C2C /* DIContainer */ = {
+			isa = PBXGroup;
+			children = (
+				FFE2B28C2CB7FF1C00927C2C /* AppDIContainer.swift */,
+			);
+			path = DIContainer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +348,11 @@
 				FFDC6DA92C730ADD00DAC52E /* RecipeAPI.swift in Sources */,
 				FFE2B2832CB506DE00927C2C /* RecipeSearchTutorialDIContainer.swift in Sources */,
 				FFDC6DA62C73087700DAC52E /* APIBase.swift in Sources */,
+				FFE2B2872CB76F5000927C2C /* Coordinator.swift in Sources */,
+				FFB913D42ABAE6FF0022E688 /* ViewController.swift in Sources */,
+				FFE2B28D2CB7FF1C00927C2C /* AppDIContainer.swift in Sources */,
+				FFE2B28A2CB7FDF700927C2C /* AppCoordinator.swift in Sources */,
+				FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */,
 				FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */,
 				FFE2B2742CB4BE4700927C2C /* RecipeSearchTutorialCoordinator.swift in Sources */,
 				FFBD7CFC2C2CC75100F6D802 /* ViewRecipeDetail.swift in Sources */,
