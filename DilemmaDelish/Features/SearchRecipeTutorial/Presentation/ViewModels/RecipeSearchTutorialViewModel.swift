@@ -11,13 +11,11 @@ import RxSwift
 protocol RecipeCategoryPickerViewModel {
     var pickCategories: AnyObserver<[ViewRecipeDetail.Category]> { get }
     var recipeCategories: Observable<[ViewRecipeDetail.Category]> { get }
-    var ingredientPickerPage: Observable<Void> { get }
 }
 
 protocol RecipeIngredientPickerViewModel {
     var pickIngredients: AnyObserver<[ViewRecipeDetail.Ingredient]> { get }
     var recipeIngredients: Observable<[ViewRecipeDetail.Ingredient]> { get }
-    var seasoningPickerPage: Observable<Void> { get }
 }
 
 protocol RecipeSubIngerdientPickerViewModel {
@@ -41,8 +39,6 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
     let recipeCategories: Observable<[ViewRecipeDetail.Category]>
     let recipeIngredients: Observable<[ViewRecipeDetail.Ingredient]>
     let recipeSeasonings: Observable<[ViewRecipeDetail.Seasoning]>
-    let ingredientPickerPage: Observable<Void>
-    let seasoningPickerPage: Observable<Void>
     
     private let disposeBag = DisposeBag()
     
@@ -74,7 +70,8 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
                 categories.map { $0.name == selected.name ? selected : $0 }
             }
             .scan([ViewRecipeDetail.Category]()) { $0 + $1 }
-            .subscribe(onNext: categories.onNext(_:))
+            .do(onNext: categories.onNext(_:))
+            .subscribe { _ in coordinator.showIngredientsPicker() }
             .disposed(by: disposeBag)
         
         pickIngredients = pickedIngredients.asObserver()
@@ -84,7 +81,8 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
                 ingredients.map { $0.name == selected.name ? selected : $0 }
             }
             .scan([ViewRecipeDetail.Ingredient]()) { $0 + $1 }
-            .subscribe(onNext: ingredients.onNext(_:))
+            .do(onNext: ingredients.onNext(_:))
+            .subscribe { _ in coordinator.showSeasoningsPicker() }
             .disposed(by: disposeBag)
             
         pickSeasonings = pickedSeasonings.asObserver()
@@ -109,7 +107,5 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
         recipeCategories = categories
         recipeIngredients = ingredients
         recipeSeasonings = seasonings
-        ingredientPickerPage = pickedCategories.map { _ in }
-        seasoningPickerPage = pickedIngredients.map { _ in }
     }
 }
