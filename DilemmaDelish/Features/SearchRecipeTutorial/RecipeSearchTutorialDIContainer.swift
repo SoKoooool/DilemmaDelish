@@ -16,6 +16,10 @@ public final class RecipeSearchTutorialDIContainer: RecipeSearchTutorialCoordina
         self.navigationController = navigationController
     }
     
+    func makeRecipeSearchTutorialCoordinator() -> RecipeSearchTutorialCoordinator {
+        return RecipeSearchTutorialCoordinator(navigationController: navigationController, dependencies: self)
+    }
+    
     func makeCategoriesPickerViewController(viewModel: RecipeSearchTutorialViewModel) -> UIViewController {
         return RecipeCategoriesPickerViewController(viewModel: viewModel)
     }
