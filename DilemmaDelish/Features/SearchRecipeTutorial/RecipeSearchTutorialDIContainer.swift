@@ -35,6 +35,6 @@ public final class RecipeSearchTutorialDIContainer: RecipeSearchTutorialCoordina
     func makeRecipeSearchTutorialViewModel(coordinator: RecipeSearchTutorialCoordinator) -> RecipeSearchTutorialViewModel {
         let repository = DefaultRecipeSearchTutorialRepository()
         let usecase = DefaultRecipeSearchTutorialUsecase(repository: repository)
-        return DefaultRecipeSearchTutorialViewModel(recipeSearchTutorialUsecase: usecase)
+        return DefaultRecipeSearchTutorialViewModel(recipeSearchTutorialUsecase: usecase, coordinator: coordinator)
     }
 }
