@@ -19,6 +19,8 @@ public final class RecipeSearchTutorialCoordinator: Coordinator {
     
     var navigationController: UINavigationController?
     var childCoordinators: [Coordinator] = []
+    var onFinish: ((String) -> Void)?
+    
     private let dependencies: RecipeSearchTutorialCoordinatorDependencies
     
     private lazy var viewModel: RecipeSearchTutorialViewModel = {
@@ -47,5 +49,9 @@ public final class RecipeSearchTutorialCoordinator: Coordinator {
     func showSeasoningsPicker() {
         let viewController = dependencies.makeCategoriesPickerViewController(viewModel: viewModel)
         navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    func didFinishCoordinate(with query: String) {
+        onFinish?(query)
     }
 }

@@ -31,5 +31,8 @@ extension AppCoordinator {
         let coordinator = container.makeRecipeSearchTutorialCoordinator()
         addChildCoordinator(coordinator)
         coordinator.start()
+        coordinator.onFinish = { [weak self] _ in
+            self?.removeChildCoordinator(coordinator)
+        }
     }
 }
