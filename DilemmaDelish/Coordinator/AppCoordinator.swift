@@ -24,3 +24,12 @@ public final class AppCoordinator: Coordinator {
         
     }
 }
+
+extension AppCoordinator {
+    func showRecipeSearchTutorial() {
+        let container = appDIContainer.makeRecipeSearchTutorialDIContainer()
+        let coordinator = container.makeRecipeSearchTutorialCoordinator()
+        addChildCoordinator(coordinator)
+        coordinator.start()
+    }
+}

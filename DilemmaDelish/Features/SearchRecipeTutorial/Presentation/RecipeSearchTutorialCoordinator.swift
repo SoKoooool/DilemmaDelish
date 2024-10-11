@@ -15,9 +15,10 @@ protocol RecipeSearchTutorialCoordinatorDependencies {
     func makeRecipeSearchTutorialViewModel(coordinator: RecipeSearchTutorialCoordinator) -> RecipeSearchTutorialViewModel
 }
 
-public final class RecipeSearchTutorialCoordinator {
+public final class RecipeSearchTutorialCoordinator: Coordinator {
     
-    private let navigationController: UINavigationController?
+    var navigationController: UINavigationController?
+    var childCoordinators: [Coordinator] = []
     private let dependencies: RecipeSearchTutorialCoordinatorDependencies
     
     private lazy var viewModel: RecipeSearchTutorialViewModel = {
