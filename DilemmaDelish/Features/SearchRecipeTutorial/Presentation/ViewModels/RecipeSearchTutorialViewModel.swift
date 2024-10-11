@@ -8,26 +8,15 @@
 import Foundation
 import RxSwift
 
-protocol RecipeCategoryPickerViewModel {
+protocol RecipeSearchTutorialViewModel {
+    var fetchRecipeDetail: AnyObserver<Void> { get }
     var pickCategories: AnyObserver<[ViewRecipeDetail.Category]> { get }
     var recipeCategories: Observable<[ViewRecipeDetail.Category]> { get }
-}
-
-protocol RecipeIngredientPickerViewModel {
     var pickIngredients: AnyObserver<[ViewRecipeDetail.Ingredient]> { get }
     var recipeIngredients: Observable<[ViewRecipeDetail.Ingredient]> { get }
-}
-
-protocol RecipeSubIngerdientPickerViewModel {
     var pickSeasonings: AnyObserver<[ViewRecipeDetail.Seasoning]> { get }
     var recipeSeasonings: Observable<[ViewRecipeDetail.Seasoning]> { get }
 }
-
-protocol RecipeSearchTutorialViewModel: RecipeSearchTutorialViewModelType {
-    var fetchRecipeDetail: AnyObserver<Void> { get }
-}
-
-typealias RecipeSearchTutorialViewModelType = RecipeCategoryPickerViewModel & RecipeIngredientPickerViewModel & RecipeSubIngerdientPickerViewModel
 
 final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel {
     
