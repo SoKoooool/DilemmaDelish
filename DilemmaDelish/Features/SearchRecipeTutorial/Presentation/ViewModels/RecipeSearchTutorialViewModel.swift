@@ -23,7 +23,6 @@ protocol RecipeIngredientPickerViewModel {
 protocol RecipeSubIngerdientPickerViewModel {
     var pickSeasonings: AnyObserver<[ViewRecipeDetail.Seasoning]> { get }
     var recipeSeasonings: Observable<[ViewRecipeDetail.Seasoning]> { get }
-    var searchRecipsResultPage: Observable<RecipeQuery> { get }
 }
 
 protocol RecipeSearchTutorialViewModel: RecipeSearchTutorialViewModelType {
@@ -44,7 +43,6 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
     let recipeSeasonings: Observable<[ViewRecipeDetail.Seasoning]>
     let ingredientPickerPage: Observable<Void>
     let seasoningPickerPage: Observable<Void>
-    let searchRecipsResultPage: Observable<RecipeQuery>
     
     private let disposeBag = DisposeBag()
     
@@ -58,7 +56,6 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
         let categories = PublishSubject<[ViewRecipeDetail.Category]>()
         let ingredients = PublishSubject<[ViewRecipeDetail.Ingredient]>()
         let seasonings = PublishSubject<[ViewRecipeDetail.Seasoning]>()
-        let recipeQuery = PublishSubject<RecipeQuery>()
         
         fetchRecipeDetail = fetching.asObserver()
         fetching
@@ -119,12 +116,11 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
                                     ingredients: $1.filter { $0.isSelected },
                                     seasonings: $2.filter { $0.isSelected })
         }
-        .map { RecipeQuery($0.asRecipeDetail()) }
-        .subscribe(onNext: recipeQuery.onNext(_:))
+        .map { $0.toQuery() }
+        .subscribe { coordinator.didFinishCoordinate(with: $0) }
         .disposed(by: disposeBag)
         
         ingredientPickerPage = pickedCategories.map { _ in }
         seasoningPickerPage = pickedIngredients.map { _ in }
-        searchRecipsResultPage = recipeQuery
     }
 }

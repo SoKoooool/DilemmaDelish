@@ -69,9 +69,10 @@ struct ViewRecipeDetail {
 }
 
 extension ViewRecipeDetail {
-    func asRecipeDetail() -> RecipeDetail {
-        return RecipeDetail(categories: categories.map { RecipeDetail.Category(iconName: $0.iconName, name: $0.name) },
-                            ingredients: ingredients.map { RecipeDetail.Ingredient(iconName: $0.iconName, name: $0.name) },
-                            seasonings: seasonings.map { RecipeDetail.Seasoning(iconName: $0.iconName, name: $0.name) })
+    func toQuery() -> String {
+        let categoryNames = "[categories:\(categories.map { $0.name }.joined(separator: ","))],"
+        let ingredientNames = "[ingredients:\(ingredients.map { $0.name }.joined(separator: ","))],"
+        let seasoningNames = "[seasonings:\(seasonings.map { $0.name }.joined(separator: ","))]"
+        return categoryNames + ingredientNames + seasoningNames
     }
 }
