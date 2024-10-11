@@ -52,7 +52,6 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
         let pickedIngredients = PublishSubject<[ViewRecipeDetail.Ingredient]>()
         let pickedSeasonings = PublishSubject<[ViewRecipeDetail.Seasoning]>()
         
-        let recipeDetail = PublishSubject<RecipeDetail>()
         let categories = PublishSubject<[ViewRecipeDetail.Category]>()
         let ingredients = PublishSubject<[ViewRecipeDetail.Ingredient]>()
         let seasonings = PublishSubject<[ViewRecipeDetail.Seasoning]>()
@@ -60,25 +59,12 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
         fetchRecipeDetail = fetching.asObserver()
         fetching
             .flatMap { recipeSearchTutorialUsecase.execute() }
-            .subscribe(onNext: recipeDetail.onNext)
-            .disposed(by: disposeBag)
-        
-        recipeCategories = categories.asObserver()
-        categories.withLatestFrom(recipeDetail)
-            .map { $0.categories.map { ViewRecipeDetail.Category($0) } }
-            .subscribe(onNext: categories.onNext(_:))
-            .disposed(by: disposeBag)
-        
-        recipeIngredients = ingredients.asObserver()
-        ingredients.withLatestFrom(recipeDetail)
-            .map { $0.ingredients.map { ViewRecipeDetail.Ingredient($0) } }
-            .subscribe(onNext: ingredients.onNext(_:))
-            .disposed(by: disposeBag)
-        
-        recipeSeasonings = seasonings.asObserver()
-        seasonings.withLatestFrom(recipeDetail)
-            .map { $0.seasonings.map { ViewRecipeDetail.Seasoning($0) } }
-            .subscribe(onNext: seasonings.onNext(_:))
+            .map { ViewRecipeDetail($0) }
+            .subscribe {
+                categories.onNext($0.categories)
+                ingredients.onNext($0.ingredients)
+                seasonings.onNext($0.seasonings)
+            }
             .disposed(by: disposeBag)
         
         pickCategories = pickedCategories.asObserver()
@@ -120,6 +106,9 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
         .subscribe { coordinator.didFinishCoordinate(with: $0) }
         .disposed(by: disposeBag)
         
+        recipeCategories = categories
+        recipeIngredients = ingredients
+        recipeSeasonings = seasonings
         ingredientPickerPage = pickedCategories.map { _ in }
         seasoningPickerPage = pickedIngredients.map { _ in }
     }
