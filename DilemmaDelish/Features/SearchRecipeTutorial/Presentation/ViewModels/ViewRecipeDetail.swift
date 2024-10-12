@@ -18,6 +18,12 @@ struct ViewRecipeDetail {
         self.seasonings = seasonings
     }
     
+    init(_ updated: (categories: [Category], ingredient: [Ingredient], seasonings: [Seasoning])) {
+        self.categories = updated.categories
+        self.ingredients = updated.ingredient
+        self.seasonings = updated.seasonings
+    }
+    
     init(_ recipeDetail: RecipeDetail) {
         self.categories = recipeDetail.categories.map { Category($0) }
         self.ingredients = recipeDetail.ingredients.map { Ingredient($0) }
@@ -74,5 +80,13 @@ extension ViewRecipeDetail {
         let ingredientNames = "[ingredients:\(ingredients.map { $0.name }.joined(separator: ","))],"
         let seasoningNames = "[seasonings:\(seasonings.map { $0.name }.joined(separator: ","))]"
         return categoryNames + ingredientNames + seasoningNames
+    }
+}
+
+extension ViewRecipeDetail {
+    func filteredSelection() -> ViewRecipeDetail {
+        return ViewRecipeDetail(categories: categories.filter { $0.isSelected },
+                                ingredients: ingredients.filter { $0.isSelected },
+                                seasonings: seasonings.filter { $0.isSelected })
     }
 }

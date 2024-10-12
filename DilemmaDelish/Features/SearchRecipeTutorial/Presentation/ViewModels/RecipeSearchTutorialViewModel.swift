@@ -10,20 +10,27 @@ import RxSwift
 
 protocol RecipeSearchTutorialViewModel {
     var fetchRecipeDetail: AnyObserver<Void> { get }
-    var pickCategories: AnyObserver<[ViewRecipeDetail.Category]> { get }
+    var pickCategory: AnyObserver<ViewRecipeDetail.Category> { get }
+    var pickIngredient: AnyObserver<ViewRecipeDetail.Ingredient> { get }
+    var pickSeasoning: AnyObserver<ViewRecipeDetail.Seasoning> { get }
+    var showIngredientsPicker: AnyObserver<Void> { get }
+    var showSeasoningsPicker: AnyObserver<Void> { get }
+    var showSearchResult: AnyObserver<Void> { get }
+    
     var recipeCategories: Observable<[ViewRecipeDetail.Category]> { get }
-    var pickIngredients: AnyObserver<[ViewRecipeDetail.Ingredient]> { get }
     var recipeIngredients: Observable<[ViewRecipeDetail.Ingredient]> { get }
-    var pickSeasonings: AnyObserver<[ViewRecipeDetail.Seasoning]> { get }
     var recipeSeasonings: Observable<[ViewRecipeDetail.Seasoning]> { get }
 }
 
 final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel {
     
     let fetchRecipeDetail: AnyObserver<Void>
-    let pickCategories: AnyObserver<[ViewRecipeDetail.Category]>
-    let pickIngredients: AnyObserver<[ViewRecipeDetail.Ingredient]>
-    let pickSeasonings: AnyObserver<[ViewRecipeDetail.Seasoning]>
+    let pickCategory: AnyObserver<ViewRecipeDetail.Category>
+    let pickIngredient: AnyObserver<ViewRecipeDetail.Ingredient>
+    let pickSeasoning: AnyObserver<ViewRecipeDetail.Seasoning>
+    let showIngredientsPicker: AnyObserver<Void>
+    let showSeasoningsPicker: AnyObserver<Void>
+    let showSearchResult: AnyObserver<Void>
     
     let recipeCategories: Observable<[ViewRecipeDetail.Category]>
     let recipeIngredients: Observable<[ViewRecipeDetail.Ingredient]>
@@ -33,9 +40,12 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
     
     init(recipeSearchTutorialUsecase: RecipeSearchTutorialUsecase, coordinator: RecipeSearchTutorialCoordinator) {
         let fetching = PublishSubject<Void>()
-        let pickedCategories = PublishSubject<[ViewRecipeDetail.Category]>()
-        let pickedIngredients = PublishSubject<[ViewRecipeDetail.Ingredient]>()
-        let pickedSeasonings = PublishSubject<[ViewRecipeDetail.Seasoning]>()
+        let categoryPicking = PublishSubject<ViewRecipeDetail.Category>()
+        let ingredientPicking = PublishSubject<ViewRecipeDetail.Ingredient>()
+        let seasoningPicking = PublishSubject<ViewRecipeDetail.Seasoning>()
+        let ingredientsPickerShowing = PublishSubject<Void>()
+        let seasoningsPickerShowing = PublishSubject<Void>()
+        let recipeSearchResultShowing = PublishSubject<Void>()
         
         let categories = PublishSubject<[ViewRecipeDetail.Category]>()
         let ingredients = PublishSubject<[ViewRecipeDetail.Ingredient]>()
@@ -52,46 +62,49 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
             }
             .disposed(by: disposeBag)
         
-        pickCategories = pickedCategories.asObserver()
-        pickedCategories
-            .flatMap { Observable.from($0) }
+        pickCategory = categoryPicking.asObserver()
+        categoryPicking
             .withLatestFrom(categories) { selected, categories in
-                categories.map { $0.name == selected.name ? selected : $0 }
+                return categories.map { $0.name == selected.name ? selected : $0 }
             }
-            .scan([ViewRecipeDetail.Category]()) { $0 + $1 }
-            .do(onNext: categories.onNext(_:))
-            .subscribe { _ in coordinator.showIngredientsPicker() }
+            .subscribe(onNext: categories.onNext(_:))
             .disposed(by: disposeBag)
         
-        pickIngredients = pickedIngredients.asObserver()
-        pickedIngredients
-            .flatMap { Observable.from($0) }
+        pickIngredient = ingredientPicking.asObserver()
+        ingredientPicking
             .withLatestFrom(ingredients) { selected, ingredients in
-                ingredients.map { $0.name == selected.name ? selected : $0 }
+                return ingredients.map { $0.name == selected.name ? selected : $0 }
             }
-            .scan([ViewRecipeDetail.Ingredient]()) { $0 + $1 }
-            .do(onNext: ingredients.onNext(_:))
-            .subscribe { _ in coordinator.showSeasoningsPicker() }
+            .subscribe(onNext: ingredients.onNext(_:))
             .disposed(by: disposeBag)
-            
-        pickSeasonings = pickedSeasonings.asObserver()
-        pickedSeasonings
-            .flatMap { Observable.from($0) }
+        
+        pickSeasoning = seasoningPicking.asObserver()
+        seasoningPicking
             .withLatestFrom(seasonings) { selected, seasonings in
-                seasonings.map { $0.name == selected.name ? selected : $0 }
+                return seasonings.map { $0.name == selected.name ? selected : $0 }
             }
-            .scan([ViewRecipeDetail.Seasoning]()) { $0 + $1 }
             .subscribe(onNext: seasonings.onNext(_:))
             .disposed(by: disposeBag)
         
-        Observable.combineLatest(pickedCategories, pickedIngredients, pickedSeasonings) {
-            return ViewRecipeDetail(categories: $0.filter { $0.isSelected },
-                                    ingredients: $1.filter { $0.isSelected },
-                                    seasonings: $2.filter { $0.isSelected })
-        }
-        .map { $0.toQuery() }
-        .subscribe { coordinator.didFinishCoordinate(with: $0) }
-        .disposed(by: disposeBag)
+        showIngredientsPicker = ingredientsPickerShowing.asObserver()
+        ingredientsPickerShowing
+            .subscribe { _ in coordinator.showIngredientsPicker() }
+            .disposed(by: disposeBag)
+        
+        showSeasoningsPicker = seasoningsPickerShowing.asObserver()
+        seasoningsPickerShowing
+            .subscribe { _ in coordinator.showSeasoningsPicker() }
+            .disposed(by: disposeBag)
+        
+        let updated = Observable.combineLatest(categories, ingredients, seasonings)
+        showSearchResult = recipeSearchResultShowing.asObserver()
+        recipeSearchResultShowing
+            .withLatestFrom(updated)
+            .map { ViewRecipeDetail($0) }
+            .map { $0.filteredSelection() }
+            .map { $0.toQuery() }
+            .subscribe { coordinator.didFinishCoordinate(with: $0) }
+            .disposed(by: disposeBag)
         
         recipeCategories = categories
         recipeIngredients = ingredients
