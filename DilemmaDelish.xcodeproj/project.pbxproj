@@ -13,6 +13,9 @@
 		FFB913D72ABAE6FF0022E688 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB913D52ABAE6FF0022E688 /* Main.storyboard */; };
 		FFB913D92ABAE7010022E688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFB913D82ABAE7010022E688 /* Assets.xcassets */; };
 		FFB913DC2ABAE7010022E688 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB913DA2ABAE7010022E688 /* LaunchScreen.storyboard */; };
+		FFDC6DA42C7306A600DAC52E /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDC6DA32C7306A600DAC52E /* Requestable.swift */; };
+		FFDC6DA62C73087700DAC52E /* APIBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDC6DA52C73087700DAC52E /* APIBase.swift */; };
+		FFDC6DA92C730ADD00DAC52E /* RecipeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDC6DA82C730ADD00DAC52E /* RecipeAPI.swift */; };
 		FFE2109A2C16D4CD000D29B0 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = FFE210992C16D4CD000D29B0 /* RxCocoa */; };
 		FFE2109C2C16D4CD000D29B0 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFE2109B2C16D4CD000D29B0 /* RxSwift */; };
 		FFE2B2872CB76F5000927C2C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE2B2862CB76F5000927C2C /* Coordinator.swift */; };
@@ -32,6 +35,9 @@
 		FFE2B2862CB76F5000927C2C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		FFE2B2892CB7FDF700927C2C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		FFE2B28C2CB7FF1C00927C2C /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		FFDC6DA32C7306A600DAC52E /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		FFDC6DA52C73087700DAC52E /* APIBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBase.swift; sourceTree = "<group>"; };
+		FFDC6DA82C730ADD00DAC52E /* RecipeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FFA2A1472C84446400760692 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FFDC6DA22C73066A00DAC52E /* APIBase */,
+				FFDC6DA72C730AD100DAC52E /* APIs */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		FFB913C32ABAE6FF0022E688 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +83,7 @@
 			children = (
 				FFE2B28B2CB7FEFF00927C2C /* DIContainer */,
 				FFE2B2882CB79AA600927C2C /* Coordinator */,
+				FFA2A1472C84446400760692 /* Network */,
 				FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */,
 				FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */,
 				FFB913D32ABAE6FF0022E688 /* ViewController.swift */,
@@ -94,6 +110,23 @@
 				FFE2B28C2CB7FF1C00927C2C /* AppDIContainer.swift */,
 			);
 			path = DIContainer;
+			sourceTree = "<group>";
+		};
+		FFDC6DA22C73066A00DAC52E /* APIBase */ = {
+			isa = PBXGroup;
+			children = (
+				FFDC6DA32C7306A600DAC52E /* Requestable.swift */,
+				FFDC6DA52C73087700DAC52E /* APIBase.swift */,
+			);
+			path = APIBase;
+			sourceTree = "<group>";
+		};
+		FFDC6DA72C730AD100DAC52E /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				FFDC6DA82C730ADD00DAC52E /* RecipeAPI.swift */,
+			);
+			path = APIs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,7 +211,10 @@
 				FFB913D42ABAE6FF0022E688 /* ViewController.swift in Sources */,
 				FFE2B28D2CB7FF1C00927C2C /* AppDIContainer.swift in Sources */,
 				FFE2B28A2CB7FDF700927C2C /* AppCoordinator.swift in Sources */,
+				FFDC6DA42C7306A600DAC52E /* Requestable.swift in Sources */,
+				FFDC6DA92C730ADD00DAC52E /* RecipeAPI.swift in Sources */,
 				FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */,
+				FFDC6DA62C73087700DAC52E /* APIBase.swift in Sources */,
 				FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
