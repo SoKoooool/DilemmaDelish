@@ -25,8 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FF707ADA2C4690D9002ABD20 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
-		FF707ADB2C4690F4002ABD20 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		FF08A4BC2CBCD5860097882D /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		FF08A4BD2CBCD58E0097882D /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		FF707ADD2C469218002ABD20 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		FFB913CC2ABAE6FF0022E688 /* DilemmaDelish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DilemmaDelish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,13 +66,21 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		FF707AD92C4690D0002ABD20 /* Resources */ = {
+		FF08A4BA2CBCD55B0097882D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FF707ADA2C4690D9002ABD20 /* Debug.xcconfig */,
-				FF707ADB2C4690F4002ABD20 /* Release.xcconfig */,
+				FF08A4BB2CBCD5630097882D /* Configurations */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		FF08A4BB2CBCD5630097882D /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				FF08A4BC2CBCD5860097882D /* Release.xcconfig */,
+				FF08A4BD2CBCD58E0097882D /* Debug.xcconfig */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 		FF707ADC2C4691FC002ABD20 /* Common */ = {
@@ -105,7 +113,7 @@
 				FFE2B28B2CB7FEFF00927C2C /* DIContainer */,
 				FFE2B2882CB79AA600927C2C /* Coordinator */,
 				FFA2A1472C84446400760692 /* Network */,
-				FF707AD92C4690D0002ABD20 /* Resources */,
+				FF08A4BA2CBCD55B0097882D /* Resources */,
 				FF707ADC2C4691FC002ABD20 /* Common */,
 				FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */,
 				FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */,
@@ -267,7 +275,7 @@
 /* Begin XCBuildConfiguration section */
 		FFB913DE2ABAE7010022E688 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF707ADA2C4690D9002ABD20 /* Debug.xcconfig */;
+			baseConfigurationReference = FF08A4BD2CBCD58E0097882D /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -328,7 +336,7 @@
 		};
 		FFB913DF2ABAE7010022E688 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF707ADB2C4690F4002ABD20 /* Release.xcconfig */;
+			baseConfigurationReference = FF08A4BC2CBCD5860097882D /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
