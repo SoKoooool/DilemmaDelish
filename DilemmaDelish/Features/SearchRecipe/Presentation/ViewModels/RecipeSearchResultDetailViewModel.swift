@@ -10,7 +10,7 @@ import RxSwift
 
 protocol RecipeSearchResultDetailViewModel {
     var recipeName: AnyObserver<String> { get }
-    var recipe: Observable<Recipe> { get }
+    var recipeDetail: Observable<Recipe> { get }
 }
 
 public final class DefaultRecipeSearchResultDetailViewModel: RecipeSearchResultDetailViewModel {
@@ -19,21 +19,21 @@ public final class DefaultRecipeSearchResultDetailViewModel: RecipeSearchResultD
     
     let recipeName: AnyObserver<String>
     
-    let recipe: Observable<Recipe>
+    let recipeDetail: Observable<Recipe>
     
     init(recipeSearchUsecase: RecipeSearchUsecase) {
         let naming = PublishSubject<String>()
         
-        let recipeDetail = PublishSubject<Recipe>()
+        let recipe = PublishSubject<Recipe>()
         
         recipeName = naming.asObserver()
         naming
             .map { DefaultRecipeSearchable(name: $0) }
             .flatMap { recipeSearchUsecase.execute(from: $0) }
             .flatMap { Observable.from($0) }
-            .subscribe(onNext: recipeDetail.onNext(_:))
+            .subscribe(onNext: recipe.onNext(_:))
             .disposed(by: disposeBag)
         
-        recipe = recipeDetail
+        recipeDetail = recipe
     }
 }
