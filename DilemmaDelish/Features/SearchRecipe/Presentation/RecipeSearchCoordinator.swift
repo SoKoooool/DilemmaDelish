@@ -10,6 +10,6 @@ import UIKit
 
 protocol RecipeSearchCoordinator {
     func showRecipeSearch()
-    func showRecipeSearchResults(with query: String)
+    func showRecipeSearchResults(from searchable: RecipeSearchable)
     func showRecipeSearchResultDetail(with id: String)
 }
