@@ -41,8 +41,8 @@ struct RecipeAPI: APIBase {
         }
     }
     
-    func recipe() -> Observable<Recipe.Response> {
-        return request(Recipe())
+    func recipe(with query: String) -> Observable<Recipe.Response> {
+        return request(Recipe(path: "" + query))
     }
     
     func recipeDetail() -> Observable<RecipeDetail.Response> {
