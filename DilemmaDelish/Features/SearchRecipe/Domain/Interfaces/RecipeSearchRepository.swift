@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol RecipeSearchRepository {
-    func searchRecipe(query: String) -> Observable<[Recipe]>
+    func searchRecipe(from searchable: RecipeSearchable) -> Observable<[Recipe]>
 }

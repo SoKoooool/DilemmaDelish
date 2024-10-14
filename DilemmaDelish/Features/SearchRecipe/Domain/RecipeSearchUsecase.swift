@@ -21,6 +21,6 @@ public final class DefaultRecipeSearchUsecase: RecipeSearchUsecase {
     }
     
     func execute(from searchable: RecipeSearchable) -> Observable<[Recipe]> {
-        return repository.searchRecipe(query: searchable.toQueryString())
+        return repository.searchRecipe(from: searchable)
     }
 }
