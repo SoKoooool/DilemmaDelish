@@ -20,6 +20,7 @@
 		FFDC6DA62C73087700DAC52E /* APIBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDC6DA52C73087700DAC52E /* APIBase.swift */; };
 		FFDC6DA92C730ADD00DAC52E /* RecipeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDC6DA82C730ADD00DAC52E /* RecipeAPI.swift */; };
 		FFDDE0662CBCA18700FA952F /* RecipeSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDDE0652CBCA18700FA952F /* RecipeSearchCoordinator.swift */; };
+		FFDDE0682CBCA1FE00FA952F /* RecipeSearchDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDDE0672CBCA1FE00FA952F /* RecipeSearchDIContainer.swift */; };
 		FFDDF1EC2C7D980900E7B551 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDDF1EB2C7D980900E7B551 /* Recipe.swift */; };
 		FFDDF1F32C7EBAA100E7B551 /* SearchRecipeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDDF1F22C7EBAA100E7B551 /* SearchRecipeRepository.swift */; };
 		FFDDF1F52C7EEBF000E7B551 /* RecipeSearchUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDDF1F42C7EEBF000E7B551 /* RecipeSearchUsecase.swift */; };
@@ -48,6 +49,7 @@
 		FFDC6DA52C73087700DAC52E /* APIBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBase.swift; sourceTree = "<group>"; };
 		FFDC6DA82C730ADD00DAC52E /* RecipeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAPI.swift; sourceTree = "<group>"; };
 		FFDDE0652CBCA18700FA952F /* RecipeSearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchCoordinator.swift; sourceTree = "<group>"; };
+		FFDDE0672CBCA1FE00FA952F /* RecipeSearchDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchDIContainer.swift; sourceTree = "<group>"; };
 		FFDDF1EB2C7D980900E7B551 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		FFDDF1F22C7EBAA100E7B551 /* SearchRecipeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecipeRepository.swift; sourceTree = "<group>"; };
 		FFDDF1F42C7EEBF000E7B551 /* RecipeSearchUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchUsecase.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				FFE2B28C2CB7FF1C00927C2C /* AppDIContainer.swift */,
+				FFDDE0672CBCA1FE00FA952F /* RecipeSearchDIContainer.swift */,
 			);
 			path = DIContainer;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				FFE2B28A2CB7FDF700927C2C /* AppCoordinator.swift in Sources */,
 				FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */,
 				FFDDF1F32C7EBAA100E7B551 /* SearchRecipeRepository.swift in Sources */,
+				FFDDE0682CBCA1FE00FA952F /* RecipeSearchDIContainer.swift in Sources */,
 				FFDC6DA62C73087700DAC52E /* APIBase.swift in Sources */,
 				FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */,
 				FFDDF1EC2C7D980900E7B551 /* Recipe.swift in Sources */,
