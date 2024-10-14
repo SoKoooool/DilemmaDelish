@@ -16,6 +16,10 @@
 		FFB913D72ABAE6FF0022E688 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB913D52ABAE6FF0022E688 /* Main.storyboard */; };
 		FFB913D92ABAE7010022E688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFB913D82ABAE7010022E688 /* Assets.xcassets */; };
 		FFB913DC2ABAE7010022E688 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB913DA2ABAE7010022E688 /* LaunchScreen.storyboard */; };
+		FFDBA7112CBCDBB2004FA8C7 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE2B28C2CB7FF1C00927C2C /* AppDIContainer.swift */; };
+		FFDBA7122CBCDBB2004FA8C7 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE2B2892CB7FDF700927C2C /* AppCoordinator.swift */; };
+		FFDBA7132CBCDBB2004FA8C7 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDC6DA32C7306A600DAC52E /* Requestable.swift */; };
+		FFDBA7142CBCDBB2004FA8C7 /* RecipeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDC6DA82C730ADD00DAC52E /* RecipeAPI.swift */; };
 		FFDC6DA62C73087700DAC52E /* APIBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDC6DA52C73087700DAC52E /* APIBase.swift */; };
 		FFDDE0662CBCA18700FA952F /* DefaultRecipeSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDDE0652CBCA18700FA952F /* DefaultRecipeSearchCoordinator.swift */; };
 		FFDDE0682CBCA1FE00FA952F /* RecipeSearchDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDDE0672CBCA1FE00FA952F /* RecipeSearchDIContainer.swift */; };
@@ -292,6 +296,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFDBA7112CBCDBB2004FA8C7 /* AppDIContainer.swift in Sources */,
+				FFDBA7122CBCDBB2004FA8C7 /* AppCoordinator.swift in Sources */,
+				FFDBA7132CBCDBB2004FA8C7 /* Requestable.swift in Sources */,
+				FFDBA7142CBCDBB2004FA8C7 /* RecipeAPI.swift in Sources */,
 				FFE2B2872CB76F5000927C2C /* Coordinator.swift in Sources */,
 				FFB913D42ABAE6FF0022E688 /* ViewController.swift in Sources */,
 				FFDDE06A2CBCA52300FA952F /* RecipeSearchCoordinator.swift in Sources */,
