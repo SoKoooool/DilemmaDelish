@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 protocol RecipeSearchUsecase {
-    func execute(query: String) -> Observable<[Recipe]>
+    func execute(from searchable: RecipeSearchable) -> Observable<[Recipe]>
 }
 
 public final class DefaultRecipeSearchUsecase: RecipeSearchUsecase {
@@ -20,7 +20,7 @@ public final class DefaultRecipeSearchUsecase: RecipeSearchUsecase {
         self.repository = repository
     }
     
-    func execute(query: String) -> Observable<[Recipe]> {
-        return repository.searchRecipe(query: query)
+    func execute(from searchable: RecipeSearchable) -> Observable<[Recipe]> {
+        return repository.searchRecipe(query: searchable.toQueryString())
     }
 }
