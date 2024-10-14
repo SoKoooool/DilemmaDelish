@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF707ADE2C469218002ABD20 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF707ADD2C469218002ABD20 /* Environment.swift */; };
 		FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */; };
 		FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */; };
 		FFB913D42ABAE6FF0022E688 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913D32ABAE6FF0022E688 /* ViewController.swift */; };
@@ -24,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF707ADA2C4690D9002ABD20 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		FF707ADB2C4690F4002ABD20 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		FF707ADD2C469218002ABD20 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		FFB913CC2ABAE6FF0022E688 /* DilemmaDelish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DilemmaDelish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +66,23 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		FF707AD92C4690D0002ABD20 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FF707ADA2C4690D9002ABD20 /* Debug.xcconfig */,
+				FF707ADB2C4690F4002ABD20 /* Release.xcconfig */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FF707ADC2C4691FC002ABD20 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FF707ADD2C469218002ABD20 /* Environment.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		FFB913C32ABAE6FF0022E688 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +105,8 @@
 				FFE2B28B2CB7FEFF00927C2C /* DIContainer */,
 				FFE2B2882CB79AA600927C2C /* Coordinator */,
 				FFA2A1472C84446400760692 /* Network */,
+				FF707AD92C4690D0002ABD20 /* Resources */,
+				FF707ADC2C4691FC002ABD20 /* Common */,
 				FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */,
 				FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */,
 				FFB913D32ABAE6FF0022E688 /* ViewController.swift */,
@@ -213,6 +236,7 @@
 				FFE2B28A2CB7FDF700927C2C /* AppCoordinator.swift in Sources */,
 				FFDC6DA42C7306A600DAC52E /* Requestable.swift in Sources */,
 				FFDC6DA92C730ADD00DAC52E /* RecipeAPI.swift in Sources */,
+				FF707ADE2C469218002ABD20 /* Environment.swift in Sources */,
 				FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */,
 				FFDC6DA62C73087700DAC52E /* APIBase.swift in Sources */,
 				FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */,
@@ -243,6 +267,7 @@
 /* Begin XCBuildConfiguration section */
 		FFB913DE2ABAE7010022E688 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF707ADA2C4690D9002ABD20 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -303,6 +328,7 @@
 		};
 		FFB913DF2ABAE7010022E688 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF707ADB2C4690F4002ABD20 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
