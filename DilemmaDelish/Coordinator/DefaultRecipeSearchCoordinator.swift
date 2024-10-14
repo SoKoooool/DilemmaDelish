@@ -1,5 +1,5 @@
 //
-//  RecipeSearchCoordinator.swift
+//  DefaultRecipeSearchCoordinator.swift
 //  DilemmaDelish
 //
 //  Created by TORI on 10/14/24.
