@@ -16,15 +16,15 @@ public final class RecipeSearchDIContainer: RecipeSearchCoordinatorDependencies 
         self.navigationController = navigationController
     }
     
-    func makeRecipeSearch() -> UIViewController {
-        return UIViewController()
+    func makeRecipeSearchViewController(viewModel: RecipeSearchViewModel) -> UIViewController {
+        return RecipeSearchViewController(viewModel: viewModel)
     }
     
-    func makeRecipeSearchResults(with query: String) -> UIViewController {
-        return UIViewController()
+    func makeRecipeSearchResultsViewController(viewModel: RecipeSearchResultsViewModel) -> UIViewController {
+        return RecipeSearchResultsViewController(viewModel: viewModel)
     }
     
-    func makeRecipeSearchResultDetail(with id: String) -> UIViewController {
-        return UIViewController()
+    func makeRecipeSearchResultDetailViewController(viewModel: RecipeSearchResultDetailViewModel) -> UIViewController {
+        return RecipeSearchResultDetailViewController(viewModel: viewModel)
     }
 }
