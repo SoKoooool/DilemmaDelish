@@ -16,6 +16,10 @@ public final class RecipeSearchDIContainer: RecipeSearchCoordinatorDependencies 
         self.navigationController = navigationController
     }
     
+    func makeRecipeSearchCoordinator() -> Coordinator {
+        return DefaultRecipeSearchCoordinator(navigationController: navigationController, dependencies: self)
+    }
+    
     func makeRecipeSearchViewController(viewModel: RecipeSearchViewModel) -> UIViewController {
         return RecipeSearchViewController(viewModel: viewModel)
     }
