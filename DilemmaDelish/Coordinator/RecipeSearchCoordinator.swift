@@ -42,14 +42,22 @@ public final class DefaultRecipeSearchCoordinator: RecipeSearchCoordinator {
 
 extension DefaultRecipeSearchCoordinator {
     func showRecipeSearch() {
-        
+        let viewModel = dependencies.makeRecipeSearchViewModel(coordinator: self)
+        let viewController = dependencies.makeRecipeSearchViewController(viewModel: viewModel)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     func showRecipeSearchResults(from searchable: RecipeSearchable) {
-        
+        let viewModel = dependencies.makeRecipeSearchResultsViewModel(coordinator: self)
+        let viewController = dependencies.makeRecipeSearchResultsViewController(viewModel: viewModel)
+        viewModel.searchableRecipe.onNext(searchable)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     func showRecipeSearchResultDetail(with id: String) {
-        
+        let viewModel = dependencies.makeRecipeSearchResultDetailViewModel(coordinator: self)
+        let viewController = dependencies.makeRecipeSearchResultDetailViewController(viewModel: viewModel)
+        viewModel.recipeName.onNext(id)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
