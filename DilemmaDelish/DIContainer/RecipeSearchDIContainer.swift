@@ -45,13 +45,13 @@ extension RecipeSearchDIContainer {
     }
 
     func makeRecipeSearchResultsViewModel(coordinator: RecipeSearchCoordinator) -> RecipeSearchResultsViewModel {
-        let repository = DefaultSearchRecipeRepository()
+        let repository = DefaultRecipeSearchRepository()
         let usecase = DefaultRecipeSearchUsecase(repository: repository)
         return DefaultRecipeSearchResultsViewModel(recipeSearchUsecase: usecase, coordinator: coordinator)
     }
     
     func makeRecipeSearchResultDetailViewModel(coordinator: RecipeSearchCoordinator) -> RecipeSearchResultDetailViewModel {
-        let repository = DefaultSearchRecipeRepository()
+        let repository = DefaultRecipeSearchRepository()
         let usecase = DefaultRecipeSearchUsecase(repository: repository)
         return DefaultRecipeSearchResultDetailViewModel(recipeSearchUsecase: usecase)
     }
