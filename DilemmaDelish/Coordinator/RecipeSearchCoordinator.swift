@@ -18,6 +18,9 @@ protocol RecipeSearchCoordinatorDependencies {
     func makeRecipeSearchViewController(viewModel: RecipeSearchViewModel) -> UIViewController
     func makeRecipeSearchResultsViewController(viewModel: RecipeSearchResultsViewModel) -> UIViewController
     func makeRecipeSearchResultDetailViewController(viewModel: RecipeSearchResultDetailViewModel) -> UIViewController
+    func makeRecipeSearchViewModel(coordinator: RecipeSearchCoordinator) -> RecipeSearchViewModel
+    func makeRecipeSearchResultsViewModel(coordinator: RecipeSearchCoordinator) -> RecipeSearchResultsViewModel
+    func makeRecipeSearchResultDetailViewModel(coordinator: RecipeSearchCoordinator) -> RecipeSearchResultDetailViewModel
 }
 
 public final class DefaultRecipeSearchCoordinator: RecipeSearchCoordinator {

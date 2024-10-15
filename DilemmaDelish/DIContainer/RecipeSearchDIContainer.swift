@@ -19,7 +19,11 @@ public final class RecipeSearchDIContainer: RecipeSearchCoordinatorDependencies 
     func makeRecipeSearchCoordinator() -> Coordinator {
         return DefaultRecipeSearchCoordinator(navigationController: navigationController, dependencies: self)
     }
-    
+}
+
+// MARK: - ViewControllers Injection
+
+extension RecipeSearchDIContainer {
     func makeRecipeSearchViewController(viewModel: RecipeSearchViewModel) -> UIViewController {
         return RecipeSearchViewController(viewModel: viewModel)
     }
@@ -30,5 +34,25 @@ public final class RecipeSearchDIContainer: RecipeSearchCoordinatorDependencies 
     
     func makeRecipeSearchResultDetailViewController(viewModel: RecipeSearchResultDetailViewModel) -> UIViewController {
         return RecipeSearchResultDetailViewController(viewModel: viewModel)
+    }
+}
+
+// MARK: - ViewModels Injection
+
+extension RecipeSearchDIContainer {
+    func makeRecipeSearchViewModel(coordinator: RecipeSearchCoordinator) -> RecipeSearchViewModel {
+        return DefaultRecipeSearchViewModel(coordinator: coordinator)
+    }
+
+    func makeRecipeSearchResultsViewModel(coordinator: RecipeSearchCoordinator) -> RecipeSearchResultsViewModel {
+        let repository = DefaultSearchRecipeRepository()
+        let usecase = DefaultRecipeSearchUsecase(repository: repository)
+        return DefaultRecipeSearchResultsViewModel(recipeSearchUsecase: usecase, coordinator: coordinator)
+    }
+    
+    func makeRecipeSearchResultDetailViewModel(coordinator: RecipeSearchCoordinator) -> RecipeSearchResultDetailViewModel {
+        let repository = DefaultSearchRecipeRepository()
+        let usecase = DefaultRecipeSearchUsecase(repository: repository)
+        return DefaultRecipeSearchResultDetailViewModel(recipeSearchUsecase: usecase)
     }
 }

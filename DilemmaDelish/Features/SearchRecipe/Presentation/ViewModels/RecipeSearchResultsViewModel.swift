@@ -17,7 +17,7 @@ protocol RecipeSearchResultsViewModel {
     var errorMessage: Observable<String> { get }
 }
 
-private final class DefaultRecipeSearchResultsViewModel: RecipeSearchResultsViewModel {
+public final class DefaultRecipeSearchResultsViewModel: RecipeSearchResultsViewModel {
     
     private let disposeBag = DisposeBag()
     

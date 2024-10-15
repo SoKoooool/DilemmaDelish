@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF2775E82CBDF8DD0040EDF1 /* RecipeSearchResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE2B26B2CAABB9600927C2C /* RecipeSearchResultsViewModel.swift */; };
 		FF5A37E32CAA663500836F62 /* RecipeSearchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A37E22CAA663500836F62 /* RecipeSearchable.swift */; };
 		FF5A37E62CAA687B00836F62 /* RecipeSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A37E52CAA687B00836F62 /* RecipeSearchRepository.swift */; };
 		FFA2A1442C843DD200760692 /* RecipeSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA2A1432C843DD200760692 /* RecipeSearchViewModel.swift */; };
@@ -31,7 +32,6 @@
 		FFDDF1F52C7EEBF000E7B551 /* RecipeSearchUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDDF1F42C7EEBF000E7B551 /* RecipeSearchUsecase.swift */; };
 		FFE2109A2C16D4CD000D29B0 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = FFE210992C16D4CD000D29B0 /* RxCocoa */; };
 		FFE2109C2C16D4CD000D29B0 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFE2109B2C16D4CD000D29B0 /* RxSwift */; };
-		FFE2B26C2CAABB9600927C2C /* RecipeSearchResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE2B26B2CAABB9600927C2C /* RecipeSearchResultsViewModel.swift */; };
 		FFE2B26E2CACDC9C00927C2C /* RecipeSearchResultDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE2B26D2CACDC9C00927C2C /* RecipeSearchResultDetailViewModel.swift */; };
 		FFE2B2872CB76F5000927C2C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE2B2862CB76F5000927C2C /* Coordinator.swift */; };
 /* End PBXBuildFile section */
@@ -310,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF2775E82CBDF8DD0040EDF1 /* RecipeSearchResultsViewModel.swift in Sources */,
 				FFDBA7112CBCDBB2004FA8C7 /* AppDIContainer.swift in Sources */,
 				FFDBA7122CBCDBB2004FA8C7 /* AppCoordinator.swift in Sources */,
 				FFDBA7132CBCDBB2004FA8C7 /* Requestable.swift in Sources */,
@@ -329,7 +330,6 @@
 				FFE2B26E2CACDC9C00927C2C /* RecipeSearchResultDetailViewModel.swift in Sources */,
 				FFA2A1442C843DD200760692 /* RecipeSearchViewModel.swift in Sources */,
 				FF5A37E62CAA687B00836F62 /* RecipeSearchRepository.swift in Sources */,
-				FFE2B26C2CAABB9600927C2C /* RecipeSearchResultsViewModel.swift in Sources */,
 				FF5A37E32CAA663500836F62 /* RecipeSearchable.swift in Sources */,
 				FFDDF1F52C7EEBF000E7B551 /* RecipeSearchUsecase.swift in Sources */,
 			);
