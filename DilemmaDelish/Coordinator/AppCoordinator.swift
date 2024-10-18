@@ -13,9 +13,9 @@ public final class AppCoordinator: Coordinator {
     var navigationController: UINavigationController?
     var childCoordinators: [Coordinator] = []
     
-    private let appDIContainer: AppDIContainer
+    private let appDIContainer: Container
     
-    init(navigationController: UINavigationController?, appDIContainer: AppDIContainer) {
+    init(navigationController: UINavigationController?, appDIContainer: Container) {
         self.navigationController = navigationController
         self.appDIContainer = appDIContainer
     }
