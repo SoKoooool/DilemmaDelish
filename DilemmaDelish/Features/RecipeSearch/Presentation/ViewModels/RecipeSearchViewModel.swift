@@ -18,7 +18,7 @@ public final class DefaultRecipeSearchViewModel: RecipeSearchViewModel {
     
     let searchTerm: AnyObserver<String>
     
-    init(coordinator: RecipeSearchCoordinator) {
+    init(coordinator: RecipeSearchCoordinator = Container.shared.resolve(DefaultRecipeSearchCoordinator.self)) {
         let searching = PublishSubject<String>()
         
         searchTerm = searching.asObserver()

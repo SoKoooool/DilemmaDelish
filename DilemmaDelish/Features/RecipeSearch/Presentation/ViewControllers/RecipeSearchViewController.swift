@@ -12,7 +12,7 @@ final class RecipeSearchViewController: UIViewController {
     
     private let viewModel: RecipeSearchViewModel!
     
-    init(viewModel: RecipeSearchViewModel) {
+    init(viewModel: RecipeSearchViewModel = Container.shared.resolve(DefaultRecipeSearchViewModel.self)) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

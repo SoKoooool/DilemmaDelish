@@ -16,7 +16,7 @@ public final class DefaultRecipeSearchUsecase: RecipeSearchUsecase {
     
     private let repository: RecipeSearchRepository
     
-    init(repository: RecipeSearchRepository) {
+    init(repository: RecipeSearchRepository = Container.shared.resolve(DefaultRecipeSearchRepository.self)) {
         self.repository = repository
     }
     

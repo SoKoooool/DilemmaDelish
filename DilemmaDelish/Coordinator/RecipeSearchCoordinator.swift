@@ -30,7 +30,8 @@ public final class DefaultRecipeSearchCoordinator: RecipeSearchCoordinator {
     
     private let dependencies: RecipeSearchCoordinatorDependencies
     
-    init(navigationController: UINavigationController?, dependencies: RecipeSearchCoordinatorDependencies) {
+    init(navigationController: UINavigationController?, 
+         dependencies: RecipeSearchCoordinatorDependencies = Container.shared.resolve(RecipeSearchDIContainer.self)) {
         self.navigationController = navigationController
         self.dependencies = dependencies
     }

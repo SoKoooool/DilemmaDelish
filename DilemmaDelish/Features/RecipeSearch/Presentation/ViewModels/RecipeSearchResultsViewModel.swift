@@ -28,7 +28,8 @@ public final class DefaultRecipeSearchResultsViewModel: RecipeSearchResultsViewM
     let isLoading: Observable<Bool>
     let errorMessage: Observable<String>
     
-    init(recipeSearchUsecase: RecipeSearchUsecase, coordinator: RecipeSearchCoordinator) {
+    init(recipeSearchUsecase: RecipeSearchUsecase = Container.shared.resolve(DefaultRecipeSearchUsecase.self),
+         coordinator: RecipeSearchCoordinator = Container.shared.resolve(DefaultRecipeSearchCoordinator.self)) {
         let searching = PublishSubject<RecipeSearchable>()
         let detailing = PublishSubject<String>()
         

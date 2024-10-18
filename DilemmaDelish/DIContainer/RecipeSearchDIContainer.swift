@@ -9,16 +9,7 @@ import Foundation
 import UIKit
 
 public final class RecipeSearchDIContainer: RecipeSearchCoordinatorDependencies {
-    
-    private let navigationController: UINavigationController?
-    
-    init(navigationController: UINavigationController?) {
-        self.navigationController = navigationController
-    }
-    
-    func makeRecipeSearchCoordinator() -> Coordinator {
-        return DefaultRecipeSearchCoordinator(navigationController: navigationController, dependencies: self)
-    }
+
 }
 
 // MARK: - ViewControllers Injection

@@ -21,7 +21,7 @@ public final class DefaultRecipeSearchResultDetailViewModel: RecipeSearchResultD
     
     let recipeDetail: Observable<Recipe>
     
-    init(recipeSearchUsecase: RecipeSearchUsecase) {
+    init(recipeSearchUsecase: RecipeSearchUsecase = Container.shared.resolve(DefaultRecipeSearchUsecase.self)) {
         let naming = PublishSubject<String>()
         
         let recipe = PublishSubject<Recipe>()
