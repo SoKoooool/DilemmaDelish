@@ -9,41 +9,19 @@ import Foundation
 import UIKit
 
 public final class RecipeSearchDIContainer: RecipeSearchCoordinatorDependencies {
-
-}
-
-// MARK: - ViewControllers Injection
-
-extension RecipeSearchDIContainer {
-    func makeRecipeSearchViewController(viewModel: RecipeSearchViewModel) -> UIViewController {
-        return RecipeSearchViewController(viewModel: viewModel)
+    func makeRecipeSearchViewController() -> UIViewController {
+        return RecipeSearchViewController()
     }
     
-    func makeRecipeSearchResultsViewController(viewModel: RecipeSearchResultsViewModel) -> UIViewController {
+    func makeRecipeSearchResultsViewController(with searchable: RecipeSearchable) -> UIViewController {
+        let viewModel = Container.shared.resolve(DefaultRecipeSearchResultsViewModel.self)
+        viewModel.searchableRecipe.onNext(searchable)
         return RecipeSearchResultsViewController(viewModel: viewModel)
     }
     
-    func makeRecipeSearchResultDetailViewController(viewModel: RecipeSearchResultDetailViewModel) -> UIViewController {
+    func makeRecipeSearchResultDetailViewController(with id: String) -> UIViewController {
+        let viewModel = Container.shared.resolve(DefaultRecipeSearchResultDetailViewModel.self)
+        viewModel.recipeName.onNext(id)
         return RecipeSearchResultDetailViewController(viewModel: viewModel)
-    }
-}
-
-// MARK: - ViewModels Injection
-
-extension RecipeSearchDIContainer {
-    func makeRecipeSearchViewModel(coordinator: RecipeSearchCoordinator) -> RecipeSearchViewModel {
-        return DefaultRecipeSearchViewModel(coordinator: coordinator)
-    }
-
-    func makeRecipeSearchResultsViewModel(coordinator: RecipeSearchCoordinator) -> RecipeSearchResultsViewModel {
-        let repository = DefaultRecipeSearchRepository()
-        let usecase = DefaultRecipeSearchUsecase(repository: repository)
-        return DefaultRecipeSearchResultsViewModel(recipeSearchUsecase: usecase, coordinator: coordinator)
-    }
-    
-    func makeRecipeSearchResultDetailViewModel(coordinator: RecipeSearchCoordinator) -> RecipeSearchResultDetailViewModel {
-        let repository = DefaultRecipeSearchRepository()
-        let usecase = DefaultRecipeSearchUsecase(repository: repository)
-        return DefaultRecipeSearchResultDetailViewModel(recipeSearchUsecase: usecase)
     }
 }

@@ -15,12 +15,9 @@ protocol RecipeSearchCoordinator: Coordinator {
 }
 
 protocol RecipeSearchCoordinatorDependencies {
-    func makeRecipeSearchViewController(viewModel: RecipeSearchViewModel) -> UIViewController
-    func makeRecipeSearchResultsViewController(viewModel: RecipeSearchResultsViewModel) -> UIViewController
-    func makeRecipeSearchResultDetailViewController(viewModel: RecipeSearchResultDetailViewModel) -> UIViewController
-    func makeRecipeSearchViewModel(coordinator: RecipeSearchCoordinator) -> RecipeSearchViewModel
-    func makeRecipeSearchResultsViewModel(coordinator: RecipeSearchCoordinator) -> RecipeSearchResultsViewModel
-    func makeRecipeSearchResultDetailViewModel(coordinator: RecipeSearchCoordinator) -> RecipeSearchResultDetailViewModel
+    func makeRecipeSearchViewController() -> UIViewController
+    func makeRecipeSearchResultsViewController(with searchable: RecipeSearchable) -> UIViewController
+    func makeRecipeSearchResultDetailViewController(with id: String) -> UIViewController
 }
 
 public final class DefaultRecipeSearchCoordinator: RecipeSearchCoordinator {
@@ -43,22 +40,17 @@ public final class DefaultRecipeSearchCoordinator: RecipeSearchCoordinator {
 
 extension DefaultRecipeSearchCoordinator {
     func showRecipeSearch() {
-        let viewModel = dependencies.makeRecipeSearchViewModel(coordinator: self)
-        let viewController = dependencies.makeRecipeSearchViewController(viewModel: viewModel)
+        let viewController = dependencies.makeRecipeSearchViewController()
         navigationController?.pushViewController(viewController, animated: true)
     }
     
     func showRecipeSearchResults(from searchable: RecipeSearchable) {
-        let viewModel = dependencies.makeRecipeSearchResultsViewModel(coordinator: self)
-        let viewController = dependencies.makeRecipeSearchResultsViewController(viewModel: viewModel)
-        viewModel.searchableRecipe.onNext(searchable)
+        let viewController = dependencies.makeRecipeSearchResultsViewController(with: searchable)
         navigationController?.pushViewController(viewController, animated: true)
     }
     
     func showRecipeSearchResultDetail(with id: String) {
-        let viewModel = dependencies.makeRecipeSearchResultDetailViewModel(coordinator: self)
-        let viewController = dependencies.makeRecipeSearchResultDetailViewController(viewModel: viewModel)
-        viewModel.recipeName.onNext(id)
+        let viewController = dependencies.makeRecipeSearchResultDetailViewController(with: id)
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
