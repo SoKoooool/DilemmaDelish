@@ -38,7 +38,8 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
     
     private let disposeBag = DisposeBag()
     
-    init(recipeSearchTutorialUsecase: RecipeSearchTutorialUsecase, coordinator: RecipeSearchTutorialCoordinator) {
+    init(recipeSearchTutorialUsecase: RecipeSearchTutorialUsecase = Container.shared.resolve(DefaultRecipeSearchTutorialUsecase.self),
+         coordinator: RecipeSearchTutorialCoordinator = Container.shared.resolve(RecipeSearchTutorialCoordinator.self)) {
         let fetching = PublishSubject<Void>()
         let categoryPicking = PublishSubject<ViewRecipeDetail.Category>()
         let ingredientPicking = PublishSubject<ViewRecipeDetail.Ingredient>()

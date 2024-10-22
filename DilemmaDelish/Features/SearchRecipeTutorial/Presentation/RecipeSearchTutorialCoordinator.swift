@@ -27,7 +27,8 @@ public final class RecipeSearchTutorialCoordinator: Coordinator {
         dependencies.makeRecipeSearchTutorialViewModel(coordinator: self)
     }()
     
-    init(navigationController: UINavigationController?, dependencies: RecipeSearchTutorialCoordinatorDependencies) {
+    init(navigationController: UINavigationController?, 
+         dependencies: RecipeSearchTutorialCoordinatorDependencies = Container.shared.resolve(RecipeSearchTutorialDIContainer.self)) {
         self.navigationController = navigationController
         self.dependencies = dependencies
     }

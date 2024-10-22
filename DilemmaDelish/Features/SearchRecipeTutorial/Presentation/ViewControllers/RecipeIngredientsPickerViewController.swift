@@ -12,7 +12,7 @@ final class RecipeIngredientsPickerViewController: UIViewController {
     
     private let viewModel: RecipeSearchTutorialViewModel!
     
-    init(viewModel: RecipeSearchTutorialViewModel) {
+    init(viewModel: RecipeSearchTutorialViewModel = Container.shared.resolve(DefaultRecipeSearchTutorialViewModel.self)) {
         self.viewModel = viewModel
         super.init()
     }
