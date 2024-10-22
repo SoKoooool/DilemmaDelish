@@ -26,18 +26,6 @@ public final class AppCoordinator: Coordinator {
 }
 
 extension AppCoordinator {
-<<<<<<< HEAD
-    func showRecipeSearchTutorial() {
-        let container = appDIContainer.makeRecipeSearchTutorialDIContainer()
-        let coordinator = container.makeRecipeSearchTutorialCoordinator()
-        addChildCoordinator(coordinator)
-        coordinator.start()
-        coordinator.onFinish = { [weak self] _ in
-            self?.removeChildCoordinator(coordinator)
-        }
-    }
-}
-=======
     func showRecipeSearch() {
         Container.shared.register(RecipeSearchDIContainer())
         Container.shared.register(DefaultRecipeSearchCoordinator(navigationController: navigationController))
@@ -53,4 +41,10 @@ extension AppCoordinator {
     }
 }
 
->>>>>>> develop
+extension AppCoordinator {
+    func showRecipeSearchTutorial() {
+        
+    }
+}
+
+
