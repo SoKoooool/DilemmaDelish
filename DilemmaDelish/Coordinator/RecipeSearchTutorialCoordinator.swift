@@ -8,13 +8,20 @@
 import Foundation
 import UIKit
 
+protocol RecipeSearchTutorialCoordinator {
+    func showCategoriesPicker()
+    func showIngredientsPicker()
+    func showSeasoningsPicker()
+    func didFinishCoordinate(with query: String)
+}
+
 protocol RecipeSearchTutorialCoordinatorDependencies {
     func makeCategoriesPickerViewController() -> UIViewController
     func makeIngredientsPickerViewController() -> UIViewController
     func makeSeasoningsPickerViewController() -> UIViewController
 }
 
-public final class RecipeSearchTutorialCoordinator: Coordinator {
+public final class DefaultRecipeSearchTutorialCoordinator: RecipeSearchTutorialCoordinator {
     
     var navigationController: UINavigationController?
     var childCoordinators: [Coordinator] = []
