@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol RecipeSearchTutorialCoordinator {
+protocol RecipeSearchTutorialCoordinator: Coordinator {
     func showCategoriesPicker()
     func showIngredientsPicker()
     func showSeasoningsPicker()
