@@ -13,9 +13,9 @@ public final class AppCoordinator: Coordinator {
     var navigationController: UINavigationController?
     var childCoordinators: [Coordinator] = []
     
-    private let appDIContainer: AppDIContainer
+    private let appDIContainer: Container
     
-    init(navigationController: UINavigationController?, appDIContainer: AppDIContainer) {
+    init(navigationController: UINavigationController?, appDIContainer: Container) {
         self.navigationController = navigationController
         self.appDIContainer = appDIContainer
     }
@@ -26,6 +26,7 @@ public final class AppCoordinator: Coordinator {
 }
 
 extension AppCoordinator {
+<<<<<<< HEAD
     func showRecipeSearchTutorial() {
         let container = appDIContainer.makeRecipeSearchTutorialDIContainer()
         let coordinator = container.makeRecipeSearchTutorialCoordinator()
@@ -36,3 +37,20 @@ extension AppCoordinator {
         }
     }
 }
+=======
+    func showRecipeSearch() {
+        Container.shared.register(RecipeSearchDIContainer())
+        Container.shared.register(DefaultRecipeSearchCoordinator(navigationController: navigationController))
+        Container.shared.register(DefaultRecipeSearchRepository())
+        Container.shared.register(DefaultRecipeSearchUsecase())
+        Container.shared.register(DefaultRecipeSearchViewModel())
+        Container.shared.register(DefaultRecipeSearchResultsViewModel())
+        Container.shared.register(DefaultRecipeSearchResultDetailViewModel())
+        
+        let coordinator = Container.shared.resolve(DefaultRecipeSearchCoordinator.self)
+        addChildCoordinator(coordinator)
+        coordinator.start()
+    }
+}
+
+>>>>>>> develop
