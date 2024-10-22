@@ -1,0 +1,23 @@
+//
+//  RecipeSearchTutorialDIContainer.swift
+//  DilemmaDelish
+//
+//  Created by TORI on 10/8/24.
+//
+
+import Foundation
+import UIKit
+
+public final class RecipeSearchTutorialDIContainer: RecipeSearchTutorialCoordinatorDependencies {
+    func makeCategoriesPickerViewController() -> UIViewController {
+        return RecipeCategoriesPickerViewController()
+    }
+    
+    func makeIngredientsPickerViewController() -> UIViewController {
+        return RecipeIngredientsPickerViewController()
+    }
+    
+    func makeSeasoningsPickerViewController() -> UIViewController {
+        RecipeSeasoningsPickerViewController()
+    }
+}

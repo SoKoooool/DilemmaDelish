@@ -9,10 +9,9 @@ import Foundation
 import UIKit
 
 protocol RecipeSearchTutorialCoordinatorDependencies {
-    func makeCategoriesPickerViewController(viewModel: RecipeSearchTutorialViewModel) -> UIViewController
-    func makeIngredientsPickerViewController(viewModel: RecipeSearchTutorialViewModel) -> UIViewController
-    func makeSeasoningsPickerViewController(viewModel: RecipeSearchTutorialViewModel) -> UIViewController
-    func makeRecipeSearchTutorialViewModel(coordinator: RecipeSearchTutorialCoordinator) -> RecipeSearchTutorialViewModel
+    func makeCategoriesPickerViewController() -> UIViewController
+    func makeIngredientsPickerViewController() -> UIViewController
+    func makeSeasoningsPickerViewController() -> UIViewController
 }
 
 public final class RecipeSearchTutorialCoordinator: Coordinator {
@@ -22,10 +21,6 @@ public final class RecipeSearchTutorialCoordinator: Coordinator {
     var onFinish: ((String) -> Void)?
     
     private let dependencies: RecipeSearchTutorialCoordinatorDependencies
-    
-    private lazy var viewModel: RecipeSearchTutorialViewModel = {
-        dependencies.makeRecipeSearchTutorialViewModel(coordinator: self)
-    }()
     
     init(navigationController: UINavigationController?, 
          dependencies: RecipeSearchTutorialCoordinatorDependencies = Container.shared.resolve(RecipeSearchTutorialDIContainer.self)) {
@@ -38,17 +33,17 @@ public final class RecipeSearchTutorialCoordinator: Coordinator {
     }
     
     func showCategoriesPicker() {
-        let viewController = dependencies.makeCategoriesPickerViewController(viewModel: viewModel)
+        let viewController = dependencies.makeCategoriesPickerViewController()
         navigationController?.pushViewController(viewController, animated: true)
     }
     
     func showIngredientsPicker() {
-        let viewController = dependencies.makeCategoriesPickerViewController(viewModel: viewModel)
+        let viewController = dependencies.makeCategoriesPickerViewController()
         navigationController?.pushViewController(viewController, animated: true)
     }
     
     func showSeasoningsPicker() {
-        let viewController = dependencies.makeCategoriesPickerViewController(viewModel: viewModel)
+        let viewController = dependencies.makeCategoriesPickerViewController()
         navigationController?.pushViewController(viewController, animated: true)
     }
     

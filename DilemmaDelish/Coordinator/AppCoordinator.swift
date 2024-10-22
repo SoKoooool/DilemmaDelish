@@ -43,7 +43,7 @@ extension AppCoordinator {
 
 extension AppCoordinator {
     func showRecipeSearchTutorial() {
-        
+        Container.shared.register(RecipeSearchTutorialDIContainer())
     }
 }
 

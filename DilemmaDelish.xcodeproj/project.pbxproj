@@ -172,7 +172,6 @@
 				FFF81AAF2C3AAFB90060F0C8 /* Data */,
 				FF940AAA2C16D5AC008A1856 /* Domain */,
 				FFBD7CF92C2CC74200F6D802 /* Presentation */,
-				FFE2B2822CB506DE00927C2C /* RecipeSearchTutorialDIContainer.swift */,
 			);
 			path = SearchRecipeTutorial;
 			sourceTree = "<group>";
@@ -245,7 +244,6 @@
 		FFBD7CF92C2CC74200F6D802 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				FFE2B2732CB4BE4700927C2C /* RecipeSearchTutorialCoordinator.swift */,
 				FFBD7CFA2C2CC74600F6D802 /* ViewModels */,
 				FFE2B27B2CB5039400927C2C /* ViewControllers */,
 			);
@@ -366,6 +364,7 @@
 			children = (
 				FFE2B2862CB76F5000927C2C /* Coordinator.swift */,
 				FFE2B2892CB7FDF700927C2C /* AppCoordinator.swift */,
+				FFE2B2732CB4BE4700927C2C /* RecipeSearchTutorialCoordinator.swift */,
 				FFDDE0692CBCA52300FA952F /* RecipeSearchCoordinator.swift */,
 			);
 			path = Coordinator;
@@ -375,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				FFE2B28C2CB7FF1C00927C2C /* Container.swift */,
+				FFE2B2822CB506DE00927C2C /* RecipeSearchTutorialDIContainer.swift */,
 				FFDDE0672CBCA1FE00FA952F /* RecipeSearchDIContainer.swift */,
 			);
 			path = DIContainer;
