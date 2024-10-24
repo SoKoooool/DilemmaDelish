@@ -104,7 +104,7 @@ final class DefaultRecipeSearchTutorialViewModel: RecipeSearchTutorialViewModel 
             .map { ViewRecipeDetail($0) }
             .map { $0.filteredSelection() }
             .map { $0.toQuery() }
-            .subscribe { coordinator.didFinishCoordinate(with: $0) }
+            .subscribe { coordinator.onFinish?($0) }
             .disposed(by: disposeBag)
         
         recipeCategories = categories

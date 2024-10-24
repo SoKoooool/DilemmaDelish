@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 public final class RecipeSearchTutorialDIContainer: RecipeSearchTutorialCoordinatorDependencies {
-    func makeCoordinator(navigationController: UINavigationController?) -> Coordinator {
+    func makeCoordinator(navigationController: UINavigationController?) -> RecipeSearchTutorialCoordinator {
         return DefaultRecipeSearchTutorialCoordinator(navigationController: navigationController)
     }
     

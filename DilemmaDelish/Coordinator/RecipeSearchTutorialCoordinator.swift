@@ -9,10 +9,10 @@ import Foundation
 import UIKit
 
 protocol RecipeSearchTutorialCoordinator: Coordinator {
+    var onFinish: ((String) -> Void)? { get set }
     func showCategoriesPicker()
     func showIngredientsPicker()
     func showSeasoningsPicker()
-    func didFinishCoordinate(with query: String)
 }
 
 protocol RecipeSearchTutorialCoordinatorDependencies {
@@ -52,9 +52,5 @@ public final class DefaultRecipeSearchTutorialCoordinator: RecipeSearchTutorialC
     func showSeasoningsPicker() {
         let viewController = dependencies.makeCategoriesPickerViewController()
         navigationController?.pushViewController(viewController, animated: true)
-    }
-    
-    func didFinishCoordinate(with query: String) {
-        onFinish?(query)
     }
 }
