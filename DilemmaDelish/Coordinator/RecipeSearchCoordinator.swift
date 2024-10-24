@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 protocol RecipeSearchCoordinator: Coordinator {
+    var query: String? { get set }
     func showRecipeSearch()
     func showRecipeSearchResults(with query: String)
     func showRecipeSearchResultDetail(with id: String)
@@ -25,6 +26,8 @@ public final class DefaultRecipeSearchCoordinator: RecipeSearchCoordinator {
     var navigationController: UINavigationController?
     var childCoordinators: [Coordinator] = []
     
+    var query: String?
+    
     private let dependencies: RecipeSearchCoordinatorDependencies
     
     init(navigationController: UINavigationController?, 
@@ -34,7 +37,7 @@ public final class DefaultRecipeSearchCoordinator: RecipeSearchCoordinator {
     }
     
     func start() {
-        showRecipeSearch()
+        query != nil ? showRecipeSearchResults(with: query!) : showRecipeSearch()
     }
 }
 
