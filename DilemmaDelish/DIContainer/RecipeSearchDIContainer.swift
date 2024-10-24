@@ -17,9 +17,9 @@ public final class RecipeSearchDIContainer: RecipeSearchCoordinatorDependencies 
         return RecipeSearchViewController()
     }
     
-    func makeRecipeSearchResultsViewController(with searchable: RecipeSearchable) -> UIViewController {
+    func makeRecipeSearchResultsViewController(with query: String) -> UIViewController {
         let viewModel = Container.shared.resolve(DefaultRecipeSearchResultsViewModel.self)
-        viewModel.searchableRecipe.onNext(searchable)
+        viewModel.searchQuery.onNext(query)
         return RecipeSearchResultsViewController(viewModel: viewModel)
     }
     

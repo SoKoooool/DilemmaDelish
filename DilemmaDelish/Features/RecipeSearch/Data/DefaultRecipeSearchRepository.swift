@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 public final class DefaultRecipeSearchRepository: RecipeSearchRepository {
-    func searchRecipe(from searchable: RecipeSearchable) -> Observable<[Recipe]> {
+    func searchRecipe(_ query: String) -> Observable<[Recipe]> {
         return RecipeAPI().recipe(with: searchable.toQueryString())
             .map { $0.dto.map { $0.toDomain() } }
     }

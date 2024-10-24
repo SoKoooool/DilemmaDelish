@@ -23,8 +23,7 @@ public final class DefaultRecipeSearchViewModel: RecipeSearchViewModel {
         
         searchTerm = searching.asObserver()
         searching
-            .map { DefaultRecipeSearchable(name: $0) }
-            .subscribe { coordinator.showRecipeSearchResults(from: $0) }
+            .subscribe { coordinator.showRecipeSearchResults(with: $0) }
             .disposed(by: disposeBag)
     }
 }

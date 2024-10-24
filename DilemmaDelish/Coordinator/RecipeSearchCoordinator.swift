@@ -10,13 +10,13 @@ import UIKit
 
 protocol RecipeSearchCoordinator: Coordinator {
     func showRecipeSearch()
-    func showRecipeSearchResults(from searchable: RecipeSearchable)
+    func showRecipeSearchResults(with query: String)
     func showRecipeSearchResultDetail(with id: String)
 }
 
 protocol RecipeSearchCoordinatorDependencies {
     func makeRecipeSearchViewController() -> UIViewController
-    func makeRecipeSearchResultsViewController(with searchable: RecipeSearchable) -> UIViewController
+    func makeRecipeSearchResultsViewController(with query: String) -> UIViewController
     func makeRecipeSearchResultDetailViewController(with id: String) -> UIViewController
 }
 
@@ -44,8 +44,8 @@ extension DefaultRecipeSearchCoordinator {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
-    func showRecipeSearchResults(from searchable: RecipeSearchable) {
-        let viewController = dependencies.makeRecipeSearchResultsViewController(with: searchable)
+    func showRecipeSearchResults(with query: String) {
+        let viewController = dependencies.makeRecipeSearchResultsViewController(with: query)
         navigationController?.pushViewController(viewController, animated: true)
     }
     

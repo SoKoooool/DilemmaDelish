@@ -28,8 +28,7 @@ public final class DefaultRecipeSearchResultDetailViewModel: RecipeSearchResultD
         
         recipeName = naming.asObserver()
         naming
-            .map { DefaultRecipeSearchable(name: $0) }
-            .flatMap { recipeSearchUsecase.execute(from: $0) }
+            .flatMap { recipeSearchUsecase.execute($0) }
             .flatMap { Observable.from($0) }
             .subscribe(onNext: recipe.onNext(_:))
             .disposed(by: disposeBag)
