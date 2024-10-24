@@ -44,12 +44,12 @@ extension AppCoordinator {
 extension AppCoordinator {
     func showRecipeSearchTutorial() {
         Container.shared.register(RecipeSearchTutorialDIContainer())
-        Container.shared.register(DefaultRecipeSearchTutorialCoordinator(navigationController: navigationController))
         Container.shared.register(DefaultRecipeSearchTutorialRepository())
         Container.shared.register(DefaultRecipeSearchTutorialUsecase())
         Container.shared.register(DefaultRecipeSearchTutorialViewModel())
         
-        let coordinator = Container.shared.resolve(DefaultRecipeSearchTutorialCoordinator.self)
+        let container = Container.shared.resolve(RecipeSearchTutorialDIContainer.self)
+        let coordinator = container.makeCoordinator(navigationController: navigationController)
         addChildCoordinator(coordinator)
         coordinator.start()
     }
