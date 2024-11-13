@@ -68,6 +68,22 @@ extension R.ColorSet {
     }
 }
 
+extension R.ColorSet {
+    enum Blue {
+        static var blue5: UIColor { .load(name: "Blue5") }
+        static var blue10: UIColor { .load(name: "Blue10") }
+        static var blue15: UIColor { .load(name: "Blue15") }
+        static var blue20: UIColor { .load(name: "Blue20") }
+        static var blue30: UIColor { .load(name: "Blue30") }
+        static var blue40: UIColor { .load(name: "Blue40") }
+        static var blue50: UIColor { .load(name: "Blue50") }
+        static var blue60: UIColor { .load(name: "Blue60") }
+        static var blue70: UIColor { .load(name: "Blue70") }
+        static var blue80: UIColor { .load(name: "Blue80") }
+        static var blue90: UIColor { .load(name: "Blue90") }
+    }
+}
+
 extension UIColor {
     static func load(name: String) -> UIColor {
         guard let color = UIColor(named: name, in: R.bundle, compatibleWith: nil) else {
