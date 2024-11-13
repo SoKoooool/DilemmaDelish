@@ -20,6 +20,22 @@ extension R.ColorSet {
     }
 }
 
+extension R.ColorSet {
+    enum GrayScale {
+        static var gray5: UIColor { .load(name: "Gray5") }
+        static var gray10: UIColor { .load(name: "Gray10") }
+        static var gray15: UIColor { .load(name: "Gray15") }
+        static var gray20: UIColor { .load(name: "Gray20") }
+        static var gray30: UIColor { .load(name: "Gray30") }
+        static var gray40: UIColor { .load(name: "Gray40") }
+        static var gray50: UIColor { .load(name: "Gray50") }
+        static var gray60: UIColor { .load(name: "Gray60") }
+        static var gray70: UIColor { .load(name: "Gray70") }
+        static var gray80: UIColor { .load(name: "Gray80") }
+        static var gray90: UIColor { .load(name: "Gray90") }
+    }
+}
+
 extension UIColor {
     static func load(name: String) -> UIColor {
         guard let color = UIColor(named: name, in: R.bundle, compatibleWith: nil) else {
