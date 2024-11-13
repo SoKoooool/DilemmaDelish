@@ -13,6 +13,13 @@ extension R.ColorSet {
     static var background: UIColor { .load(name: "Background_Color") }
 }
 
+extension R.ColorSet {
+    enum BlackAndWhite {
+        static var black: UIColor { .load(name: "Black") }
+        static var white: UIColor { .load(name: "White") }
+    }
+}
+
 extension UIColor {
     static func load(name: String) -> UIColor {
         guard let color = UIColor(named: name, in: R.bundle, compatibleWith: nil) else {
