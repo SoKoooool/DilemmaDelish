@@ -14,6 +14,7 @@
 		FFB913D92ABAE7010022E688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFB913D82ABAE7010022E688 /* Assets.xcassets */; };
 		FFB913DC2ABAE7010022E688 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB913DA2ABAE7010022E688 /* LaunchScreen.storyboard */; };
 		FFCE5E632CE4303900C473DE /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCE5E622CE4303900C473DE /* R.swift */; };
+		FFCE5E652CE43AB800C473DE /* R + ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCE5E642CE43AB800C473DE /* R + ColorSet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		FFB913DB2ABAE7010022E688 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFB913DD2ABAE7010022E688 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFCE5E622CE4303900C473DE /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
+		FFCE5E642CE43AB800C473DE /* R + ColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R + ColorSet.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				FFCE5E622CE4303900C473DE /* R.swift */,
+				FFCE5E642CE43AB800C473DE /* R + ColorSet.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			files = (
 				FFCE5E632CE4303900C473DE /* R.swift in Sources */,
 				FFB913D42ABAE6FF0022E688 /* ViewController.swift in Sources */,
+				FFCE5E652CE43AB800C473DE /* R + ColorSet.swift in Sources */,
 				FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */,
 				FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */,
 			);
