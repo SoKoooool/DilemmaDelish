@@ -14,3 +14,4 @@ public class R {
 extension R {
     enum ColorSet {}
 }
+
