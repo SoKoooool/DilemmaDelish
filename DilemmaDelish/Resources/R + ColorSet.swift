@@ -8,13 +8,13 @@
 import UIKit
 
 extension R.ColorSet {
-    static var primary: UIColor { .load(name: "Primary_Color") }
-    static var primaryLighten: UIColor { .load(name: "Primary_Lighten_Color") }
-    static var primaryDarken: UIColor { .load(name: "Primary_Darken_Color") }
-    static var primaryDisabled: UIColor { .load(name: "Primary_Disabled_Color") }
-    static var background: UIColor { .load(name: "Background_Color") }
-    static var backgroundLighten: UIColor { .load(name: "Background_Lighten_Color") }
-    static var backgroundDarken: UIColor { .load(name: "Background_Darken_Color") }
+    static var primary: UIColor { .load(name: "Primary") }
+    static var primaryLighten: UIColor { .load(name: "Primary Lighten") }
+    static var primaryDarken: UIColor { .load(name: "Primary Darken") }
+    static var primaryDisabled: UIColor { .load(name: "Primary Disabled") }
+    static var background: UIColor { .load(name: "Background") }
+    static var backgroundLighten: UIColor { .load(name: "Background Lighten") }
+    static var backgroundDarken: UIColor { .load(name: "Background Darken") }
 }
 
 extension R.ColorSet {
