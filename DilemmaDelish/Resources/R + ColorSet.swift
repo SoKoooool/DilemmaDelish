@@ -85,6 +85,26 @@ extension R.ColorSet {
     }
 }
 
+extension R.ColorSet {
+    enum TransparentWhite {
+        static var transparent5: UIColor { .load(name: "Transparent White/Transparent5") }
+        static var transparent10: UIColor { .load(name: "Transparent White/Transparent10") }
+        static var transparent15: UIColor { .load(name: "Transparent White/Transparent15") }
+        static var transparent20: UIColor { .load(name: "Transparent White/Transparent20") }
+        static var transparent30: UIColor { .load(name: "Transparent White/Transparent30") }
+        static var transparent40: UIColor { .load(name: "Transparent White/Transparent40") }
+    }
+    
+    enum TransparentBlack {
+        static var transparent5: UIColor { .load(name: "Transparent Black/Transparent5") }
+        static var transparent10: UIColor { .load(name: "Transparent Black/Transparent10") }
+        static var transparent15: UIColor { .load(name: "Transparent Black/Transparent15") }
+        static var transparent20: UIColor { .load(name: "Transparent Black/Transparent20") }
+        static var transparent30: UIColor { .load(name: "Transparent Black/Transparent30") }
+        static var transparent40: UIColor { .load(name: "Transparent Black/Transparent40") }
+    }
+}
+
 extension UIColor {
     static func load(name: String) -> UIColor {
         guard let color = UIColor(named: name, in: R.bundle, compatibleWith: nil) else {
