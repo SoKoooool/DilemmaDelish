@@ -74,7 +74,6 @@ extension R.ColorSet {
     enum Blue {
         static var blue5: UIColor { .load(name: "Blue5") }
         static var blue10: UIColor { .load(name: "Blue10") }
-        static var blue15: UIColor { .load(name: "Blue15") }
         static var blue20: UIColor { .load(name: "Blue20") }
         static var blue30: UIColor { .load(name: "Blue30") }
         static var blue40: UIColor { .load(name: "Blue40") }
