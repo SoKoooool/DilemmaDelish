@@ -25,7 +25,7 @@ extension R.ColorSet {
 }
 
 extension R.ColorSet {
-    enum GrayScale {
+    enum Grayscale {
         static var gray5: UIColor { .load(name: "Gray5") }
         static var gray10: UIColor { .load(name: "Gray10") }
         static var gray15: UIColor { .load(name: "Gray15") }
