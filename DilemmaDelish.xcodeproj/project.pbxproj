@@ -13,6 +13,7 @@
 		FFB913D72ABAE6FF0022E688 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB913D52ABAE6FF0022E688 /* Main.storyboard */; };
 		FFB913D92ABAE7010022E688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFB913D82ABAE7010022E688 /* Assets.xcassets */; };
 		FFB913DC2ABAE7010022E688 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB913DA2ABAE7010022E688 /* LaunchScreen.storyboard */; };
+		FFC9A5552CEAD44F00477948 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFC9A5542CEAD44F00477948 /* Colors.xcassets */; };
 		FFCE5E632CE4303900C473DE /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCE5E622CE4303900C473DE /* R.swift */; };
 		FFCE5E652CE43AB800C473DE /* R + ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCE5E642CE43AB800C473DE /* R + ColorSet.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +27,7 @@
 		FFB913D82ABAE7010022E688 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFB913DB2ABAE7010022E688 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFB913DD2ABAE7010022E688 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFC9A5542CEAD44F00477948 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		FFCE5E622CE4303900C473DE /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
 		FFCE5E642CE43AB800C473DE /* R + ColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R + ColorSet.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +79,7 @@
 			children = (
 				FFCE5E622CE4303900C473DE /* R.swift */,
 				FFCE5E642CE43AB800C473DE /* R + ColorSet.swift */,
+				FFC9A5542CEAD44F00477948 /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFB913DC2ABAE7010022E688 /* LaunchScreen.storyboard in Resources */,
+				FFC9A5552CEAD44F00477948 /* Colors.xcassets in Resources */,
 				FFB913D92ABAE7010022E688 /* Assets.xcassets in Resources */,
 				FFB913D72ABAE6FF0022E688 /* Main.storyboard in Resources */,
 			);
