@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FFA1EF292CED788E00F36A6B /* PretendardVariable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFA1EF282CED788E00F36A6B /* PretendardVariable.ttf */; };
+		FFA1EF2D2CED78DB00F36A6B /* R + Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA1EF2C2CED78DB00F36A6B /* R + Font.swift */; };
 		FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */; };
 		FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */; };
 		FFB913D42ABAE6FF0022E688 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB913D32ABAE6FF0022E688 /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FFA1EF282CED788E00F36A6B /* PretendardVariable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardVariable.ttf; sourceTree = "<group>"; };
+		FFA1EF2C2CED78DB00F36A6B /* R + Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R + Font.swift"; sourceTree = "<group>"; };
 		FFB913CC2ABAE6FF0022E688 /* DilemmaDelish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DilemmaDelish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB913CF2ABAE6FF0022E688 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFB913D12ABAE6FF0022E688 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FFA1EF272CED788300F36A6B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FFA1EF282CED788E00F36A6B /* PretendardVariable.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		FFB913C32ABAE6FF0022E688 = {
 			isa = PBXGroup;
 			children = (
@@ -77,8 +89,10 @@
 		FFCE5E612CE4302800C473DE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FFA1EF272CED788300F36A6B /* Fonts */,
 				FFCE5E622CE4303900C473DE /* R.swift */,
 				FFCE5E642CE43AB800C473DE /* R + ColorSet.swift */,
+				FFA1EF2C2CED78DB00F36A6B /* R + Font.swift */,
 				FFC9A5542CEAD44F00477948 /* Colors.xcassets */,
 			);
 			path = Resources;
@@ -142,6 +156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFA1EF292CED788E00F36A6B /* PretendardVariable.ttf in Resources */,
 				FFB913DC2ABAE7010022E688 /* LaunchScreen.storyboard in Resources */,
 				FFC9A5552CEAD44F00477948 /* Colors.xcassets in Resources */,
 				FFB913D92ABAE7010022E688 /* Assets.xcassets in Resources */,
@@ -161,6 +176,7 @@
 				FFCE5E652CE43AB800C473DE /* R + ColorSet.swift in Sources */,
 				FFB913D02ABAE6FF0022E688 /* AppDelegate.swift in Sources */,
 				FFB913D22ABAE6FF0022E688 /* SceneDelegate.swift in Sources */,
+				FFA1EF2D2CED78DB00F36A6B /* R + Font.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
